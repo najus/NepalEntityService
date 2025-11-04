@@ -7,7 +7,26 @@
       "Indian",
       "Nepali"
     ],
-    "place_of_death": "Siphal, Kathmandu, Nepal"
+    "place_of_death": "Siphal, Kathmandu, Nepal",
+    "sys:positions": [
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "Member"
+      },
+      {
+        "organization": "Nepal Sadbhawana Party",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -2,7 +2,21 @@
   "attributes": {
     "birthPlace": "Haldibari, Jhapa",
     "nationality": "Nepali",
-    "politicalParty": "Communist Party of Nepal (Maoist Centre)"
+    "politicalParty": "Communist Party of Nepal (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2018-02-05T00:00:00",
+        "title": "Member of the Koshi Provincial Assembly"
+      },
+      {
+        "endDate": "2009-12-31T00:00:00",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

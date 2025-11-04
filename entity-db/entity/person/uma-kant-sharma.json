@@ -1,7 +1,15 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of the Constituent Assembly for Salyan-2"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -23,6 +23,14 @@
         "party": "Communist Party of Nepal (Maoist)",
         "period": "till 2015"
       }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2013-12-31T23:59:59Z",
+        "organization": null,
+        "startDate": "2008-01-01T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      }
     ]
   },
   "attributions": [

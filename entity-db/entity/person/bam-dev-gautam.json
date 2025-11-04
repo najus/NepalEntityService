@@ -2,7 +2,63 @@
   "attributes": {
     "born_in": "Pyuthan District",
     "nationality": "Nepali",
-    "spouse": "Tulsi Thapa"
+    "spouse": "Tulsi Thapa",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": null,
+        "title": "Deputy Prime Minister and Minister of Home Affairs"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-31T00:00:00",
+        "title": "Deputy Prime Minister and Home Minister"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "1997-02-01T00:00:00",
+        "title": "Deputy Prime Minister and Home Minister"
+      },
+      {
+        "endDate": null,
+        "organization": "National Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of National Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of Constituent Assembly of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": null,
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN(UML)",
+        "startDate": "2009-02-01T00:00:00",
+        "title": "vice-chairman"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN(ML)",
+        "startDate": "1998-03-01T00:00:00",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN Rupandehi",
+        "startDate": null,
+        "title": "District Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

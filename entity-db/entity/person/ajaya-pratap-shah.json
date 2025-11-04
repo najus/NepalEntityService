@@ -1,7 +1,15 @@
 {
   "attributes": {
     "death_location": "Lucknow, India",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": null,
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

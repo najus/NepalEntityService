@@ -13,7 +13,70 @@
       "CPN (Unity Centre) (1990-1994)",
       "CPN (Fourth Convention) (before 1990)"
     ],
-    "spouse": "Tara Devi Sapkota"
+    "spouse": "Tara Devi Sapkota",
+    "sys:education": [
+      {
+        "degree": "Post-graduate",
+        "field": "Sociology",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "Secondary School Education",
+        "institution": "Krishna Ratna Ganga High School"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2022-09-25T00:00:00",
+        "organization": null,
+        "startDate": "2020-01-27T00:00:00",
+        "title": "Speaker of the Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2016-07-31T00:00:00",
+        "organization": null,
+        "startDate": "2015-10-01T00:00:00",
+        "title": "Minister for Forests and Soil Conservation"
+      },
+      {
+        "endDate": "2011-07-31T00:00:00",
+        "organization": null,
+        "startDate": "2011-05-01T00:00:00",
+        "title": "Minister for Information and Communications"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Sindhupalchok 1",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Sindhupalchok 2",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of the Constituent Assembly / Legislature Parliament"
+      },
+      {
+        "organization": "CPN (Maoist Centre)",
+        "title": "Spokesperson"
+      },
+      {
+        "organization": "Nepal Communist Party (NCP)",
+        "title": "Standing committee member"
+      },
+      {
+        "organization": "Communist Party of Nepal (Maoist)",
+        "title": "Central committee member"
+      },
+      {
+        "organization": "Janajagriti Secondary School",
+        "title": "Headmaster"
+      },
+      {
+        "organization": "National Teachers Association",
+        "title": "General secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

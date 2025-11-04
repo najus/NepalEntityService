@@ -1,7 +1,13 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Nepalese Constituent Assembly",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

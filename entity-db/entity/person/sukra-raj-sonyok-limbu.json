@@ -3,7 +3,33 @@
     "birthDate": "1936-12-22",
     "birthPlace": "Taplejung, Eastern Nepal",
     "ethnicity": "Limbu",
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "endDate": "2004-12-31T23:59:59",
+        "organization": "National Assembly of Nepal",
+        "startDate": "1997-01-01T00:00:00",
+        "title": "Member of National Assembly"
+      },
+      {
+        "endDate": "2004-12-31T23:59:59",
+        "organization": "Nepali Congress (Democratic)",
+        "startDate": "2003-01-01T00:00:00",
+        "title": "Chief Whip"
+      },
+      {
+        "endDate": "1974-12-31T23:59:59",
+        "organization": "Congress Mukti Sena (Liberation Army) of Nepali Congress",
+        "startDate": "1974-01-01T00:00:00",
+        "title": "Local Commander"
+      },
+      {
+        "endDate": "1970-12-31T23:59:59",
+        "organization": "Queen's Gurkha Engineers Unit, British Army",
+        "startDate": "1954-01-01T00:00:00",
+        "title": "Serjeant"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

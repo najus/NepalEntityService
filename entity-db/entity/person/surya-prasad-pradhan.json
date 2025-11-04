@@ -1,7 +1,21 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Butwal",
+        "title": "8th Mayor of Butwal"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Candidate for the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

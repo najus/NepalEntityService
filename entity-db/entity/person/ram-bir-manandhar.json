@@ -6,6 +6,26 @@
     "political_affiliations": [
       "Aam Janta Party (2022-present)",
       "CPN (UML) (till 2022)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2019-11-21T00:00:00Z",
+        "title": "State Minister for Minister of Urban Development"
+      },
+      {
+        "endDate": "2022-09-17T00:00:00Z",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00Z",
+        "organization": null,
+        "startDate": "2014-01-21T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      }
     ]
   },
   "attributions": [

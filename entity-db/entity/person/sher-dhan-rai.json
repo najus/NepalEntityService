@@ -16,7 +16,64 @@
     "spouse": {
       "marriageDate": "2021-01-24",
       "name": "Jangmu Enn Sherpa"
-    }
+    },
+    "sys:education": [
+      {
+        "degree": "Master's",
+        "field": "Sociology",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2021-08-26T00:00:00",
+        "organization": "Government of Koshi Province",
+        "startDate": "2018-02-14T00:00:00",
+        "title": "Chief Minister of Koshi Province"
+      },
+      {
+        "endDate": "2022-09-03T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2021-11-01T00:00:00",
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "2021-08-26T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2018-01-15T00:00:00",
+        "title": "Leader of the House"
+      },
+      {
+        "endDate": "2016-08-14T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2015-11-05T00:00:00",
+        "title": "Minister of Information and Communications"
+      },
+      {
+        "endDate": "2022-09-02T00:00:00",
+        "organization": "Province No. 1 Provincial Assembly",
+        "startDate": "2018-02-05T00:00:00",
+        "title": "Member of Province No. 1 Provincial Assembly"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Legislature Parliament"
+      },
+      {
+        "endDate": "2008-01-16T00:00:00",
+        "organization": "Interim legislature of Nepal",
+        "startDate": "2006-04-28T00:00:00",
+        "title": "Member of Interim legislature"
+      },
+      {
+        "endDate": "2002-05-01T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

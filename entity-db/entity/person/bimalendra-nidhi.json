@@ -11,7 +11,84 @@
     "nationality": "Nepalese",
     "politicalParty": "Nepali Congress",
     "residence": "Nagarain, Janakpur, Nepal",
-    "spouse": "Anamika Upasak Nidhi"
+    "spouse": "Anamika Upasak Nidhi",
+    "sys:education": [
+      {
+        "degree": "Masters",
+        "field": "Political Science",
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "House of Representatives of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "2021-12-31T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Vice-President of the Nepali Congress"
+      },
+      {
+        "endDate": "2017-05-24T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2016-08-04T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2017-05-24T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2016-08-04T00:00:00",
+        "title": "Minister for Home Affairs"
+      },
+      {
+        "endDate": "2015-10-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister for Physical Infrastructure and Transport"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly / Legislature Parliament"
+      },
+      {
+        "endDate": "2010-12-31T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2006-01-01T00:00:00",
+        "title": "General Secretary of Nepali Congress"
+      },
+      {
+        "endDate": "1997-03-11T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1995-12-13T00:00:00",
+        "title": "Minister for General Administration"
+      },
+      {
+        "endDate": "2002-12-31T00:00:00",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for Education and Sports"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "organization": "Nepal Students Union",
+        "title": "President of the Nepal Students Union"
+      },
+      {
+        "title": "General Secretary of Nepali Congress (Democratic)"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

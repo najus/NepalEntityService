@@ -6,6 +6,26 @@
     "political_affiliations": [
       "People's Progressive Party (2022-present)",
       "Terai Madhesh Loktantrik Party (till 2017)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "People's Progressive Party",
+        "startDate": "2022-01-01T00:00:00",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": "2013-12-31T23:59:59",
+        "organization": null,
+        "startDate": "2011-01-01T00:00:00",
+        "title": "Minister of state for Physical Infrastructure"
+      },
+      {
+        "endDate": "2017-12-31T23:59:59",
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Nepalese Constituent Assembly"
+      }
     ]
   },
   "attributions": [

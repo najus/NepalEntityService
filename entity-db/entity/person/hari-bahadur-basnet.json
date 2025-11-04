@@ -1,6 +1,36 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Rastriya Janashakti Party",
+        "title": "head of the Foreign Relations Department"
+      },
+      {
+        "organization": "Rastriya Panchayat",
+        "title": "Member"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "Central Committee member"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "head of the International Relations department"
+      },
+      {
+        "organization": "Cabinet of Surya Bahadur Thapa",
+        "title": "Minister of Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "organization": "Cabinet of Surya Bahadur Thapa",
+        "title": "Minister of Education and Sports"
+      },
+      {
+        "organization": "Cabinet of Surya Bahadur Thapa",
+        "title": "Minister of Industry, Commerce, and Supplies"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

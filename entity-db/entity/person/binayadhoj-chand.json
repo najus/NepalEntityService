@@ -1,7 +1,15 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

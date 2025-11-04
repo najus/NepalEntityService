@@ -5,7 +5,39 @@
     "father": "Gopaldas Bade",
     "mother": "Chinimaya Bade",
     "nationality": "Nepali",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Provincial Assembly of Bagmati Province",
+        "startDate": null,
+        "title": "Member of the Provincial Assembly of Bagmati Province"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress Bagmati Province",
+        "startDate": "2021-12-07T00:00:00",
+        "title": "General Secretary of Nepali Congress Bagmati Province"
+      },
+      {
+        "endDate": null,
+        "organization": "Second Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of Second Constituent Assembly of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": null,
+        "title": "State Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": null,
+        "organization": "Banepa Municipality",
+        "startDate": null,
+        "title": "Deputy Mayor of Banepa Municipality"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

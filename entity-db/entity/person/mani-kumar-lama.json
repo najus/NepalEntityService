@@ -3,7 +3,57 @@
     "date_of_birth": "1996-03-24",
     "height": "1.75 m",
     "nationality": "Nepalese",
-    "place_of_birth": "Kathmandu, Nepal"
+    "place_of_birth": "Kathmandu, Nepal",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Paro F.C.",
+        "startDate": null,
+        "title": "Midfielder"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal A.P.F. Club",
+        "startDate": null,
+        "title": "Midfielder"
+      },
+      {
+        "endDate": null,
+        "organization": "Butwal Lumbini F.C.",
+        "startDate": null,
+        "title": "Midfielder"
+      },
+      {
+        "endDate": null,
+        "organization": "Lalitpur City F.C.",
+        "startDate": null,
+        "title": "Midfielder"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal national futsal team",
+        "startDate": null,
+        "title": "Player"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal national football team",
+        "startDate": null,
+        "title": "Midfielder"
+      },
+      {
+        "endDate": null,
+        "organization": "Tribhuvan Army Club",
+        "startDate": null,
+        "title": "Table Tennis Player"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal A.P.F. Club",
+        "startDate": null,
+        "title": "Table Tennis Player"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

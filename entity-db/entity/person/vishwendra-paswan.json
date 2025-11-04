@@ -2,7 +2,30 @@
   "attributes": {
     "known_as": "Ambedkar of Nepal",
     "nationality": "Nepali",
-    "religion": "Buddhism"
+    "religion": "Buddhism",
+    "sys:education": [
+      {
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Science, Technology, Environment and Population"
+      },
+      {
+        "organization": "Bahujan Shakti Party",
+        "title": "President"
+      },
+      {
+        "organization": "Dalit Janajati Party",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Dalit Janajati Party",
+        "title": "Member of the Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

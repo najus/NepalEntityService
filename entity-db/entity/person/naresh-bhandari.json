@@ -1,7 +1,18 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Parliament member"
+      },
+      {
+        "organization": "Karnali Province",
+        "title": "Minister of internal affairs and law"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

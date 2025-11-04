@@ -1,6 +1,17 @@
 {
   "attributes": {
-    "legal_issues": "In 2007, was accused of the murder of two regional Young Communist League leaders."
+    "legal_issues": "In 2007, was accused of the murder of two regional Young Communist League leaders.",
+    "sys:positions": [
+      {
+        "organization": "Rupandehi-2 constituency",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Madhesi Janadhikar Forum",
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

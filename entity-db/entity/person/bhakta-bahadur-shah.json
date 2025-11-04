@@ -1,6 +1,19 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepal Socialist Party",
+        "startDate": "2022-07-28T00:00:00",
+        "title": "Deputy chairman"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": null,
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -5,7 +5,38 @@
       "Nepal Communist Party"
     ],
     "placeOfBirth": "Bajhang",
-    "politicalParty": "Communist Party of Nepal (Unified Socialist)"
+    "politicalParty": "Communist Party of Nepal (Unified Socialist)",
+    "sys:positions": [
+      {
+        "endDate": "2024-07-15T00:00:00",
+        "startDate": "2024-03-06T00:00:00",
+        "title": "Minister of Federal Affairs and General Administration"
+      },
+      {
+        "endDate": "2011-08-29T00:00:00",
+        "organization": "Jhalanath Khanal cabinet",
+        "startDate": "2011-02-13T00:00:00",
+        "title": "Minister of Forests and Soil Conservation"
+      },
+      {
+        "endDate": null,
+        "organization": "House of Representatives of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of House of Representatives"
+      },
+      {
+        "endDate": "1999-05-31T00:00:00",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1994-10-01T00:00:00",
+        "title": "Member of House of Representatives for Bajhang 1"
+      },
+      {
+        "endDate": "2013-11-19T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly of Nepal for Bajhang 1"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

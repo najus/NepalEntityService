@@ -5,7 +5,15 @@
     "nationality": "Nepali",
     "place_of_death": "Bishanpur (Kalyanpur-2)",
     "political_party": "independent",
-    "status": "deceased"
+    "status": "deceased",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of the Constituent Assembly for Saptari-5"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

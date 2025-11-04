@@ -25,6 +25,73 @@
     },
     "religion": "Hindu",
     "spouse": "Mangala Devi Singh",
+    "sys:education": [
+      {
+        "degree": null,
+        "endYear": null,
+        "field": null,
+        "institution": "Durbar High School",
+        "startYear": null
+      },
+      {
+        "degree": "Matriculation",
+        "endYear": 1939,
+        "field": null,
+        "institution": "Vidyasagar College",
+        "startYear": null
+      },
+      {
+        "degree": "Intermediate of Science",
+        "endYear": null,
+        "field": "Science",
+        "institution": "Vidyasagar College",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepal Praja Parishad",
+        "startDate": "1940-01-01T00:00:00",
+        "title": "Member"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "1950-04-01T00:00:00",
+        "title": "Founding Leader"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "1982-01-01T00:00:00",
+        "title": "Supreme Leader"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "1951-01-01T00:00:00",
+        "title": "Minister of Industry and Commerce"
+      },
+      {
+        "endDate": "1960-12-15T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1959-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "1960-12-15T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1959-05-27T00:00:00",
+        "title": "Minister of Construction and Transport"
+      },
+      {
+        "endDate": "1990-04-19T00:00:00",
+        "organization": "1990 People's Movement",
+        "startDate": "1990-02-18T00:00:00",
+        "title": "Supreme Commander"
+      }
+    ],
     "titles": [
       "Father of Democracy",
       "Iron Man",

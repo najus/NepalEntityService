@@ -5,7 +5,36 @@
     "childrenCount": 3,
     "nationality": "Nepali",
     "notableWork": "Prakanda Collected Works-Part 1",
-    "spouse": "Nanda Kumal Vishwakarma"
+    "spouse": "Nanda Kumal Vishwakarma",
+    "sys:education": [
+      {
+        "degree": "SLC",
+        "institution": "Nandadevi Secondary School, Kotbada-Kalikot"
+      },
+      {
+        "institution": "Surketh Education Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal",
+        "title": "Spokesperson"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Tourism and Civil Aviation"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Minister of Women, Children and Social Welfare"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

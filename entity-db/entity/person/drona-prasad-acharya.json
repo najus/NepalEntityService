@@ -2,7 +2,15 @@
   "attributes": {
     "nationality": "Nepali",
     "political_party": "CPN (UML)",
-    "political_party_full_name": "Communist Party of Nepal (Unified Marxist-Leninist)"
+    "political_party_full_name": "Communist Party of Nepal (Unified Marxist-Leninist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": null,
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

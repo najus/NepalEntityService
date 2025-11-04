@@ -3,7 +3,21 @@
     "birthDate": "1982-01-22",
     "birthPlace": "Kaski District",
     "nationality": "Nepali",
-    "political_party": "CPN (Maoist Centre)"
+    "political_party": "CPN (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "CPN (Maoist Centre)",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Communist Party of Nepal (Maoist)",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

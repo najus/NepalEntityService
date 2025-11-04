@@ -1,7 +1,12 @@
 {
   "attributes": {
     "caste": "Brahmin",
-    "gotra": "Kaudilya/Kaudinya"
+    "gotra": "Kaudilya/Kaudinya",
+    "sys:positions": [
+      {
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

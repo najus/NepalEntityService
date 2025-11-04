@@ -1,7 +1,15 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)"
+    "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)",
+    "sys:positions": [
+      {
+        "endDate": "2012-05-27T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of the Constituent Assembly from Mustang-1"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

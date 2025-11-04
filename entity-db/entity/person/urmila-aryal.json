@@ -1,7 +1,31 @@
 {
   "attributes": {
     "birth_place": "Parsa District, Province No. 2, Nepal",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "National Assembly of Nepal",
+        "startDate": "2023-02-06T00:00:00",
+        "title": "Vice Chairperson of the National Assembly of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2022-03-04T00:00:00",
+        "title": "Member of the National Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2006-05-01T00:00:00",
+        "title": "Minister for Women, Children and Social Welfare"
+      },
+      {
+        "organization": "Communist Party of Nepal (Maoist Centre)",
+        "title": "Member of the Central Committee"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

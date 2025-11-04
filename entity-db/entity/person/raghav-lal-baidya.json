@@ -1,5 +1,17 @@
 {
-  "attributes": null,
+  "attributes": {
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-21T00:00:00",
+        "title": "Attorney General of Nepal"
+      },
+      {
+        "organization": "Janakpur Appellate Court",
+        "title": "Judge"
+      }
+    ]
+  },
   "attributions": [
     "Wikipedia"
   ],

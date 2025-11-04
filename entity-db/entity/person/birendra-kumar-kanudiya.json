@@ -2,7 +2,33 @@
   "attributes": {
     "birth_place": "Kapilvastu, Lumbini Province, Nepal",
     "nationality": "Nepalese",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Lumbini Provincial Assembly",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Province Assembly Member"
+      },
+      {
+        "endDate": null,
+        "organization": "Lumbini Province",
+        "startDate": null,
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "2002-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "2001-01-01T00:00:00",
+        "title": "Assistant Minister for Water Resources"
+      },
+      {
+        "endDate": "2002-12-31T23:59:59",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of House of Representatives"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

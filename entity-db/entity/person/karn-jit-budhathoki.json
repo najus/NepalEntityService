@@ -1,6 +1,14 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00Z",
+        "title": "Member of the Constituent Assembly for Humla-1"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -6,7 +6,45 @@
     "other_political_affiliations": [
       "CPN (Maoist Centre)"
     ],
-    "political_party": "CPN (UML)"
+    "political_party": "CPN (UML)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "CPN (UML)",
+        "startDate": "2021-11-30T00:00:00",
+        "title": "Secretary"
+      },
+      {
+        "endDate": "2021-05-20T00:00:00",
+        "organization": null,
+        "startDate": "2019-11-20T00:00:00",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": "2009-12-31T00:00:00",
+        "organization": null,
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Minister for Labour and Transport"
+      },
+      {
+        "endDate": "2021-12-31T00:00:00",
+        "organization": "Kailali-4",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Member of House of Representatives"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": "Kailali-5",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of Constituent Assembly of Nepal"
+      },
+      {
+        "endDate": "2013-12-31T00:00:00",
+        "organization": "Kailali-5",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Constituent Assembly of Nepal"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

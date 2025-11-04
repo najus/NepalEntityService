@@ -1,7 +1,31 @@
 {
   "attributes": {
     "dateOfDeath": "2006-01-21",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepal Terai Congress",
+        "startDate": "1951-01-01T00:00:00",
+        "title": "Founder"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Cabinet Minister"
+      },
+      {
+        "organization": "Back-to-the-Village National Campaign",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Ambassador to India"
+      },
+      {
+        "endDate": "2006-01-21T00:00:00",
+        "organization": "Rajsabha standing committee",
+        "title": "Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

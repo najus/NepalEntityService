@@ -1,6 +1,26 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal (Maoist)",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Member of the interim legislature of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal (Maoist)",
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly for Bardiya-1"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN (Maoist)",
+        "startDate": null,
+        "title": "Central Committee member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

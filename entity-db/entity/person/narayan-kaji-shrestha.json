@@ -3,7 +3,82 @@
     "alias": "Prakash",
     "marital_status": "Unmarried",
     "nationality": "Nepali",
-    "political_party": "CPN (Maoist Centre)"
+    "political_party": "CPN (Maoist Centre)",
+    "sys:education": [
+      {
+        "degree": "Master's degree",
+        "field": "Public Administration",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2024-07-15T00:00:00",
+        "startDate": "2022-12-26T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2024-07-15T00:00:00",
+        "startDate": "2024-03-06T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2024-03-04T00:00:00",
+        "startDate": "2023-03-31T00:00:00",
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "endDate": "2023-03-31T00:00:00",
+        "startDate": "2022-12-26T00:00:00",
+        "title": "Minister of Physical Infrastructure and Transportation"
+      },
+      {
+        "endDate": null,
+        "organization": "Gandaki Province",
+        "startDate": "2023-03-04T00:00:00",
+        "title": "Member of the Parliament, Rastriya Sabha"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00",
+        "startDate": "2011-09-04T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00",
+        "startDate": "2011-09-04T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": null,
+        "startDate": "2011-09-07T00:00:00",
+        "title": "Official government spokesman"
+      },
+      {
+        "endDate": "2011-08-29T00:00:00",
+        "startDate": "2011-08-06T00:00:00",
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "endDate": null,
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "startDate": "2009-01-13T00:00:00",
+        "title": "Deputy leader of the parliamentary party"
+      },
+      {
+        "endDate": null,
+        "organization": "Janamorcha Nepal",
+        "startDate": "2008-07-01T00:00:00",
+        "title": "Constituent Assembly member"
+      },
+      {
+        "organization": "CPN-Unity Centre",
+        "title": "General Secretary"
+      },
+      {
+        "organization": "Siddhartha Vanasthali Institute",
+        "title": "Mathematics lecturer"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

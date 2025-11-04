@@ -7,7 +7,39 @@
     "nationality": "Nepali",
     "placeOfBirth": "Biratnagar, Kingdom of Nepal",
     "placeOfDeath": "Kathmandu, Nepal",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2015-10-11T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-11T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2016-02-09T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2010-09-22T00:00:00",
+        "title": "President of the Nepali Congress"
+      },
+      {
+        "endDate": "2016-02-09T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of the Constituent Assembly / Legislature Parliament"
+      },
+      {
+        "endDate": "2008-12-31T00:00:00",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the House of Representatives for Banke–2"
+      },
+      {
+        "endDate": "1994-12-31T00:00:00",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Member of the House of Representatives for Banke–2"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

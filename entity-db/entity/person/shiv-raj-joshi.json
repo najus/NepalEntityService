@@ -1,6 +1,24 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Information and Communications"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of State"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Assistant Minister"
+      },
+      {
+        "organization": "House of Representatives of Nepal",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

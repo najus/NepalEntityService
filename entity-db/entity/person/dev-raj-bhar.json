@@ -7,7 +7,14 @@
       "Mani Ram Sharma",
       "Kala Panthi"
     ],
-    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)"
+    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "startDate": "2013-11-19T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

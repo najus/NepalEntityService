@@ -6,7 +6,40 @@
     "father": "Keshav Prasad Koirala",
     "mother": "Nona Koirala",
     "politicalParty": "Nepali Congress",
-    "spouse": "Poonam Koirala"
+    "spouse": "Poonam Koirala",
+    "sys:education": [
+      {
+        "institution": "Mahendra Morang Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Central working committee member"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Legislature Parliament of Nepal"
+      },
+      {
+        "organization": "BPKIHS",
+        "title": "Vice Chancellor"
+      },
+      {
+        "organization": "Bir Hospital",
+        "title": "Physician"
+      },
+      {
+        "organization": "Koshi Zonal Hospital",
+        "title": "Physician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

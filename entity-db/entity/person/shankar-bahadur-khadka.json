@@ -1,6 +1,16 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Communist Party of Nepal (Maoist)",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

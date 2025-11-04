@@ -2,7 +2,15 @@
   "attributes": {
     "nationality": "Nepalese",
     "political_party": "Sanghiya Loktantrik Rastriya Manch (Tharuhat)",
-    "province": "Lumbini Province"
+    "province": "Lumbini Province",
+    "sys:positions": [
+      {
+        "endDate": "2015-10-13T00:00:00",
+        "organization": "Second Constituent Assembly of Nepal",
+        "startDate": "2014-01-22T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

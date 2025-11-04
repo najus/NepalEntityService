@@ -3,7 +3,26 @@
     "birthDate": "1956-01-25",
     "birthPlace": "Dailekh District, Nepal",
     "nationality": "Nepali",
-    "politicalParty": "CPN (Unified Socialist)"
+    "politicalParty": "CPN (Unified Socialist)",
+    "sys:positions": [
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2023-01-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-09-30T00:00:00Z",
+        "organization": "Karnali Provincial Assembly",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Karnali Provincial Assembly"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00Z",
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2014-01-21T00:00:00Z",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

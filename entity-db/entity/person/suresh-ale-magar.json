@@ -1,6 +1,36 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Nepal Law Campus, Tribhuvan University",
+        "title": "Lecturer in English"
+      },
+      {
+        "organization": "Nepal Federation of Indigenous Nationalities",
+        "title": "Founding General Secretary"
+      },
+      {
+        "organization": "Nepal Magar Association",
+        "title": "Founding General Secretary"
+      },
+      {
+        "organization": "All Nepal Nationalities Organisation",
+        "title": "President"
+      },
+      {
+        "organization": "CPN (Maoist Centre)",
+        "title": "Member"
+      },
+      {
+        "organization": "CPN(Maoist)",
+        "title": "Active in the International Department"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -2,7 +2,45 @@
   "attributes": {
     "birthDate": "1958-10-08",
     "birthPlace": "Manang District, Nepal",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal (Maoist Centre)",
+        "startDate": "2022-08-20T00:00:00",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2008-08-22T00:00:00",
+        "title": "Minister of Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": null,
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2007-09-30T23:59:59",
+        "organization": null,
+        "startDate": "2007-04-01T00:00:00",
+        "title": "Minister for Local Development"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2007-12-31T00:00:00",
+        "title": "Minister for Local Development"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

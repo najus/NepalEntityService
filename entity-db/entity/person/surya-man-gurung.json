@@ -1,7 +1,18 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2017-05-31T00:00:00",
+        "startDate": "2016-08-26T00:00:00",
+        "title": "Minister of Labour and Employment"
+      },
+      {
+        "organization": "Nepali Congress in Taplejung District",
+        "title": "District President"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

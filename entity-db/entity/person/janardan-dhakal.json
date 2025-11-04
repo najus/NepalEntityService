@@ -1,6 +1,17 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -5,7 +5,51 @@
     "mother_name": "Lila Kumari Dhungel",
     "nationality": "Nepali",
     "place_of_birth": "Katunje, Bhaktapur",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:education": [
+      {
+        "degree": "Bachelor's Degree",
+        "field": "Humanities",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "2nd Nepalese Constituent Assembly",
+        "startDate": "2013-01-01",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Regional Chairman"
+      },
+      {
+        "organization": "Katunje VDC",
+        "startDate": "1992-01-01",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Katunje VDC",
+        "startDate": "1997-01-01",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Kajunte Ghattekhola Drinking Water Project",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Nepal Children's Organization",
+        "title": "Zonal Representative"
+      },
+      {
+        "organization": "National Cooperative Association",
+        "title": "Central Representative"
+      },
+      {
+        "organization": "Ganesh Man Memorial Foundation",
+        "title": "Founding Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -6,7 +6,34 @@
     "fatherName": "Dinanath Dhakal",
     "motherName": "Devkala Dhakal",
     "nationality": "Nepali",
-    "placeOfBirth": "Khadgakot, Gulmi District, Nepal"
+    "placeOfBirth": "Khadgakot, Gulmi District, Nepal",
+    "sys:education": [
+      {
+        "degree": "Bachelor's degree",
+        "field": "Law",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "All Nepal National Free Students Union (ANNFSU)",
+        "startDate": "1993-01-01T00:00:00",
+        "title": "President"
+      },
+      {
+        "organization": "All Nepal National Free Students Union (ANNFSU)",
+        "title": "General Secretary"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

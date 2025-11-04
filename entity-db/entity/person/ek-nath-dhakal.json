@@ -3,7 +3,94 @@
     "birthDate": "1974-08-13",
     "birthPlace": "Gorkha District, Nepal",
     "nationality": "Nepalese",
-    "spouse": "Blessie Gadon Dhakal"
+    "spouse": "Blessie Gadon Dhakal",
+    "sys:education": [
+      {
+        "field": "political science",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "field": "sociology and anthropology",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "Master of Arts in Peace Studies",
+        "endYear": 2024,
+        "institution": "HJ International"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2012-01-01T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2012-05-16T00:00:00",
+        "title": "Minister for Ministry of Co-operatives and Poverty Alleviation"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for the Ministry of Peace and Reconstruction"
+      },
+      {
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2022-11-20T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "organization": "Nepal Family Party",
+        "title": "President"
+      },
+      {
+        "organization": "Nepal Family Party",
+        "title": "Founder"
+      },
+      {
+        "organization": "International Association of Parliamentarians for Peace (IAPP)",
+        "title": "Asia Pacific Regional Chair"
+      },
+      {
+        "organization": "Inter-Parliamentary Speakers’ Conference (ISC)",
+        "startDate": "2025-04-11T00:00:00",
+        "title": "Secretary General"
+      },
+      {
+        "organization": "Security Special Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "International Relations and Human Rights Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Constitutional Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Public Accounts Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Foreign Relations and Tourism Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Sun Moon University",
+        "title": "Global Vice President"
+      },
+      {
+        "organization": "World Summit",
+        "title": "Special Global Envoy"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

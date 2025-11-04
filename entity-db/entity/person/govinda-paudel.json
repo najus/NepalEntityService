@@ -1,7 +1,21 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2013-01-01T00:00:00Z",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Consolidated coin company Faridabad Haryana India",
+        "startDate": null,
+        "title": "Employee"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

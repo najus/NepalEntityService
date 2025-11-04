@@ -7,7 +7,30 @@
     "nationality": "Nepali",
     "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)",
     "residence": "Nijgadh",
-    "spouse": "Pramila paudel"
+    "spouse": "Pramila paudel",
+    "sys:education": [
+      {
+        "degree": null,
+        "endYear": null,
+        "field": null,
+        "institution": "Gaurishankar School",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2015-10-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Youth and Sports of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": null,
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

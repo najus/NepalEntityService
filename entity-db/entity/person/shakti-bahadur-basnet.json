@@ -12,7 +12,51 @@
       "mother": "Dharma Kumari Basnet"
     },
     "political_party": "CPN (Maoist Centre)",
-    "spouse": "Satya Pahadi"
+    "spouse": "Satya Pahadi",
+    "sys:positions": [
+      {
+        "endDate": "2024-07-15T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2024-03-06T00:00:00",
+        "title": "Minister of Energy, Water Resources and Irrigation"
+      },
+      {
+        "endDate": "2024-03-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2023-03-31T00:00:00",
+        "title": "Minister of Energy, Water Resources and Irrigation"
+      },
+      {
+        "endDate": "2020-12-25T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2018-03-16T00:00:00",
+        "title": "Minister of Forest and Environment"
+      },
+      {
+        "endDate": "2016-08-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2015-10-19T00:00:00",
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "endDate": "2011-08-29T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2011-02-06T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

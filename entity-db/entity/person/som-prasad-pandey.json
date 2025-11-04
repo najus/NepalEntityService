@@ -1,7 +1,46 @@
 {
   "attributes": {
     "birth_date": "1956-06-02",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:education": [
+      {
+        "degree": "Bachelor",
+        "field": "Management",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2016-08-26T00:00:00",
+        "organization": null,
+        "startDate": "2015-10-12T00:00:00",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "House of Representatives",
+        "startDate": "1994-10-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": null,
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "House of Representatives",
+        "startDate": null,
+        "title": "Chairman of the Human Rights and External Affairs Committee"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -1,6 +1,12 @@
 {
   "attributes": {
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Maoist)",
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

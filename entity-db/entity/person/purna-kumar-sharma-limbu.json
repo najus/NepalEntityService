@@ -1,7 +1,21 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Member of the Central Working Committee"
+      },
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of the Constituent Assembly from Panchthar-1 constituency"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

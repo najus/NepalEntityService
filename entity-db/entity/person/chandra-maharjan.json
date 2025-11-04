@@ -17,7 +17,50 @@
       "CPN (Fourth Convention)"
     ],
     "religion": "Hindu",
-    "spouse": "Chandeshwori Maharjan"
+    "spouse": "Chandeshwori Maharjan",
+    "sys:education": [
+      {
+        "degree": "Bachelor's degree",
+        "field": "Political Science",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2013-11-01T00:00:00",
+        "title": "Member of Constituent Assembly of Nepal"
+      },
+      {
+        "organization": "Lalitpur Sub-metropolitan City",
+        "startDate": "1992-01-01T00:00:00",
+        "title": "Deputy Mayor"
+      },
+      {
+        "organization": "Jyapu Samaj, Yala",
+        "title": "Former President"
+      },
+      {
+        "organization": "Jyapu Samaj-Yala",
+        "title": "Vice-president"
+      },
+      {
+        "organization": "Ganeshman Singh Study Foundation",
+        "title": "General secretary"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "District president"
+      },
+      {
+        "organization": "Nepali Congress's association of ethnic communities",
+        "title": "Central member"
+      },
+      {
+        "organization": "Rotary Club",
+        "title": "Founder member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -11,7 +11,42 @@
     ],
     "politicalParty": "CPN (Maoist Centre)",
     "profession": "Politician",
-    "residence": "Kathmandu, Nepal"
+    "residence": "Kathmandu, Nepal",
+    "sys:positions": [
+      {
+        "endDate": "2020-12-20T00:00:00",
+        "startDate": "2018-03-16T00:00:00",
+        "title": "Minister of Education, Science and Technology"
+      },
+      {
+        "endDate": "2009-05-04T00:00:00",
+        "startDate": "2007-04-29T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Adharshila",
+        "title": "Founding chairman"
+      },
+      {
+        "organization": "Janamorcha Nepal",
+        "title": "vice-chairman"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "title": "Standing Committee Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

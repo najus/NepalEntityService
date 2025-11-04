@@ -2,6 +2,50 @@
   "attributes": {
     "political_party": [
       "CPN (UML)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Karnali Province",
+        "startDate": "2024-04-10T00:00:00",
+        "title": "Chief Minister"
+      },
+      {
+        "endDate": null,
+        "organization": "Karnali Province",
+        "startDate": "2024-04-10T00:00:00",
+        "title": "Minister for Internal Affairs and Law"
+      },
+      {
+        "endDate": "2024-04-09T00:00:00",
+        "organization": "Karnali Provincial Assembly",
+        "startDate": "2023-01-01T00:00:00",
+        "title": "Leader of the Opposition in the Karnali Provincial Assembly"
+      },
+      {
+        "endDate": "2022-12-31T00:00:00",
+        "organization": "Karnali Provincial Assembly",
+        "startDate": "2021-01-01T00:00:00",
+        "title": "Leader of the Opposition in the Karnali Provincial Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Karnali Provincial Assembly",
+        "startDate": "2018-01-01T00:00:00",
+        "title": "Member of the Karnali Provincial Assembly"
+      },
+      {
+        "endDate": "1998-12-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "Minister of Tourism and Civil Aviation"
+      },
+      {
+        "endDate": "1998-12-31T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Member of the Parliament, Pratinidhi Sabha"
+      }
     ]
   },
   "attributions": [

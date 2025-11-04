@@ -1,6 +1,22 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Marxist-Leninist)",
+        "title": "Member of the Central Committee"
+      },
+      {
+        "organization": "All Nepal Progressive Women's Association",
+        "title": "Member"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Constituent Assembly member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

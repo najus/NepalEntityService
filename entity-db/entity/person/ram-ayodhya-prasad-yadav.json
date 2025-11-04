@@ -4,7 +4,15 @@
     "birthYear": "1952 or 1953",
     "causeOfDeath": "kidney disease",
     "deathDate": "2025-07-02",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2013-11-19T00:00:00Z",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

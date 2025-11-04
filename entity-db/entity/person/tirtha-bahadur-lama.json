@@ -1,7 +1,27 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Bagmati Province",
+        "startDate": "2023-04-09T00:00:00",
+        "title": "Minister for Drinking Water, Energy and Irrigation"
+      },
+      {
+        "endDate": null,
+        "organization": "Bagmati Provincial Assembly",
+        "startDate": "2022-01-01T00:00:00",
+        "title": "Member of Bagmati Provincial Assembly"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2013-11-19T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

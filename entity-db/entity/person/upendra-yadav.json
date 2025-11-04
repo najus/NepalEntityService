@@ -15,7 +15,80 @@
     ],
     "political_party": "PSP-N (2020–present)",
     "residence": "Biratnagar, Morang",
-    "spouse": "Parbati Yadav"
+    "spouse": "Parbati Yadav",
+    "sys:education": [
+      {
+        "degree": "Bachelor's degree",
+        "field": "Mathematics",
+        "institution": "Hattisar College"
+      },
+      {
+        "degree": "Master's degree",
+        "field": "Law",
+        "institution": "Mahendra Morang Adarsh Multiple Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2024-05-13T00:00:00",
+        "startDate": "2024-03-10T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2024-05-13T00:00:00",
+        "startDate": "2024-03-10T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": null,
+        "organization": "Bara 2",
+        "startDate": "2023-05-02T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2023-12-31T00:00:00",
+        "organization": "People's Socialist Party",
+        "startDate": "2020-01-01T00:00:00",
+        "title": "President"
+      },
+      {
+        "endDate": "2019-12-24T00:00:00",
+        "startDate": "2019-11-21T00:00:00",
+        "title": "Minister of Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "endDate": "2019-12-24T00:00:00",
+        "startDate": "2018-06-01T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2019-11-20T00:00:00",
+        "startDate": "2018-06-01T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Saptari 2",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2011-08-29T00:00:00",
+        "startDate": "2011-05-04T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2009-05-25T00:00:00",
+        "startDate": "2008-08-18T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Sunsari 5",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -1,6 +1,35 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:education": [
+      {
+        "degree": null,
+        "endYear": null,
+        "field": null,
+        "institution": "MIT",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "South Asian Association for Regional Cooperation Chambers of Commerce and Industry",
+        "startDate": "2002-02-01T00:00:00",
+        "title": "President"
+      },
+      {
+        "endDate": null,
+        "organization": "Jyoti Group of Companies",
+        "startDate": null,
+        "title": "Chairman"
+      },
+      {
+        "endDate": null,
+        "organization": "Federation of Nepalese Chamber of Commerce and Industry",
+        "startDate": null,
+        "title": "President"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

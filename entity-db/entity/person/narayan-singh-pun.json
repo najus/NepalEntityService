@@ -4,7 +4,29 @@
     "cause_of_death": "Infection after a kidney transplant",
     "death_date": "2008-02-21",
     "death_place": "New Delhi, India",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Royal Nepal Army",
+        "title": "Lieutenant Colonel"
+      },
+      {
+        "organization": "Royal Nepal Army",
+        "title": "Helicopter Pilot"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepal Samata Party",
+        "title": "Founder"
+      },
+      {
+        "organization": "Karnali Air",
+        "title": "Founder"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

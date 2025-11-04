@@ -7,7 +7,33 @@
       "Samyukta Janamorcha",
       "CPN (Unity Centre–Masal)"
     ],
-    "political_party": "CPN (Maoist Centre)"
+    "political_party": "CPN (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2007-04-29T00:00:00",
+        "title": "Minister of State for Health and Population"
+      },
+      {
+        "endDate": null,
+        "organization": "Janamorcha Nepal",
+        "startDate": null,
+        "title": "Central Committee member"
+      },
+      {
+        "endDate": null,
+        "organization": "All Nepal Women's Association",
+        "startDate": null,
+        "title": "Head"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

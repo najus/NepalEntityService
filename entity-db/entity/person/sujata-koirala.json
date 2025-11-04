@@ -1,7 +1,21 @@
 {
   "attributes": {
     "father": "Girija Prasad Koirala",
-    "mother": "Sushma Koirala"
+    "mother": "Sushma Koirala",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2009-10-12T00:00:00",
+        "title": "Deputy Prime Minister"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2009-10-12T00:00:00",
+        "title": "Minister for Foreign Affairs"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

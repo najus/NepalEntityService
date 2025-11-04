@@ -16,6 +16,32 @@
         "party": "Communist Party of Nepal (Maoist Centre)",
         "period": "2016-2018"
       }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "CPN (UML)",
+        "startDate": "2021-11-30T00:00:00",
+        "title": "Deputy chairman"
+      },
+      {
+        "endDate": "2021-05-20T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2018-02-26T00:00:00",
+        "title": "Minister for Home Affairs"
+      },
+      {
+        "endDate": "2021-04-18T00:00:00",
+        "organization": "National Assembly of Nepal",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Member of National Assembly from Bagmati"
+      },
+      {
+        "endDate": "2009-05-25T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-18T00:00:00",
+        "title": "Minister of Defence"
+      }
     ]
   },
   "attributions": [

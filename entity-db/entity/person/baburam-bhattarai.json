@@ -5,7 +5,71 @@
     "father": "Bhoj Prasad Bhattarai",
     "fatherInLaw": "Dharma Ratna Yami",
     "mother": "Dharma Kumari Bhattarai",
-    "spouse": "Hisila Yami"
+    "spouse": "Hisila Yami",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "endYear": 1986,
+        "institution": "Jawaharlal Nehru University"
+      },
+      {
+        "degree": "M.Tech.",
+        "institution": "Delhi School of Planning and Architecture"
+      },
+      {
+        "degree": "B.Arch.",
+        "endYear": 1977,
+        "institution": "Chandigarh College of Architecture"
+      },
+      {
+        "institution": "Amrit Science College, Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepal Socialist Party",
+        "startDate": "2022-07-28T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2011-08-29T00:00:00",
+        "title": "36th Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2009-05-25T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-18T00:00:00",
+        "title": "Minister of Finance"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2015-09-26T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "title": "Deputy chairman"
+      },
+      {
+        "organization": "Naya Shakti Party, Nepal",
+        "title": "Coordinator"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

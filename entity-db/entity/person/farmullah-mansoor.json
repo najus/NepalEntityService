@@ -1,7 +1,33 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:education": [
+      {
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2021-12-16T00:00:00",
+        "title": "Deputy General Secretary"
+      },
+      {
+        "endDate": "2018-02-15T00:00:00",
+        "organization": null,
+        "startDate": "2017-06-07T00:00:00",
+        "title": "Minister of Labour and Employment"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

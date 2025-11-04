@@ -4,6 +4,14 @@
     "political_party": [
       "Nepali Congress",
       "Nepali Congress (Democratic)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Member of the Pratinidhi Sabha"
+      }
     ]
   },
   "attributions": [

@@ -1,7 +1,21 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)"
+    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Bhadrapur",
+        "startDate": null,
+        "title": "Mayor"
+      },
+      {
+        "endDate": null,
+        "organization": "House of Representatives of Nepal",
+        "startDate": null,
+        "title": "Member of House of Representatives"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -3,7 +3,27 @@
     "birth_date": "1950-07-27",
     "birth_place": "Janakpur, Dhanusha District",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00Z",
+        "organization": "Nepali Congress",
+        "startDate": "1999-05-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Member of the Provincial Assembly of Province No. 2"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

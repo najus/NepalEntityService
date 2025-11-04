@@ -2,7 +2,39 @@
   "attributes": {
     "citizenship": "Nepalese",
     "nationality": "Nepalese",
-    "political_party": "Nepal Workers Peasants Party"
+    "political_party": "Nepal Workers Peasants Party",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Bhaktapur",
+        "startDate": "2022-05-13T00:00:00",
+        "title": "Mayor"
+      },
+      {
+        "endDate": "2022-05-12T00:00:00",
+        "organization": "Bhaktapur",
+        "startDate": "2017-05-14T00:00:00",
+        "title": "Mayor"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2008-05-27T00:00:00",
+        "organization": "Interim Legislature-Parliament of Nepal",
+        "startDate": "2007-01-15T00:00:00",
+        "title": "Member"
+      },
+      {
+        "endDate": null,
+        "organization": "Interim Constitution Drafting Committee",
+        "startDate": null,
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

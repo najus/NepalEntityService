@@ -1,6 +1,12 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

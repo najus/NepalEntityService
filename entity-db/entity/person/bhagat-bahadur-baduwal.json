@@ -3,7 +3,14 @@
     "constituency_2008": "Kailali-2",
     "election_votes_2008": 21219,
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00Z",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

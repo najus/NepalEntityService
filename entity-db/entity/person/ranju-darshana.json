@@ -7,7 +7,28 @@
     "spouse": {
       "marriageYear": 2022,
       "name": "Kishu Kuikel"
-    }
+    },
+    "sys:education": [
+      {
+        "institution": "National College Kathmandu"
+      },
+      {
+        "institution": "Bhanubhakta Memorial Higher Secondary School"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Bibeksheel Sajha Party",
+        "startDate": "2022-01-01T00:00:00Z",
+        "title": "General secretary"
+      },
+      {
+        "endDate": "2021-12-31T23:59:59Z",
+        "organization": "Bibeksheel Nepali",
+        "startDate": "2015-11-01T00:00:00Z",
+        "title": "Central committee member and media coordinator"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

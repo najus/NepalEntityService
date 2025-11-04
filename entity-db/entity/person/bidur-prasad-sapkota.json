@@ -5,7 +5,18 @@
     "citizenship": "Nepali",
     "deathDate": "2025-02-20",
     "deathPlace": "Kathmandu, Nepal",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "CPN (Unified Socialist)",
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

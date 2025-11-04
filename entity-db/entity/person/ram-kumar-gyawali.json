@@ -1,7 +1,16 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "CPN (Unified Socialist)"
+    "political_party": "CPN (Unified Socialist)",
+    "sys:positions": [
+      {
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "CPN (Unified Socialist)",
+        "title": "Deputy in charge of Sudurpashchim Province"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

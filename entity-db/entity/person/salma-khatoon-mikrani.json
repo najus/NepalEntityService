@@ -6,7 +6,15 @@
     "gender": "Female",
     "mother": "Jamila Begum Mikrani",
     "nationality": "Nepalese",
-    "spouse": "Mohammad Azaz Mikrani"
+    "spouse": "Mohammad Azaz Mikrani",
+    "sys:positions": [
+      {
+        "endDate": "2013-12-31T23:59:59",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "CA Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

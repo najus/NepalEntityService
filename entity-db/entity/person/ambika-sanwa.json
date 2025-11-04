@@ -6,7 +6,29 @@
       "Keshav Sanba"
     ],
     "nationality": "Nepali",
-    "spouse": "Jasmaya Sanba Thamsuhang"
+    "spouse": "Jasmaya Sanba Thamsuhang",
+    "sys:positions": [
+      {
+        "endDate": "2000-12-31T23:59:59",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for Population and Environment"
+      },
+      {
+        "endDate": "2004-12-31T23:59:59",
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "title": "Member"
+      },
+      {
+        "organization": "Communist Party of Nepal (Maoist Centre)",
+        "startDate": "2005-01-01T00:00:00",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

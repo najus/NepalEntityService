@@ -8,7 +8,52 @@
       "Anita Yadav"
     ],
     "politicalParty": "Nepali Congress (1968–2008)",
-    "spouse": "Julekha Yadav"
+    "spouse": "Julekha Yadav",
+    "sys:education": [
+      {
+        "institution": "PGIMER Chandigarh"
+      },
+      {
+        "institution": "Medical College & Hospital, Kolkata"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2015-10-29T00:00:00",
+        "organization": "Nepal",
+        "startDate": "2008-07-23T00:00:00",
+        "title": "President of Nepal"
+      },
+      {
+        "endDate": "2008-01-01T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2006-01-01T00:00:00",
+        "title": "General Secretary of the Nepali Congress"
+      },
+      {
+        "endDate": "2001-01-01T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Minister of Health"
+      },
+      {
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "1994-01-01T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Minister of State for Health"
+      },
+      {
+        "endDate": "2008-07-21T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

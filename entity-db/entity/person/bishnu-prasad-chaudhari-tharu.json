@@ -1,7 +1,15 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist Centre)"
+    "political_party": "Communist Party of Nepal (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

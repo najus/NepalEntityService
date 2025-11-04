@@ -3,7 +3,29 @@
     "date_of_birth": "1963-05-26",
     "nationality": "Nepali",
     "place_of_birth": "Morang District",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepal Woman Association",
+        "title": "President"
+      },
+      {
+        "organization": "Nepali Congress Shadow Cabinet",
+        "startDate": "2019-05-01T00:00:00",
+        "title": "Minister of Labour"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

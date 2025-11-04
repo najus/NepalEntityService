@@ -2,7 +2,21 @@
   "attributes": {
     "birthDate": "1962-12-10",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2020-11-23T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": null,
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

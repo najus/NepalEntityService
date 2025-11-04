@@ -1,6 +1,16 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepal Loktantrik Samajbadi Dal",
+        "title": "Member"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

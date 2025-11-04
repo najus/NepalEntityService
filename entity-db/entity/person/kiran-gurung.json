@@ -1,6 +1,20 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Central Committee member"
+      },
+      {
+        "organization": null,
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Forest and Soil Conservation Minister"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

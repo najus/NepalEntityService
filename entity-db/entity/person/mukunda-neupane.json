@@ -5,6 +5,23 @@
     "political_parties": [
       "CPN (Unified Socialist)",
       "CPN (UML)"
+    ],
+    "sys:positions": [
+      {
+        "organization": "CPN (UML)",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "1999-05-31T23:59:59",
+        "organization": "CPN (UML)",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "organization": "General Federation of Nepalese Trade Unions",
+        "title": "President"
+      }
     ]
   },
   "attributions": [

@@ -6,7 +6,37 @@
     "mother": "Sarojani Shah",
     "nationality": "Nepali",
     "placeOfBirth": "Kapilvastu District",
-    "spouse": "Minakshi Singh Shah"
+    "spouse": "Minakshi Singh Shah",
+    "sys:education": [
+      {
+        "degree": "Bachelor of Business Administration",
+        "field": "Business Administration",
+        "institution": "Babu Banarasi Das National Institute of Technology and Management"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Industry, Commerce, Labour and Consumer Welfare Committee of the House of Representatives",
+        "title": "Member"
+      },
+      {
+        "endDate": "2008-03-31T23:59:59",
+        "organization": "Interim Parliament of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the interim parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

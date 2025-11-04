@@ -7,7 +7,118 @@
     "mother": "Yasoda Devi KC",
     "nationality": "Nepali",
     "politicalParty": "Nepali Congress",
-    "spouse": "Pratima KC"
+    "spouse": "Pratima KC",
+    "sys:education": [
+      {
+        "degree": "LLB",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "M.A.",
+        "field": "political science",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "Fellowship",
+        "endYear": 1982,
+        "field": "International Relations and Foreign Policy decision making",
+        "institution": "Tufts University, Fletcher School of Diplomacy"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "House of Representatives of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament for Nuwakot 2"
+      },
+      {
+        "organization": "Public Accounts Committee, House of Representatives",
+        "title": "Member"
+      },
+      {
+        "organization": "Central Executive Committee, Nepali Congress",
+        "startDate": "2022-01-28T00:00:00",
+        "title": "Member"
+      },
+      {
+        "endDate": "2017-05-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2016-08-26T00:00:00",
+        "title": "Minister of Urban Development"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of the Legislature Parliament for Nuwakot 1"
+      },
+      {
+        "organization": "Central Committee, Nepali Congress",
+        "startDate": "2010-09-21T00:00:00",
+        "title": "Member"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2005-08-01T00:00:00",
+        "title": "Joint-General Secretary"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2000-09-25T00:00:00",
+        "title": "Spokesperson"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Chief of the International Relation Department"
+      },
+      {
+        "endDate": "1999-05-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1998-04-15T00:00:00",
+        "title": "Minister of Education, Housing & Physical Planning"
+      },
+      {
+        "endDate": "1997-03-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1995-09-22T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": "1999-05-01T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1994-10-01T00:00:00",
+        "title": "Member of Parliament for Nuwakot 3"
+      },
+      {
+        "endDate": "1994-08-01T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament for Nuwakot 3"
+      },
+      {
+        "endDate": "1983-07-03T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1982-10-10T00:00:00",
+        "title": "State Minister of Health and Population"
+      },
+      {
+        "organization": "Rastriya Panchayat",
+        "startDate": "1981-01-01T00:00:00",
+        "title": "Member"
+      },
+      {
+        "organization": "Tribhuvan University",
+        "title": "Professor and Head of the Political Science department"
+      },
+      {
+        "title": "Advocate"
+      },
+      {
+        "organization": "Nepal Student Union (NSU)",
+        "title": "Founding member and coordinator"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

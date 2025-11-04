@@ -7,7 +7,51 @@
     "nationality": "Nepali",
     "place_of_birth": "Bara, Nepal",
     "political_party": "Nepali Congress",
-    "spouse": "Gayatri Devi Tharuni"
+    "spouse": "Gayatri Devi Tharuni",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2021-12-17T00:00:00",
+        "title": "Deputy General Secretary"
+      },
+      {
+        "endDate": "2022-12-25T00:00:00",
+        "organization": null,
+        "startDate": "2021-10-08T00:00:00",
+        "title": "Minister for Water Supply"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha for Bara 1"
+      },
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": null,
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Minister of State for Agriculture and Cooperation"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Health Minister"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

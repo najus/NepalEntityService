@@ -23,7 +23,33 @@
     "political_party": "Nepal Workers and Peasants Party",
     "profession": "Leader",
     "residence": "Kamalbinayak, Bhaktapur",
-    "spouse": "Shova Pradhan"
+    "spouse": "Shova Pradhan",
+    "sys:education": [
+      {
+        "institution": "Bhaktapur College"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepal Workers Peasants Party",
+        "startDate": "1975-01-01T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament for Bhaktapur 1"
+      },
+      {
+        "organization": "Communist Party of Nepal (Pushpa Lal)",
+        "title": "Central Committee member"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

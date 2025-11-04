@@ -2,7 +2,51 @@
   "attributes": {
     "birthDate": "1945-01-01",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Chief Party Secretary"
+      },
+      {
+        "endDate": "1997-12-31T23:59:59",
+        "organization": "District Development Committee, Tanahu district",
+        "startDate": "1992-01-01T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Vyas municipality—9, Tanahu",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Council Member"
+      },
+      {
+        "endDate": "1980-12-31T23:59:59",
+        "organization": "RSS (national news agency in Nepal)",
+        "startDate": "1973-01-01T00:00:00",
+        "title": "Journalist"
+      },
+      {
+        "organization": "Nirmal high school",
+        "startDate": "1968-01-01T00:00:00",
+        "title": "Principal"
+      },
+      {
+        "organization": "Central Publicity Department, Nepali Congress Party",
+        "title": "Member Secretary"
+      },
+      {
+        "organization": "Foreign Relation Committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Federation of District Development Committees",
+        "title": "Founding General Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

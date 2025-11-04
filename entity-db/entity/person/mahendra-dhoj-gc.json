@@ -1,7 +1,25 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Gandaki Province",
+        "title": "Agricultural and Land Development Minister"
+      },
+      {
+        "organization": null,
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress Party",
+        "title": "Parliamentary Secretary"
+      },
+      {
+        "organization": null,
+        "title": "Minister of Agricultural, Health and Land Development"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

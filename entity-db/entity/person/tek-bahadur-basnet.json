@@ -5,7 +5,20 @@
     "otherPoliticalAffiliations": [
       "CPN (Mashal)"
     ],
-    "politicalParty": "CPN (Maoist Centre)"
+    "politicalParty": "CPN (Maoist Centre)",
+    "sys:positions": [
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

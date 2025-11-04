@@ -6,7 +6,33 @@
     "motherName": "Tilka Devi",
     "nationality": "Nepalese",
     "politicalParty": "Communist Party of Nepal (CPN)- Unified Marxist Leninist (UML)",
-    "spouse": "Sujita Shakya"
+    "spouse": "Sujita Shakya",
+    "sys:positions": [
+      {
+        "endDate": "2021-08-11T00:00:00",
+        "organization": "Lumbini Province",
+        "startDate": "2018-02-15T00:00:00",
+        "title": "Chief Minister of Lumbini Province"
+      },
+      {
+        "endDate": "2011-02-06T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2009-05-25T00:00:00",
+        "title": "Minister of Information and Communications"
+      },
+      {
+        "endDate": null,
+        "organization": "Lumbini Provincial Assembly",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Provincial Assembly Member of Lumbini Province"
+      },
+      {
+        "endDate": "2008-12-31T23:59:59",
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "Central Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

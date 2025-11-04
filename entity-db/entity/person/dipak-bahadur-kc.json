@@ -1,7 +1,21 @@
 {
   "attributes": {
     "election_2008_votes": 12857,
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly for Pyuthan-2"
+      },
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal (Revolutionary Maoist)",
+        "startDate": null,
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

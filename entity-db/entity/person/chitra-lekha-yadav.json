@@ -3,7 +3,42 @@
     "dateOfBirth": "1965-05-28",
     "nationality": "Nepali",
     "placeOfBirth": "Siraha District",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Embassy of Nepal in Australia",
+        "title": "Ambassador to Australia"
+      },
+      {
+        "endDate": "2015-10-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister for Education of Nepal"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-13T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "startDate": null,
+        "title": "Deputy Speaker of Pratinidhi Sabha & Interim Legislature"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

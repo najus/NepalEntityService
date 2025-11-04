@@ -1,7 +1,19 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2023-09-02T00:00:00",
+        "title": "Head of the Senior Citizen Coordination"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

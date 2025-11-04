@@ -2,7 +2,13 @@
   "attributes": {
     "constituency": "Chitwan 2(B)",
     "location": "Gunjanagar, Western Chitwan District, Nepal",
-    "political_party": "CPN(UML)"
+    "political_party": "CPN(UML)",
+    "sys:positions": [
+      {
+        "organization": "Bagmati Province",
+        "title": "Member of provincial assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

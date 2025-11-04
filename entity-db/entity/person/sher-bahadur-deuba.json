@@ -10,7 +10,78 @@
       "Nepali Congress (before 2002)",
       "Nepali Congress (Democratic) (2002–2007)"
     ],
-    "spouse": "Arzu Rana Deuba"
+    "spouse": "Arzu Rana Deuba",
+    "sys:education": [
+      {
+        "degree": "Primary Education",
+        "institution": "Ashigram Primary School"
+      },
+      {
+        "field": "Doti",
+        "institution": "Mahendra High School"
+      },
+      {
+        "degree": "Higher Education",
+        "institution": "Tri-Chandra College"
+      },
+      {
+        "degree": "Research Student",
+        "field": "Political Science",
+        "institution": "London School of Economics"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2022-12-26T00:00:00",
+        "startDate": "2021-07-13T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2018-02-15T00:00:00",
+        "startDate": "2017-06-07T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2005-02-01T00:00:00",
+        "startDate": "2004-06-04T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2002-10-04T00:00:00",
+        "startDate": "2001-07-26T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "1997-03-12T00:00:00",
+        "startDate": "1995-09-12T00:00:00",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2016-03-07T00:00:00",
+        "title": "President of the Nepali Congress"
+      },
+      {
+        "endDate": "2023-02-27T00:00:00",
+        "startDate": "2022-12-26T00:00:00",
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "2021-07-13T00:00:00",
+        "startDate": "2018-02-15T00:00:00",
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "1994-12-31T00:00:00",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of the Parliament, Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -3,7 +3,21 @@
     "date_of_birth": "1954-04-04",
     "nationality": "Nepali",
     "place_of_birth": "Sarlahi District",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhia Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -10,7 +10,65 @@
       "father": "Bhim Bahadur Bista",
       "mother": "Chinta Kala Bista"
     },
-    "politicalParty": "CPN (Unified Marxist-Leninist)"
+    "politicalParty": "CPN (Unified Marxist-Leninist)",
+    "sys:education": [
+      {
+        "degree": "Master's degree",
+        "field": "Management",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "Bachelor's degree",
+        "field": "Law",
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2019-11-20T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2018-03-16T00:00:00",
+        "title": "Minister of Labour, Employment and Social Security"
+      },
+      {
+        "endDate": "2011-08-30T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2011-04-21T00:00:00",
+        "title": "Minister of Energy"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "startDate": "2014-07-01T00:00:00",
+        "title": "Secretary"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-01T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Democratic National Youth Association",
+        "startDate": "2000-01-01T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Democratic National Youth Association",
+        "startDate": "1996-01-01T00:00:00",
+        "title": "General Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

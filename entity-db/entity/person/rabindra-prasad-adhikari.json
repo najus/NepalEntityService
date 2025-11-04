@@ -1,5 +1,12 @@
 {
-  "attributes": null,
+  "attributes": {
+    "sys:positions": [
+      {
+        "organization": "CPN UML",
+        "title": "Politician"
+      }
+    ]
+  },
   "attributions": [
     "Wikipedia"
   ],

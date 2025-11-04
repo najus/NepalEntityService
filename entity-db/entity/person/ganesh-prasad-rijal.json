@@ -10,7 +10,15 @@
     "nationality": "Nepali",
     "political_party": "Nepali Congress",
     "relatives": "Suman Pokhrel (grandson)",
-    "spouse": "Kamala Rizal"
+    "spouse": "Kamala Rizal",
+    "sys:positions": [
+      {
+        "endDate": "1960-12-16T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1959-05-27T00:00:00",
+        "title": "Member of Parliament of Nepal"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

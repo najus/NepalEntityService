@@ -1,7 +1,33 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)"
+    "political_party": "Communist Party of Nepal (Unified Marxist–Leninist)",
+    "sys:positions": [
+      {
+        "endDate": "2023-07-07T00:00:00",
+        "organization": "Government of Koshi Province",
+        "startDate": "2023-01-09T00:00:00",
+        "title": "Minister for Water Supply, Irrigation and Energy of Koshi Province"
+      },
+      {
+        "endDate": "2023-07-07T00:00:00",
+        "organization": "Government of Koshi Province",
+        "startDate": "2023-06-03T00:00:00",
+        "title": "Minister for Health of Koshi Province"
+      },
+      {
+        "endDate": null,
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2022-12-26T00:00:00",
+        "title": "Member of the Koshi Provincial Assembly"
+      },
+      {
+        "endDate": "2008-12-31T23:59:59",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of House of Representatives"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

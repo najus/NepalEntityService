@@ -20,7 +20,23 @@
       "Sanskrit",
       "Hindi"
     ],
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "title": "Poet"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Politician"
+      },
+      {
+        "title": "Leader of the Dhankuta Front"
+      },
+      {
+        "organization": "Raj Sabha",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

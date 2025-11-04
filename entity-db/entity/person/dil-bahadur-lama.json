@@ -11,7 +11,31 @@
     "deathDate": "2014-03-25",
     "nationality": "Nepali",
     "political_party": "Nepali Congress (Democratic)",
-    "residence": "Dhapasi, Kathmandu"
+    "residence": "Dhapasi, Kathmandu",
+    "sys:positions": [
+      {
+        "endDate": "1986-06-30T00:00:00",
+        "organization": "Nepal Police",
+        "startDate": "1982-06-01T00:00:00",
+        "title": "Inspector General of Nepal Police"
+      },
+      {
+        "endDate": "2014-03-25T00:00:00",
+        "organization": "Ex-Nepalese Policemen's Organization",
+        "startDate": "1992-01-01T00:00:00",
+        "title": "President"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2001-01-01T00:00:00",
+        "title": "Assistant Minister of General Administration"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

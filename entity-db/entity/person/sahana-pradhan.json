@@ -8,7 +8,45 @@
     "ethnicity": "Newar",
     "nationality": "Nepalese",
     "politicalParty": "Communist Party of Nepal (UML)",
-    "spouse": "Pushpa Lal Shrestha"
+    "spouse": "Pushpa Lal Shrestha",
+    "sys:positions": [
+      {
+        "endDate": "2008-08-22T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2007-04-01T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2008-12-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "1991-05-11T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "1990-04-19T00:00:00",
+        "title": "Minister of Industry and Commerce"
+      },
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal",
+        "startDate": "1986-01-01T00:00:00",
+        "title": "Leader"
+      },
+      {
+        "endDate": "2002-12-31T00:00:00",
+        "organization": "Communist Party of Nepal (Marxist-Leninist)",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "Chairperson"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN(UML)",
+        "startDate": "2003-01-01T00:00:00",
+        "title": "Member of the Central Committee"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

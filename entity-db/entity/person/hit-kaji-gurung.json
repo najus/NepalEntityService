@@ -1,6 +1,20 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Member"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

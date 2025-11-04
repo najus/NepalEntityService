@@ -1,6 +1,14 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

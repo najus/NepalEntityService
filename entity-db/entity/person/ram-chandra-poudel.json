@@ -1,6 +1,38 @@
 {
   "attributes": {
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2023-03-13T00:00:00",
+        "title": "President of Nepal"
+      },
+      {
+        "endDate": "2023-03-13T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-11-20T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "2002-12-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2000-01-01T00:00:00",
+        "title": "Deputy Prime Minister and Home Minister"
+      },
+      {
+        "endDate": "1999-12-31T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Speaker of the House of Representatives"
+      },
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

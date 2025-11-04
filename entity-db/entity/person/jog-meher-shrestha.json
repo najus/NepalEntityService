@@ -3,7 +3,37 @@
     "birthDate": "1924/1925",
     "deathDate": "2009-12-06",
     "nationality": "Nepali",
-    "politicalParty": "Rastriya Prajatantra Party"
+    "politicalParty": "Rastriya Prajatantra Party",
+    "sys:positions": [
+      {
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "title": "Minister of Panchayat and Land Reforms"
+      },
+      {
+        "title": "Minister of Health and Water Resources"
+      },
+      {
+        "title": "Minister of Law and Justice"
+      },
+      {
+        "title": "Minister of Education and Communication"
+      },
+      {
+        "title": "Minister of Panchayat and Local Development and Land Reforms"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2004-01-01T00:00:00Z",
+        "title": "Land Reform and Management Minister"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "startDate": "2006-01-01T00:00:00Z",
+        "title": "Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

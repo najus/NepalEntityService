@@ -3,7 +3,29 @@
     "birthDate": "1982-04-15",
     "marriageDate": "2013-03-10",
     "nationality": "Nepali",
-    "spouse": "Sobi Budhathoki"
+    "spouse": "Sobi Budhathoki",
+    "sys:positions": [
+      {
+        "organization": "Bagmati Province",
+        "title": "Forest and Environment Minister"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "title": "Central Committee Member"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "title": "In-charge of Dolakha District"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "title": "Deputy In-charge of Dolakha District"
+      },
+      {
+        "organization": "Provincial Assembly of Bagmati Province",
+        "title": "Elected representative of Province 3, Dolakha-1 (A)"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

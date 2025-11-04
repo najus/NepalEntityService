@@ -11,7 +11,23 @@
     "placeOfBirth": "Kamalbazar Municipality, Achham District",
     "politicalParty": "Communist Party of Nepal (Unified Marxist–Leninist)",
     "residence": "Lamki Chuha Municipality",
-    "spouse": "Indra Bajgain"
+    "spouse": "Indra Bajgain",
+    "sys:positions": [
+      {
+        "endDate": "2022-04-24T00:00:00",
+        "organization": "Lamki Chuha Municipality",
+        "startDate": "2017-07-05T00:00:00",
+        "title": "Mayor of Lamki Chuha Municipality"
+      },
+      {
+        "organization": "CPN UML Sudurpaschim Province Committee",
+        "title": "Secretariat Member"
+      },
+      {
+        "organization": "Thakur Baba Business Group",
+        "title": "Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

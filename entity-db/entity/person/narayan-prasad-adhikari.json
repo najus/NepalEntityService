@@ -1,6 +1,11 @@
 {
   "attributes": {
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

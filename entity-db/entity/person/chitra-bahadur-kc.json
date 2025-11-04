@@ -2,7 +2,43 @@
   "attributes": {
     "dateOfBirth": "1941-02-02",
     "nationality": "Nepali",
-    "political_party": "Rastriya Janamorcha"
+    "political_party": "Rastriya Janamorcha",
+    "sys:positions": [
+      {
+        "organization": "Pratinidhi Sabha of Nepal",
+        "startDate": "2022-12-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2016-08-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2015-11-01T00:00:00",
+        "title": "Deputy Prime Minister and Minister of Poverty Alleviation"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of the 1st Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Rastriya Janamorcha",
+        "startDate": "2006-05-25T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "endDate": "2002-05-01T00:00:00",
+        "organization": "Pratinidhi Sabha of Nepal",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

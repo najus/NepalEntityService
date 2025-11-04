@@ -1,6 +1,14 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": null,
+        "title": "Member of the Nepalese Legislature for Taplejung-1"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

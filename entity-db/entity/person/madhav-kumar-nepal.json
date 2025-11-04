@@ -11,7 +11,114 @@
       "Nepal Communist Party (2018-2021)",
       "CPN (UML) (until 2018; 2021)"
     ],
-    "spouse": "Gayatri Acharya"
+    "spouse": "Gayatri Acharya",
+    "sys:education": [
+      {
+        "degree": "Graduate",
+        "endYear": 1973,
+        "field": "Commerce",
+        "institution": "Tribhuvan University",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2011-02-06T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2009-05-25T00:00:00Z",
+        "title": "Prime Minister of Nepal"
+      },
+      {
+        "endDate": "1995-09-12T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "1994-11-30T00:00:00Z",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "CPN (Unified Socialist)",
+        "startDate": "2021-08-18T00:00:00Z",
+        "title": "Chairman"
+      },
+      {
+        "endDate": null,
+        "organization": "Socialist Front",
+        "startDate": "2021-01-01T00:00:00Z",
+        "title": "Chairman"
+      },
+      {
+        "endDate": "1995-09-12T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "1994-11-30T00:00:00Z",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "1995-09-12T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "1994-11-30T00:00:00Z",
+        "title": "Minister of Defence"
+      },
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-09-30T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "1999-06-27T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-06-26T00:00:00Z",
+        "title": "Member of Parliament, Rastriya Sabha"
+      },
+      {
+        "endDate": "2008-04-12T00:00:00Z",
+        "organization": "Communist Party of Nepal (UML)",
+        "startDate": "1993-01-01T00:00:00Z",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": "1994-11-29T00:00:00Z",
+        "organization": "National Assembly of Nepal",
+        "startDate": "1991-01-01T00:00:00Z",
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "2002-12-31T00:00:00Z",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1999-01-01T00:00:00Z",
+        "title": "Leader of the Opposition"
+      },
+      {
+        "endDate": "1990-12-31T00:00:00Z",
+        "organization": "Constitution Drafting Commission",
+        "startDate": "1990-01-01T00:00:00Z",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

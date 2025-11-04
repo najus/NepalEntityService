@@ -2,7 +2,21 @@
   "attributes": {
     "constituency": "Kapilvastu-1",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for Culture, Tourism, and Civil Aviation"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Ambassador of Nepal for India"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

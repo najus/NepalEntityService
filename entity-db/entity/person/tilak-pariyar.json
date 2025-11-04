@@ -6,7 +6,31 @@
     "mother": "Bhakti Devi Pariyar",
     "placeOfBirth": "Liwang, Rolpa, Nepal",
     "residence": "Kohalpur, Banke",
-    "spouse": "Chandra Pariyar"
+    "spouse": "Chandra Pariyar",
+    "sys:education": [
+      {
+        "degree": "B.A.",
+        "institution": "Not specified (from India)"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2024-07-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-11-09T00:00:00",
+        "title": "Governor of Karnali Province"
+      },
+      {
+        "endDate": "2021-02-19T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2019-11-05T00:00:00",
+        "title": "Governor of Madhesh Province"
+      },
+      {
+        "organization": "Nepalese Constituent Assembly",
+        "title": "Member of the 1st Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

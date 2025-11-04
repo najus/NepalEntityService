@@ -3,7 +3,50 @@
     "birthDate": "1971-06-28",
     "birthPlace": "Gorkha District, Nepal",
     "nationality": "Nepali",
-    "religion": "Buddhism"
+    "religion": "Buddhism",
+    "sys:education": [
+      {
+        "degree": "master's degree",
+        "field": "computer science",
+        "institution": "Belarusian State University"
+      },
+      {
+        "institution": "Laxmi Secondary School"
+      },
+      {
+        "institution": "Hong Kong University of Science and Technology"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2013-12-31T23:59:59",
+        "organization": "Communist Party of Nepal (United)",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Blue Diamond Society",
+        "startDate": "2001-01-01T00:00:00",
+        "title": "Founder"
+      },
+      {
+        "endDate": "2013-06-30T23:59:59",
+        "organization": "Blue Diamond Society",
+        "title": "Director"
+      },
+      {
+        "organization": "Peace Environment Development NGO",
+        "title": "Founder"
+      },
+      {
+        "organization": "Pink Mountain",
+        "title": "Founder"
+      },
+      {
+        "startDate": "2020-01-01T00:00:00",
+        "title": "Monk"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

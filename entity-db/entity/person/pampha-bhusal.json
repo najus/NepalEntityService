@@ -9,7 +9,33 @@
       "CPN (Mashal)",
       "Samyukta Janamorcha"
     ],
-    "political_party": "CPN (Maoist Centre)"
+    "political_party": "CPN (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": "2022-12-26T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-07-12T00:00:00",
+        "title": "Minister of Energy, Water Resources and Irrigation"
+      },
+      {
+        "endDate": "2022-12-31T00:00:00",
+        "organization": "Lalitpur 3",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Lalitpur 3",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "United Peoples’ Front (Samyukta Janamorcha)",
+        "startDate": null,
+        "title": "Leader"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

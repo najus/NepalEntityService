@@ -3,7 +3,30 @@
     "birthDate": "1973-01-18",
     "birthPlace": "Jhapa District",
     "gender": "Female",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "CPN (Maoist Centre)",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratnidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "CPN (Maoist Centre)",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2011-01-01T00:00:00",
+        "title": "Minister of State for Health and Population"
+      },
+      {
+        "organization": "CPN (Maoist Centre)",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Member of the interim legislature of Nepal"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

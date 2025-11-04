@@ -7,7 +7,21 @@
     "death_date": "2024-12-16",
     "nationality": "Nepali",
     "occupation": "Politician",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "House of Representatives of Nepal",
+        "startDate": null,
+        "title": "Member of the House of Representatives of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Kathmandu",
+        "startDate": null,
+        "title": "11th Mayor of Kathmandu"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

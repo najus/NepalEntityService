@@ -5,7 +5,34 @@
     "fatherName": "Kazi Gurung",
     "motherName": "Pulama Gurung",
     "nationality": "Nepali",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2015-12-24T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister for Labour and Employment of Nepal"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2014-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress of Manang District",
+        "title": "District chairperson"
+      },
+      {
+        "organization": "Manang Marsyandi Club",
+        "title": "Founder chairperson"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -8,7 +8,25 @@
     "mother": "Anandi Devi Bahuni",
     "nationality": "Nepali",
     "politicalParty": "Loktantrik Samajwadi",
-    "spouse": "Dimpal Kumari Jha"
+    "spouse": "Dimpal Kumari Jha",
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Sanghiya Sadbhavana Party",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

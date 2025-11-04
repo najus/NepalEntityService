@@ -1,6 +1,31 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Communist Party of Nepal (Unified Socialist)",
+        "title": "Standing Committee member"
+      },
+      {
+        "organization": "CPN UML",
+        "title": "Central committee member"
+      },
+      {
+        "organization": null,
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "title": "Member of the Rashtriya Sabha"
+      },
+      {
+        "organization": null,
+        "title": "State Minister for Labour and Transport Management"
+      },
+      {
+        "organization": null,
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

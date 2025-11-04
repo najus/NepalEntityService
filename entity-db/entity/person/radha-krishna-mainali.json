@@ -1,7 +1,37 @@
 {
   "attributes": {
     "birthDate": "1946-09-26",
-    "birthPlace": "Chokpur, Taplejung, Nepal"
+    "birthPlace": "Chokpur, Taplejung, Nepal",
+    "sys:positions": [
+      {
+        "endDate": "2006-04-25T00:00:00",
+        "startDate": "2005-02-01T00:00:00",
+        "title": "Minister for sports and education"
+      },
+      {
+        "endDate": "1997-10-06T00:00:00",
+        "organization": "Coalition government led by Lokendra Bahadur Chand",
+        "startDate": "1997-03-12T00:00:00",
+        "title": "Minister of Health"
+      },
+      {
+        "organization": "CPN(UML) minority government",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Minister for Agriculture, Land Reforms and Management"
+      },
+      {
+        "organization": "United Left Front",
+        "title": "Acting Chairman"
+      },
+      {
+        "organization": "Communist Party of Nepal (Marxist-Leninist)",
+        "title": "Politburo member"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Standing Committee member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

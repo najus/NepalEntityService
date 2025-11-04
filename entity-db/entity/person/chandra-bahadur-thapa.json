@@ -1,5 +1,21 @@
 {
-  "attributes": null,
+  "attributes": {
+    "sys:positions": [
+      {
+        "organization": "Young Communist League",
+        "title": "Kathmandu valley in-charge"
+      },
+      {
+        "organization": "Dinesh-Ramji Smriti Brigade of the People's Liberation Army",
+        "title": "Commander"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-10T00:00:00",
+        "title": "Constituent Assembly member"
+      }
+    ]
+  },
   "attributions": [
     "Wikipedia"
   ],

@@ -7,7 +7,79 @@
     "father": "Bahadur Singh Baral",
     "mother": "Saraswati Baral",
     "residence": "Kathmandu, Bagmati Zone, Nepal",
-    "son": "Ranjeet Baral"
+    "son": "Ranjeet Baral",
+    "sys:education": [
+      {
+        "degree": "B.A.",
+        "endYear": null,
+        "field": null,
+        "institution": "Agra University",
+        "startYear": null
+      },
+      {
+        "degree": "M.A.",
+        "endYear": null,
+        "field": "Political Science",
+        "institution": "Patna University",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "1978-06-14T23:59:59",
+        "organization": "Nepal Police",
+        "startDate": "1972-07-31T00:00:00",
+        "title": "9th Inspector General of Nepal Police"
+      },
+      {
+        "endDate": "1985-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "1979-01-01T00:00:00",
+        "title": "Ambassador of Nepal to Myanmar"
+      },
+      {
+        "endDate": "1985-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "1979-01-01T00:00:00",
+        "title": "Ambassador of Nepal to French Indochina and Indonesia"
+      },
+      {
+        "endDate": "1990-12-31T23:59:59",
+        "organization": "Rastriya Panchayat",
+        "startDate": "1986-01-01T00:00:00",
+        "title": "Member of Nepalese Legislature"
+      },
+      {
+        "endDate": "1993-12-31T23:59:59",
+        "organization": "United Nations Transitional Authority in Cambodia (UNTAC)",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Chief Liaison Officer"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Hockey Association",
+        "startDate": null,
+        "title": "Founder President"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Badminton Association",
+        "startDate": null,
+        "title": "Vice-President"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Judo Association",
+        "startDate": null,
+        "title": "President"
+      },
+      {
+        "endDate": null,
+        "organization": "Royal Nepal Golf Club",
+        "startDate": null,
+        "title": "President"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

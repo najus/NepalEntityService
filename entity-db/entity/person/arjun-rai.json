@@ -1,7 +1,28 @@
 {
   "attributes": {
     "birth_place": "Khalle, Khotang district",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": null,
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Constituent Assembly member"
+      },
+      {
+        "organization": "Rastriya Janshakti Party",
+        "title": "Alternative Central Committee member"
+      },
+      {
+        "endDate": "1989-12-31T23:59:59",
+        "organization": "Nepal Youth Organization",
+        "startDate": "1986-01-01T00:00:00",
+        "title": "Khotang district chairman"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "Khotang district chair"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

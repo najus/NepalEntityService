@@ -7,6 +7,24 @@
     "political_parties": [
       "Nepali Congress",
       "Nepali Congress (Democratic)"
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Law Minister"
+      },
+      {
+        "organization": "Nepali Congress parliamentary party",
+        "title": "Whip"
+      },
+      {
+        "organization": "Nepali Congress parliamentary party",
+        "title": "Chief Whip"
+      }
     ]
   },
   "attributions": [

@@ -3,7 +3,33 @@
     "dateOfBirth": "1935-11-23",
     "nationality": "Nepali",
     "placeOfBirth": "Ilam, Nepal",
-    "spouse": "Ratna Gurung"
+    "spouse": "Ratna Gurung",
+    "sys:positions": [
+      {
+        "endDate": "2010-12-31T23:59:59",
+        "organization": "Nepali Congress",
+        "startDate": "2006-01-01T00:00:00",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "1997-01-01T00:00:00",
+        "title": "Minister of Education"
+      },
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-10T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Acting chairman of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

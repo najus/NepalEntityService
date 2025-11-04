@@ -4,7 +4,26 @@
     "birthPlace": "Salyan District, Nepal",
     "nationality": "Nepali",
     "politicalParty": "Nepali Congress",
-    "spouse": "Anita Shah"
+    "spouse": "Anita Shah",
+    "sys:positions": [
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

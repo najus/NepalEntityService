@@ -6,6 +6,20 @@
       "Communist Party of Nepal (Masal) (2006)",
       "Janamorcha Nepal",
       "Communist Party of Nepal (Unity Centre-Masal)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": null,
+        "organization": "Rashtriya Jana Morcha",
+        "startDate": "2006-05-26T00:00:00",
+        "title": "General Secretary"
+      }
     ]
   },
   "attributions": [

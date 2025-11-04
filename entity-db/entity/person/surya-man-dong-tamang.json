@@ -7,7 +7,21 @@
       "Iman Singh Dong",
       "Maili Maya Taman"
     ],
-    "politicalParty": "CPN (Maoist Centre)"
+    "politicalParty": "CPN (Maoist Centre)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Federal Parliament of Nepal",
+        "startDate": null,
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "1st Nepalese Constituent Assembly",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of 1st Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

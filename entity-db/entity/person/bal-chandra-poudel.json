@@ -7,7 +7,13 @@
       "People's Movement 1990",
       "People's Movement 2006"
     ],
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "title": "Party President for the district of Rasuwa"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

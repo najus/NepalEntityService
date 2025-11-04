@@ -4,7 +4,39 @@
     "date_of_death": "2014-09-15",
     "place_of_birth": "Tupche–2, Nuwakot",
     "place_of_death": "Norvic International Hospital, Kathmandu, Nepal",
-    "political_party": "Unified Communist Party of Nepal (Maoist)"
+    "political_party": "Unified Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "startDate": null,
+        "title": "General Secretary"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Minister for Information and Communications"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Minister for Culture, Tourism and Civil Aviation"
+      },
+      {
+        "endDate": null,
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "startDate": null,
+        "title": "Vice-chairman"
+      },
+      {
+        "endDate": null,
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Constituent Assembly Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

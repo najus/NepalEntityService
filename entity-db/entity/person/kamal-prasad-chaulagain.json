@@ -1,6 +1,44 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Samyukta Janamorcha Nepal",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2002-01-01T00:00:00",
+        "organization": "Communist Party of Nepal (Marxist-Leninist)",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "Central Committee member"
+      },
+      {
+        "endDate": "2002-11-08T00:00:00",
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "startDate": "2002-01-01T00:00:00",
+        "title": "Central Committee member"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2002-11-11T00:00:00",
+        "title": "Minister for Labour and Transport Management"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2002-11-11T00:00:00",
+        "title": "Minister for Population and Environment"
+      },
+      {
+        "endDate": null,
+        "organization": "National Integrated Study and Research Centre of Nepal",
+        "startDate": null,
+        "title": "Chief Adviser"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

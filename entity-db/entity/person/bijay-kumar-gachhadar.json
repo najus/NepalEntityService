@@ -12,7 +12,117 @@
       "Nepal Democratic Forum",
       "Nepali Congress (17 October 2017 – present)"
     ],
-    "spouse": "Nirmala Gachchhadar"
+    "spouse": "Nirmala Gachchhadar",
+    "sys:positions": [
+      {
+        "endDate": "2021-12-16",
+        "organization": "Nepali Congress",
+        "startDate": "2018-01-01",
+        "title": "Vice-President of the Nepali Congress"
+      },
+      {
+        "endDate": "2011-02-06",
+        "organization": null,
+        "startDate": "2009-05-25",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2013-03-14",
+        "organization": null,
+        "startDate": "2011-09-04",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2016-08-04",
+        "organization": null,
+        "startDate": "2015-10-12",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2017-05-31",
+        "organization": null,
+        "startDate": "2017-05-08",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2018-02-15",
+        "organization": null,
+        "startDate": "2017-06-07",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2009-05-25",
+        "organization": null,
+        "startDate": "2008-08-18",
+        "title": "Minister for Physical Planning and Transport"
+      },
+      {
+        "endDate": "2011-02-06",
+        "organization": null,
+        "startDate": "2009-05-25",
+        "title": "Minister for Physical Planning and Transport"
+      },
+      {
+        "endDate": "2016-08-04",
+        "organization": null,
+        "startDate": "2015-10-12",
+        "title": "Minister for Physical Planning and Transport"
+      },
+      {
+        "endDate": "2017-05-31",
+        "organization": null,
+        "startDate": "2017-05-08",
+        "title": "Minister of Federal Affairs and Local Development"
+      },
+      {
+        "endDate": "2018-02-15",
+        "organization": null,
+        "startDate": "2017-06-07",
+        "title": "Minister of Federal Affairs and Local Development"
+      },
+      {
+        "endDate": "2013-03-14",
+        "organization": null,
+        "startDate": "2011-09-04",
+        "title": "Minister of Home Affairs"
+      },
+      {
+        "endDate": "2022-09-17",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04",
+        "title": "Member of the Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31",
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-05-01",
+        "title": "Member of the Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": "2017-12-31",
+        "organization": "Madhesi Jana Adhikar Forum, Nepal (Democratic)",
+        "startDate": "2008-01-01",
+        "title": "Chairperson"
+      },
+      {
+        "endDate": "2017-10-16",
+        "organization": "Nepal Loktantrik Forum",
+        "startDate": "2017-04-05",
+        "title": "Chairperson"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Minister of Water Resources"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

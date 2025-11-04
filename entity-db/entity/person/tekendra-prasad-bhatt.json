@@ -2,7 +2,15 @@
   "attributes": {
     "constituency": "Kanchanpur-3",
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

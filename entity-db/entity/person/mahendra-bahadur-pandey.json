@@ -9,7 +9,66 @@
     "fatherName": "Fatta Bahadur Pandey",
     "motherName": "Bishnu Maya Pandey",
     "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)",
-    "spouseName": "Bhim Kumari Thapa"
+    "spouseName": "Bhim Kumari Thapa",
+    "sys:education": [
+      {
+        "degree": "M.Ed",
+        "institution": "Tribhuwan University"
+      },
+      {
+        "degree": "Bachelor of Education",
+        "field": "English",
+        "institution": "Tribhuwan University"
+      },
+      {
+        "field": "Conflict Management",
+        "institution": "Ulster University"
+      },
+      {
+        "degree": "Bachelor of Law (LLB)",
+        "institution": "Tribhuwan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Embassy of Nepal - Beijing, China",
+        "startDate": "2020-04-01T00:00:00",
+        "title": "Ambassador of Nepal to China"
+      },
+      {
+        "endDate": "2015-10-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2007-12-31T00:00:00",
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "startDate": "2006-01-01T00:00:00",
+        "title": "Chief Whip"
+      },
+      {
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "1995-12-31T00:00:00",
+        "organization": "Social Welfare Council",
+        "startDate": "1995-01-01T00:00:00",
+        "title": "Member Secretary"
+      },
+      {
+        "endDate": "1995-12-31T00:00:00",
+        "organization": "Tribhuvan University",
+        "startDate": "1975-01-01T00:00:00",
+        "title": "Associate Professor of English"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Politburo member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

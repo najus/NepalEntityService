@@ -15,6 +15,20 @@
     ],
     "spouse": [
       "Manmati Chand"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Registered Auditor"
+      }
     ]
   },
   "attributions": [

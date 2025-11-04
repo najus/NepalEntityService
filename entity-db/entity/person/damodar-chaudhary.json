@@ -2,7 +2,21 @@
   "attributes": {
     "date_of_death": "2010-04-29",
     "nationality": "Nepali",
-    "place_of_death": "Kathmandu"
+    "place_of_death": "Kathmandu",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Committee for Determining the Structure of the Legislative Body",
+        "title": "Member"
+      },
+      {
+        "organization": "Development Committee",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -1,7 +1,27 @@
 {
   "attributes": {
     "home_district": "Syangja District",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2018-02-15T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2017-06-07T00:00:00",
+        "title": "Deputy Prime Minister and Education Minister of Nepal"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress Democratic",
+        "title": "Acting President"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Senior CWC member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

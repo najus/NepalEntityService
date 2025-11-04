@@ -2,7 +2,15 @@
   "attributes": {
     "home_district": "Jhapa District",
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal"
+    "political_party": "Communist Party of Nepal",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": null,
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

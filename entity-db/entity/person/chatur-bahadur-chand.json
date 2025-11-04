@@ -2,7 +2,18 @@
   "attributes": {
     "birthDate": "1971-07-25",
     "nationality": "Nepalese",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Cricket Association of Nepal",
+        "startDate": "2019-09-29T00:00:00",
+        "title": "President"
+      },
+      {
+        "organization": "Baitadi district committee of the Nepali Congress",
+        "title": "District Committee Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

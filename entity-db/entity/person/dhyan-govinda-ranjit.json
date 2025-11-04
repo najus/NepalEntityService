@@ -2,7 +2,52 @@
   "attributes": {
     "birth_place": "Majipat, Kathmandu",
     "father_name": "Narayan Govinda Ranjit",
-    "mother_name": "Mohan Devi Ranjit"
+    "mother_name": "Mohan Devi Ranjit",
+    "sys:education": [
+      {
+        "institution": "J.P. High School"
+      },
+      {
+        "degree": "Master of Arts",
+        "field": "Political Science"
+      },
+      {
+        "degree": "Master of Public Administration"
+      },
+      {
+        "degree": "Bachelor of Law"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Parliament of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Nepali Congress parliamentary party working committee",
+        "title": "Member"
+      },
+      {
+        "organization": "Nepali Congress Kathmandu District Committee",
+        "title": "Past President"
+      },
+      {
+        "organization": "Nepal Student Union",
+        "title": "Founder"
+      },
+      {
+        "organization": "National Interest Preservation Committee",
+        "title": "Representative"
+      },
+      {
+        "organization": "Martyrs Day Main Organising Committee 2063",
+        "title": "Coordinator"
+      },
+      {
+        "organization": "Nepali Congress Mahasamiti preparation committee",
+        "title": "Coordinator"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

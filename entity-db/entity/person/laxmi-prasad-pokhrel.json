@@ -1,5 +1,14 @@
 {
-  "attributes": null,
+  "attributes": {
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Politician"
+      }
+    ]
+  },
   "attributions": [
     "Wikipedia"
   ],

@@ -1,6 +1,26 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": null,
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2005-07-01T00:00:00",
+        "title": "Assistant Minister for Water Resource"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Communist Party",
+        "startDate": null,
+        "title": "Central Committee member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

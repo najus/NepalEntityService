@@ -7,7 +7,15 @@
     "death_place": "Kathmandu, Nepal",
     "gender": "Female",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2020-07-01T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the 2nd Nepalese Constituent Assembly (Baglung-3)"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

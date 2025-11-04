@@ -4,7 +4,36 @@
     "other_political_affiliations": [
       "CPN (UML)"
     ],
-    "political_party": "Samajbadi Prajatantrik Janata Party, Nepal"
+    "political_party": "Samajbadi Prajatantrik Janata Party, Nepal",
+    "sys:positions": [
+      {
+        "organization": "Samajbadi Prajatantrik Janata Party, Nepal",
+        "title": "Chairman"
+      },
+      {
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of Parliament for Kalikot-1"
+      },
+      {
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2009-07-03T00:00:00",
+        "title": "Minister for Law and Justice"
+      },
+      {
+        "endDate": "2016-07-20T00:00:00",
+        "organization": "Government of Nepal",
+        "title": "Minister for Water Supply and Sanitation"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Minister for Water Supply and Sanitation"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

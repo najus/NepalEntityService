@@ -2,7 +2,29 @@
   "attributes": {
     "dateOfBirth": "1954-03-31",
     "nationality": "Nepali",
-    "politicalParty": "CPN (UML)"
+    "politicalParty": "CPN (UML)",
+    "sys:positions": [
+      {
+        "endDate": "2015-10-01T00:00:00",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Energy"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "CPN (UML) party list",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "CPN (UML) party list",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "title": "Energy minister"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

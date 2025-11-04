@@ -6,6 +6,47 @@
     "politicalAffiliations": [
       "CPN (UML)",
       "CPN (Maoist Centre) (1994-2021)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2021-05-20T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2020-12-25T00:00:00",
+        "title": "Minister of Energy, Water Resources and Irrigation"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Deputy Prime Minister"
+      },
+      {
+        "endDate": "2023-05-10T00:00:00",
+        "organization": "CPN (UML)",
+        "startDate": "2021-11-30T00:00:00",
+        "title": "Secretary of the CPN (UML)"
+      },
+      {
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of 1st Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for Physical Planning and Constructions"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Local Development"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Peace and Reconstruction"
+      }
     ]
   },
   "attributions": [

@@ -5,7 +5,39 @@
     "death_age": 80,
     "death_date": "2024-02-05",
     "death_place": "Biratnagar, Nepal",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2017-05-31T00:00:00",
+        "organization": null,
+        "startDate": "2016-08-26T00:00:00",
+        "title": "Defence Minister of Nepal"
+      },
+      {
+        "endDate": "2024-02-05T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of Legislature Parliament of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress (Democratic)",
+        "startDate": null,
+        "title": "Jhapa District President"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2013-04-28T00:00:00",
+        "title": "Zonal coordinator of Sagarmatha region"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

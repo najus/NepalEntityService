@@ -1,6 +1,21 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "CPN (UML)",
+        "title": "Province Secretary"
+      },
+      {
+        "organization": "Unified Communist Party of Nepal (Maoist)",
+        "startDate": "2010-08-06T00:00:00",
+        "title": "Constituent Assembly member"
+      },
+      {
+        "organization": "Dhanusa District Development Committee",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

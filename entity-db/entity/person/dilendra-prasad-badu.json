@@ -7,7 +7,75 @@
     "mother": "Kalasha Devi Badu",
     "nationality": "Nepali",
     "politicalParty": "Nepali Congress",
-    "spouse": "Madhavi Badu"
+    "spouse": "Madhavi Badu",
+    "sys:positions": [
+      {
+        "endDate": "2022-12-26T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-10-08T00:00:00",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2021-01-01T00:00:00",
+        "title": "Minister for Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "1994-08-31T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2003-01-01T00:00:00",
+        "title": "Member of the central working committee"
+      },
+      {
+        "endDate": "2016-12-31T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2010-01-01T00:00:00",
+        "title": "Spokesperson"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress, District Committee, Darchula",
+        "startDate": "1989-01-01T00:00:00",
+        "title": "Secretary"
+      },
+      {
+        "endDate": "1990-12-31T00:00:00",
+        "organization": "Mahendra Multiple Campus, Nepalgunj, Banke, Tribhuvan University",
+        "startDate": "1981-01-01T00:00:00",
+        "title": "Faculty member and campus chief"
+      },
+      {
+        "endDate": "1979-12-31T00:00:00",
+        "organization": "secondary school of Darchula",
+        "startDate": "1977-01-01T00:00:00",
+        "title": "Teacher"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

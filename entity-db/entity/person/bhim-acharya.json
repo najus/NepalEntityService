@@ -6,7 +6,62 @@
     "mother": "Laxmi Devi Acharya",
     "nationality": "Nepali",
     "politicalParty": "CPN (UML)",
-    "spouse": "Nira Devi Khanal Acharya"
+    "spouse": "Nira Devi Khanal Acharya",
+    "sys:education": [
+      {
+        "degree": "Master's degree",
+        "field": "Management",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2021-11-01T00:00:00",
+        "organization": "Province No. 1 Government",
+        "startDate": "2021-08-26T00:00:00",
+        "title": "Chief Minister of Province No. 1"
+      },
+      {
+        "endDate": "2014-09-13T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister for Culture, Tourism and Civil Aviation"
+      },
+      {
+        "endDate": "2022-09-02T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2021-11-02T00:00:00",
+        "title": "Leader of the Opposition in the Koshi Provincial Assembly"
+      },
+      {
+        "endDate": "2021-11-01T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2021-08-26T00:00:00",
+        "title": "Leader of the House in the Koshi Provincial Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "House of Representatives of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-09-01T00:00:00",
+        "organization": "Koshi Provincial Assembly",
+        "startDate": "2018-02-05T00:00:00",
+        "title": "Member of the Koshi Provincial Assembly"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

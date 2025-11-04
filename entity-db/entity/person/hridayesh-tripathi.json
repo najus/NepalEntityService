@@ -13,6 +13,66 @@
       "Terai Madhesh Loktantrik Party (2007-2017)",
       "Nepal Sadbhawana Party (1991-2006)",
       "Communist Party of Nepal (Rayamajhi)"
+    ],
+    "sys:education": [
+      {
+        "degree": null,
+        "field": "political science",
+        "institution": "Institute of Oriental Studies"
+      },
+      {
+        "degree": "Secondary Education",
+        "institution": "Palpa"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "People's Progressive Party",
+        "startDate": "2021-12-14T00:00:00",
+        "title": "Chairman"
+      },
+      {
+        "endDate": "2021-06-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2020-12-25T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": "2020-12-25T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2019-11-21T00:00:00",
+        "title": "Minister of Federal Affairs and General Administration"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2011-09-04T00:00:00",
+        "title": "Minister of Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2008-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "2006-01-01T00:00:00",
+        "title": "Minister of Industry, Commerce and Supplies"
+      },
+      {
+        "endDate": "2002-05-31T23:59:59",
+        "organization": "House of Representatives",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament"
+      }
     ]
   },
   "attributions": [

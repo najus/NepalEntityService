@@ -1,6 +1,20 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Communist Party of Nepal (Maoist)",
+        "startDate": null,
+        "title": "Politician"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -7,7 +7,55 @@
     "politicalParty": "Nepali Congress",
     "profession": "Social worker",
     "residence": "Biratnagar, Nepal",
-    "spouse": "Gunu Upadhyay"
+    "spouse": "Gunu Upadhyay",
+    "sys:education": [
+      {
+        "degree": "Bachelor of Arts",
+        "field": "Political Science",
+        "institution": "Banaras Hindu University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "startDate": "2010-09-21T00:00:00",
+        "title": "Member of Nepali Congress Central Working Committee (CWC)"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2012-08-15T00:00:00",
+        "title": "Head of the Disciplinary Committee"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Morang-1",
+        "startDate": "2008-05-27T00:00:00",
+        "title": "Member of Constituent Assembly of Nepal"
+      },
+      {
+        "endDate": "2008-05-26T00:00:00",
+        "startDate": "2007-01-15T00:00:00",
+        "title": "Member of Interim legislature of Nepal"
+      },
+      {
+        "organization": "Pratinidhi Sabha",
+        "title": "Chief Whip of the Nepali Congress Parliamentary Party"
+      },
+      {
+        "endDate": "2002-05-23T00:00:00",
+        "startDate": "2000-03-22T00:00:00",
+        "title": "Minister of Education and Sports"
+      },
+      {
+        "endDate": "2002-05-23T00:00:00",
+        "organization": "Morang-1",
+        "title": "Member of Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2005-01-11T00:00:00",
+        "startDate": "1991-06-01T00:00:00",
+        "title": "Member of Rashtriya Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

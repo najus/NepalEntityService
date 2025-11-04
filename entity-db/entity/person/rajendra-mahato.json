@@ -2,7 +2,57 @@
   "attributes": {
     "birthDate": "1958-11-19",
     "birthPlace": "Babarganj, Sarlahi, Nepal",
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "endDate": "2021-06-22T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2021-06-04T00:00:00Z",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2021-06-22T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2021-06-04T00:00:00Z",
+        "title": "Minister for Urban Development"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2011-09-04T00:00:00Z",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": "2009-05-25T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-18T00:00:00Z",
+        "title": "Minister of Commerce and Supplies"
+      },
+      {
+        "endDate": "2011-02-06T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2009-05-23T00:00:00Z",
+        "title": "Minister of Commerce and Supplies"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

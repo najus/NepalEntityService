@@ -1,7 +1,23 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)"
+    "political_party": "Communist Party of Nepal (Unified Marxist-Leninist)",
+    "sys:positions": [
+      {
+        "endDate": "2014-09-14T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Industry of Nepal"
+      },
+      {
+        "organization": "Nepalese Constituent Assembly",
+        "title": "Member of 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "organization": "Nepal Communist Party Sudurpaschim Pradesh Committee",
+        "title": "Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

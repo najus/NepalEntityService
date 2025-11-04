@@ -3,7 +3,27 @@
     "date_of_birth": "1959-03-31",
     "nationality": "Nepali",
     "place_of_birth": "Mahottari District, Nepal",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": null,
+        "title": "Central working committee member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -19,7 +19,39 @@
       }
     ],
     "nationality": "Nepali",
-    "spouse": "Prem Sagari Nidhi"
+    "spouse": "Prem Sagari Nidhi",
+    "sys:positions": [
+      {
+        "endDate": "1991-05-26T00:00:00",
+        "organization": null,
+        "startDate": "1990-04-19T00:00:00",
+        "title": "Minister of Water Resources and Local Development"
+      },
+      {
+        "endDate": "1960-12-15T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1959-05-27T00:00:00",
+        "title": "Deputy Speaker of Pratinidhi Sabha"
+      },
+      {
+        "endDate": "1999-05-04T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "General Secretary"
+      },
+      {
+        "endDate": "1960-12-15T00:00:00",
+        "organization": null,
+        "startDate": "1959-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

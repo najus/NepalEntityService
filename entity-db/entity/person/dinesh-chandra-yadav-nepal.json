@@ -3,7 +3,19 @@
     "cause_of_death": "COVID-19",
     "date_of_death": "2021-01-14",
     "nationality": "Nepali",
-    "place_of_death": "Kathmandu, Nepal"
+    "place_of_death": "Kathmandu, Nepal",
+    "sys:positions": [
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "2nd Nepalese Constituent Assembly",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "title": "Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

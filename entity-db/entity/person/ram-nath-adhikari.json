@@ -4,7 +4,27 @@
     "dateOfBirth": "1961-09-03",
     "nationality": "Nepali",
     "placeOfBirth": "Dhading District, Nepal",
-    "politicalParty": "Nepali Congress"
+    "politicalParty": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": "2025-09-09T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2024-07-15T00:00:00",
+        "title": "Minister of Agriculture and Livestock Development of Nepal"
+      },
+      {
+        "endDate": "2025-09-12T00:00:00",
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00",
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

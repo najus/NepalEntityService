@@ -1,7 +1,14 @@
 {
   "attributes": {
     "constituency": "Bara-2",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the 2nd Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -12,7 +12,63 @@
       "Nepali Congress (1992–2002, 2007-2008)",
       "Rastriya Prajatantra Party (? –1991)"
     ],
-    "political_party": "Loktantrik Samajwadi Party"
+    "political_party": "Loktantrik Samajwadi Party",
+    "sys:positions": [
+      {
+        "endDate": "2025-09-09T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2024-07-15T00:00:00Z",
+        "title": "Minister of Labour, Employment and Social Security"
+      },
+      {
+        "endDate": "2024-03-04T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2023-03-31T00:00:00Z",
+        "title": "Minister of Labour, Employment and Social Security"
+      },
+      {
+        "endDate": "2021-06-22T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2021-06-04T00:00:00Z",
+        "title": "Minister of Energy, Water Resources and Irrigation"
+      },
+      {
+        "endDate": "2013-03-14T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2011-09-04T00:00:00Z",
+        "title": "Minister of Defence"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": null,
+        "title": "Minister of Tourism and Civil Aviation"
+      },
+      {
+        "endDate": "2025-09-12T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-05-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "1999-05-31T00:00:00Z",
+        "organization": "Parliament of Nepal",
+        "startDate": "1994-10-01T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -27,7 +27,65 @@
         "Girija Prasad Koirala",
         "Tarini Prasad Koirala"
       ]
-    }
+    },
+    "sys:education": [
+      {
+        "degree": "Intermediate of Science",
+        "field": "Science",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "1998-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "1998-09-01T00:00:00",
+        "title": "Prime Minister of Nepal (acting)"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "Deputy Prime Minister of Nepal"
+      },
+      {
+        "endDate": "1993-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Minister of Agriculture and forests"
+      },
+      {
+        "endDate": "1998-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "1997-01-01T00:00:00",
+        "title": "Minister of Water Resources"
+      },
+      {
+        "endDate": "2009-06-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Nepal's Ambassador to India"
+      },
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1991-05-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1994-11-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "1998-12-31T23:59:59",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1998-04-15T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Vice-chair"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

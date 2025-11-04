@@ -5,7 +5,32 @@
     "father": "Ganesh Prasad Acharya",
     "mother": "Shanta Acharya",
     "nationality": "Nepali",
-    "sister": "Durga Ghimire"
+    "sister": "Durga Ghimire",
+    "sys:positions": [
+      {
+        "endDate": "2015-10-12T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00Z",
+        "title": "Minister of Forest and Soil Conservation"
+      },
+      {
+        "organization": "Nepalese Constituent Assembly",
+        "startDate": "2013-01-01T00:00:00Z",
+        "title": "Member of the 2nd Nepalese Constituent Assembly"
+      },
+      {
+        "endDate": "1994-12-31T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "1991-01-01T00:00:00Z",
+        "title": "Minister of Finance"
+      },
+      {
+        "endDate": "2001-12-31T00:00:00Z",
+        "organization": "Government of Nepal",
+        "startDate": "1999-01-01T00:00:00Z",
+        "title": "Minister of Finance"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

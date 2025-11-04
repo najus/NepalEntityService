@@ -1,6 +1,20 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Communist Party Of Nepal (Maoist Center)",
+        "title": "Member"
+      },
+      {
+        "organization": "ANNISU(Revolutionary)",
+        "title": "Former President"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -3,7 +3,27 @@
     "children": 1,
     "nationality": "Nepali",
     "political_party": "Communist Party of Nepal (Maoist)",
-    "spouse": "Lila Thapa Baral"
+    "spouse": "Lila Thapa Baral",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Province No. 5",
+        "startDate": null,
+        "title": "Social Development Minister"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Member of the interim parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

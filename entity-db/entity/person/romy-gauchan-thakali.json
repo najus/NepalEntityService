@@ -6,7 +6,21 @@
     ],
     "nationality": "Nepali",
     "political_party": "Nepali Congress",
-    "spouse": "Lakshmi Gauchan Thakali"
+    "spouse": "Lakshmi Gauchan Thakali",
+    "sys:positions": [
+      {
+        "endDate": "2017-05-31T00:00:00",
+        "organization": null,
+        "startDate": "2016-08-26T00:00:00",
+        "title": "Minister of Commerce"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the Pratinidhi Sabha"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

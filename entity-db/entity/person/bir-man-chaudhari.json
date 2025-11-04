@@ -1,7 +1,21 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Provincial Assembly of Sudurpashchim Province",
+        "startDate": "2017-01-01T00:00:00Z",
+        "title": "Member of Provincial Assembly of Sudurpashchim Province"
+      },
+      {
+        "endDate": "2013-12-31T23:59:59Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00Z",
+        "title": "Member of Constituent Assembly of Nepal"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

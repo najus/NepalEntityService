@@ -1,7 +1,18 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Madhesi Janadhikar Forum"
+    "political_party": "Madhesi Janadhikar Forum",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Madhesi Janadhikar Forum, Banke district",
+        "title": "President"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

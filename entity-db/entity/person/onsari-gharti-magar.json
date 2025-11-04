@@ -1,7 +1,15 @@
 {
   "attributes": {
     "ethnic_group": "Magar",
-    "political_party": "नेकपा (माओवादी केन्द्र)"
+    "political_party": "नेकपा (माओवादी केन्द्र)",
+    "sys:positions": [
+      {
+        "endDate": "2017-10-15T00:00:00",
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2015-10-16T00:00:00",
+        "title": "Speaker of the Legislature Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

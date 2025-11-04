@@ -3,7 +3,27 @@
     "date_of_birth": "1960-06-08",
     "honorific_prefix": "Honourable",
     "nationality": "Nepali",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-05-31T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "2nd Nepalese Constituent Assembly",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of 2nd Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -7,6 +7,51 @@
     "parents": [
       "Govind Bahadur Pradhan",
       "Radha Pradhan"
+    ],
+    "sys:education": [
+      {
+        "degree": "Master in Comparative Law (MCL)",
+        "institution": "University of Delhi"
+      },
+      {
+        "degree": "Mid-Career Masters in Public Administration (MC/MPA)",
+        "institution": "Harvard University"
+      },
+      {
+        "degree": "Bachelor of Laws",
+        "institution": "Nepal Law Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Supreme Court of Nepal",
+        "startDate": "2016-08-01T00:00:00",
+        "title": "Supreme Court Justice"
+      },
+      {
+        "organization": "Judges Society",
+        "title": "President"
+      },
+      {
+        "endDate": "2012-05-31T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-01T00:00:00",
+        "title": "Member of the Nepalese Constituent Assembly"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": "Committee Against Torture",
+        "startDate": "2014-01-01T00:00:00",
+        "title": "Member"
+      },
+      {
+        "organization": "Forum for Women, Law & Development",
+        "title": "President"
+      },
+      {
+        "organization": "Supreme Court of Nepal",
+        "title": "Senior Advocate"
+      }
     ]
   },
   "attributions": [

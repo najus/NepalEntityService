@@ -4,7 +4,13 @@
     "birthPlace": "Kapilvastu, Lumbini, Nepal",
     "deathDate": "1998-11-15",
     "ethnicity": "Agrahari Vaishya",
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "organization": "Parliament of Nepal",
+        "title": "Member of Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

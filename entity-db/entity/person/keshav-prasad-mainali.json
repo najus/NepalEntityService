@@ -1,6 +1,32 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "title": "Member"
+      },
+      {
+        "organization": "Chure Bhawar Rastriya Ekta Party Nepal",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Nepali Congress Sarlahi District committee",
+        "title": "President"
+      },
+      {
+        "organization": "Chure Bhawar Ekta Samaj",
+        "title": "Founder"
+      },
+      {
+        "organization": "Constituent Assembly",
+        "title": "Representative"
+      },
+      {
+        "organization": "Chure Bhawar Rastriya Party",
+        "title": "Founder"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

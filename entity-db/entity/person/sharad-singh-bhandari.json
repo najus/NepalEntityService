@@ -9,7 +9,27 @@
       "Politician"
     ],
     "politicalParty": "Nepal Communist Party (NCP)",
-    "spouse": "Chetana Regmi"
+    "spouse": "Chetana Regmi",
+    "sys:positions": [
+      {
+        "endDate": "2013-12-31T23:59:59",
+        "organization": "Rastriya Sabha",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Rastriya Sabha"
+      },
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Communist Party (NCP)",
+        "startDate": null,
+        "title": "Central Committee /PBM"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

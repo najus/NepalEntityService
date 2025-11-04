@@ -3,7 +3,55 @@
     "birthDate": "1944-04-21",
     "nationality": "Nepali",
     "political_party": "Rastriya Prajatantra Party",
-    "residence": "Kathmandu, Nepal"
+    "residence": "Kathmandu, Nepal",
+    "sys:education": [
+      {
+        "degree": "MBA",
+        "institution": "Indiana University"
+      },
+      {
+        "degree": "PhD",
+        "institution": "University of California Los Angeles"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Finance"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Agriculture"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Labour & Transportation"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister of Housing & Physical Planning"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "acting prime minister"
+      },
+      {
+        "organization": "California State University, Northridge",
+        "title": "assistant professor of finance"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "member"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

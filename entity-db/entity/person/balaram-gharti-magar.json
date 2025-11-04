@@ -4,7 +4,65 @@
     "dateOfDeath": "2025-07-11",
     "nationality": "Nepali",
     "placeOfBirth": "Upallothar Mukhyadera, Rolpa district, Nepal",
-    "placeOfDeath": "Lalitpur, Nepal"
+    "placeOfDeath": "Lalitpur, Nepal",
+    "sys:education": [
+      {
+        "degree": null,
+        "field": "Politics and Law",
+        "institution": "Kanpur, India"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "Central Committee Member, Senior Member"
+      },
+      {
+        "organization": "Mijhing VDC",
+        "title": "Pradhanpancha"
+      },
+      {
+        "organization": "Rolpa District Panchayat",
+        "title": "Deputy Chairman of District Panchayat"
+      },
+      {
+        "title": "National Panchayat Member"
+      },
+      {
+        "title": "Assistant Minister of Home Affairs"
+      },
+      {
+        "title": "Defence State Minister"
+      },
+      {
+        "title": "Construction and Transport State Minister"
+      },
+      {
+        "title": "Construction and Transport Minister"
+      },
+      {
+        "title": "Defence Minister"
+      },
+      {
+        "title": "Local Development Minister"
+      },
+      {
+        "title": "Industry Minister"
+      },
+      {
+        "title": "Health Minister"
+      },
+      {
+        "organization": "Rastriya Prajatantra Party",
+        "title": "Member of Parliament"
+      },
+      {
+        "title": "Housing and Physical Planning Minister"
+      },
+      {
+        "title": "Science and Technology Minister"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

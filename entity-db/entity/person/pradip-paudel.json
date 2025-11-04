@@ -3,7 +3,47 @@
     "date_of_birth": "1975-03-27",
     "nationality": "Nepali",
     "place_of_birth": "Tanahun District, Nepal",
-    "political_party": "Nepali Congress"
+    "political_party": "Nepali Congress",
+    "sys:education": [
+      {
+        "institution": "Amrit Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2025-09-09T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2024-07-15T00:00:00",
+        "title": "Minister of Health and Population of Nepal"
+      },
+      {
+        "endDate": "2025-09-12T00:00:00",
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2014-09-17T00:00:00",
+        "title": "Central Committee Member"
+      },
+      {
+        "organization": "Nepal Student Union",
+        "title": "President"
+      },
+      {
+        "organization": "Nepal Student Union",
+        "title": "Vice President"
+      },
+      {
+        "organization": "Nepal Student Union",
+        "title": "Central Committee Member"
+      },
+      {
+        "organization": "Amrit Campus",
+        "title": "Free Student Union president"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

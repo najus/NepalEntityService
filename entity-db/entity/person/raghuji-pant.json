@@ -5,7 +5,57 @@
       "Journalist",
       "author"
     ],
-    "political_party": "CPN (UML)"
+    "political_party": "CPN (UML)",
+    "sys:positions": [
+      {
+        "endDate": "2025-09-09T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2025-04-23T00:00:00",
+        "title": "Minister for Education, Science and Technology"
+      },
+      {
+        "endDate": "2025-09-12T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2005-02-01T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2004-07-05T00:00:00",
+        "title": "Minister for Labour and Transportation Management"
+      },
+      {
+        "endDate": "2008-04-30T00:00:00",
+        "organization": "Parliament of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "organization": "CPN-UML",
+        "startDate": "1997-01-01T00:00:00",
+        "title": "Central Committee Member"
+      },
+      {
+        "organization": "Office of the Prime Minister, Nepal",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Press Advisor to the Prime Minister"
+      },
+      {
+        "endDate": "1994-01-01T00:00:00",
+        "organization": "Various Nepali publications (Budhabar Weekly, Chhalphal Weekly, etc.)",
+        "startDate": "1975-01-01T00:00:00",
+        "title": "Journalist"
+      },
+      {
+        "organization": "CPN-UML",
+        "title": "Head of the Culture Department"
+      },
+      {
+        "organization": "CPN-UML",
+        "title": "Standing Committee Member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

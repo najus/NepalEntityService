@@ -11,7 +11,54 @@
     },
     "place_of_birth": "Jhochhen, Kathmandu, Nepal",
     "political_party": "Communist Party of Nepal (UML)",
-    "spouse": "Amrit Kumar Bohara"
+    "spouse": "Amrit Kumar Bohara",
+    "sys:education": [
+      {
+        "institution": "Ratna Rajya Lakshmi Campus"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2021-10-27T00:00:00",
+        "organization": "Government of Bagmati Province",
+        "startDate": "2021-08-18T00:00:00",
+        "title": "Chief Minister of Bagmati Province"
+      },
+      {
+        "endDate": "2009-05-25T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-18T00:00:00",
+        "title": "Minister for Industry"
+      },
+      {
+        "endDate": "2005-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "2004-01-01T00:00:00",
+        "title": "Minister for Women, Children and Social Welfare"
+      },
+      {
+        "endDate": "2022-12-31T23:59:59",
+        "organization": "Provincial Assembly of Bagmati Province",
+        "startDate": "2018-02-01T00:00:00",
+        "title": "Member of the Provincial Assembly of Bagmati Province"
+      },
+      {
+        "endDate": "2008-12-31T23:59:59",
+        "organization": "House of Representatives of Nepal",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of the Constituent Assembly / Legislature Parliament"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist–Leninist)",
+        "title": "Vice-president"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -7,7 +7,33 @@
     "dateOfBirth": "1969-03-28",
     "nationality": "Nepalese",
     "politicalParty": "CPN UML",
-    "spouse": "Usha Kala Rai"
+    "spouse": "Usha Kala Rai",
+    "sys:positions": [
+      {
+        "endDate": "2021-06-22T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-06-04T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": "2018-07-24T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2018-03-16T00:00:00",
+        "title": "Minister of Law, Justice and Parliamentary Affairs"
+      },
+      {
+        "endDate": "2022-09-18T00:00:00",
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": null,
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

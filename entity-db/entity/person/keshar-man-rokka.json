@@ -1,5 +1,16 @@
 {
-  "attributes": null,
+  "attributes": {
+    "sys:positions": [
+      {
+        "organization": "Nepali Congress",
+        "title": "Member of the Pratinidhi Sabha"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "Candidate for the Constituent Assembly"
+      }
+    ]
+  },
   "attributions": [
     "Wikipedia"
   ],

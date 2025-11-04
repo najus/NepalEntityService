@@ -4,7 +4,55 @@
     "birthPlace": "Lalitpur, Nepal",
     "nationality": "Nepali",
     "political_party": "Nepali Congress",
-    "spouse": "Sher Bahadur Deuba"
+    "spouse": "Sher Bahadur Deuba",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "endYear": 1990,
+        "field": "Organizational Psychology",
+        "institution": "Punjab University"
+      },
+      {
+        "degree": "Master's degree",
+        "institution": "Punjab University"
+      },
+      {
+        "institution": "Padmakanya College"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2025-09-09T00:00:00",
+        "startDate": "2024-07-15T00:00:00",
+        "title": "Minister of Foreign Affairs of Nepal"
+      },
+      {
+        "endDate": "2024-07-31T00:00:00",
+        "startDate": "2023-08-01T00:00:00",
+        "title": "Chairperson of the Parliamentary Committee on Agriculture, Cooperatives and Natural Resources"
+      },
+      {
+        "endDate": "2025-09-12T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of the House of Representatives"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of the Constituent Assembly of Nepal"
+      },
+      {
+        "organization": "Nepali Congress",
+        "startDate": "2010-12-01T00:00:00",
+        "title": "Central Committee member"
+      },
+      {
+        "organization": "IUCN",
+        "title": "Regional councilor for South and East Asia"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

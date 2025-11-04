@@ -1,6 +1,24 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Nepal Progressive Women's Federation",
+        "title": "President"
+      },
+      {
+        "organization": "Communist Party of Nepal (United Marxist)",
+        "title": "Central Committee member"
+      },
+      {
+        "organization": "Communist Party of Nepal (United Marxist)",
+        "title": "FPTP candidate"
+      },
+      {
+        "organization": "Communist Party of Nepal",
+        "title": "Candidate"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

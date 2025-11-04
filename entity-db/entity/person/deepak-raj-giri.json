@@ -10,6 +10,20 @@
       "director",
       "producer"
     ],
+    "sys:positions": [
+      {
+        "endDate": "2015-12-31T23:59:59Z",
+        "organization": "Tito Satya",
+        "startDate": "2003-01-01T00:00:00Z",
+        "title": "Actor, Writer, and Director"
+      },
+      {
+        "endDate": null,
+        "organization": "Crime Patrol Nepal",
+        "startDate": "2022-01-01T00:00:00Z",
+        "title": "Host"
+      }
+    ],
     "yearsActive": "1995–present"
   },
   "attributions": [

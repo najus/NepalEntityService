@@ -4,7 +4,68 @@
     "date_of_birth": "1976-07-16",
     "father_in_law": "Arjun Narasingha K.C.",
     "political_party": "Nepali Congress",
-    "spouse": "Anjana KC Thapa"
+    "spouse": "Anjana KC Thapa",
+    "sys:education": [
+      {
+        "endYear": 1992,
+        "institution": "Siddhartha Vanasthali School"
+      },
+      {
+        "degree": "Bachelors of Science",
+        "endYear": 1998,
+        "field": "Chemistry",
+        "institution": "Tri Chandra College"
+      },
+      {
+        "degree": "M.A.",
+        "endYear": 2003,
+        "field": "Sociology",
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Nepali Congress",
+        "startDate": "2021-12-16T00:00:00",
+        "title": "General Secretary of Nepali Congress"
+      },
+      {
+        "endDate": "2017-05-31T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2016-08-25T00:00:00",
+        "title": "Minister of Health and Population"
+      },
+      {
+        "endDate": null,
+        "organization": "House of Representatives, Nepal",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "startDate": "2014-01-21T00:00:00",
+        "title": "Member of Legislature Parliament of Nepal"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "Nepali Congress",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "endDate": "2000-12-31T00:00:00",
+        "organization": "Tri Chandra College",
+        "startDate": "1998-01-01T00:00:00",
+        "title": "President of the Free Student Union"
+      },
+      {
+        "endDate": "2004-12-31T00:00:00",
+        "organization": "Nepal Students Union",
+        "startDate": "2002-01-01T00:00:00",
+        "title": "General Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

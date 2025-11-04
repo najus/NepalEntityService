@@ -1,6 +1,26 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": null,
+        "title": "Member of Parliament for Manang"
+      },
+      {
+        "endDate": "2001-07-01T00:00:00",
+        "organization": "G.P. Koirala's cabinet",
+        "startDate": "2001-02-01T00:00:00",
+        "title": "Minister of Labour and Transport Management"
+      },
+      {
+        "endDate": null,
+        "organization": "Sher Bahadur Deuba's ministry",
+        "startDate": "2001-07-01T00:00:00",
+        "title": "Minister of Labour and Transport Management"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -1,6 +1,19 @@
 {
   "attributes": {
-    "children": 4
+    "children": 4,
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Madhesi Janadhikar Forum",
+        "title": "Member"
+      },
+      {
+        "title": "Domestic servant"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -1,6 +1,18 @@
 {
   "attributes": {
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:positions": [
+      {
+        "organization": "Legislature Parliament of Nepal",
+        "startDate": "2007-01-01T00:00:00",
+        "title": "Member of the interim legislature"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

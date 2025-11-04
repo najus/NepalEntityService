@@ -8,7 +8,43 @@
     ],
     "placeOfBirth": "Dingla, Nepal",
     "politicalParty": "Nepali Congress",
-    "spouse": "Dr. Isabella C. Bassignana Khadka"
+    "spouse": "Dr. Isabella C. Bassignana Khadka",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "field": "Economics",
+        "institution": "University of Pune"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2022-12-26T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-09-22T00:00:00",
+        "title": "Minister of Foreign Affairs"
+      },
+      {
+        "endDate": "2015-10-10T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Urban Development"
+      },
+      {
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "National Planning Commission of Nepal",
+        "title": "Vice-chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

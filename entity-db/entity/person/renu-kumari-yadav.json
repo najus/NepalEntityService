@@ -11,6 +11,50 @@
       "Federal Socialist Forum, Nepal",
       "Samajbadi Party, Nepal",
       "People's Socialist Party, Nepal"
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "People's Socialist Party",
+        "startDate": "2024-05-05T00:00:00",
+        "title": "Joint chairman"
+      },
+      {
+        "endDate": "2022-07-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2021-10-08T00:00:00",
+        "title": "Minister for Physical Infrastructure and Transportation"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2008-08-22T00:00:00",
+        "title": "Minister for Education"
+      },
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2003-06-01T00:00:00",
+        "title": "Minister for Women, Children and Social Affairs"
+      },
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T23:59:59",
+        "organization": null,
+        "startDate": "1999-05-01T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": null,
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of Constituent Assembly"
+      }
     ]
   },
   "attributions": [

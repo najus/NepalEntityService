@@ -8,7 +8,74 @@
     ],
     "placeOfBirth": "Biratnagar, Morang District, Eastern Region, Kingdom of Nepal",
     "politicalParty": "Independent",
-    "spouse": "Durga Prasad Subedi"
+    "spouse": "Durga Prasad Subedi",
+    "sys:education": [
+      {
+        "degree": "Bachelor of Arts",
+        "endYear": 1972,
+        "field": null,
+        "institution": "Mahendra Morang College",
+        "startYear": null
+      },
+      {
+        "degree": "Master's",
+        "endYear": 1975,
+        "field": "Political Science",
+        "institution": "Banaras Hindu University",
+        "startYear": null
+      },
+      {
+        "degree": "LLB",
+        "endYear": 1978,
+        "field": "Law",
+        "institution": "Tribhuvan University",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": null,
+        "startDate": "2025-09-12T00:00:00",
+        "title": "Interim Prime Minister of Nepal"
+      },
+      {
+        "endDate": "2017-06-06T00:00:00",
+        "organization": "Supreme Court of Nepal",
+        "startDate": "2016-07-11T00:00:00",
+        "title": "25th Chief Justice of Nepal"
+      },
+      {
+        "endDate": "2017-06-06T00:00:00",
+        "organization": "Supreme Court of Nepal",
+        "startDate": "2009-01-01T00:00:00",
+        "title": "Justice of the Supreme Court of Nepal"
+      },
+      {
+        "endDate": null,
+        "organization": "Nepal Bar Association",
+        "startDate": "2004-01-01T00:00:00",
+        "title": "Senior Advocate"
+      },
+      {
+        "endDate": "2004-12-31T00:00:00",
+        "organization": "Biratnagar Appellate Court",
+        "startDate": "2002-01-01T00:00:00",
+        "title": "President"
+      },
+      {
+        "endDate": "1990-12-31T00:00:00",
+        "organization": "Koshi Zonal Court",
+        "startDate": "1988-01-01T00:00:00",
+        "title": "Bar President"
+      },
+      {
+        "endDate": "1989-12-31T00:00:00",
+        "organization": "Mahendra Multiple Campus, Dharan",
+        "startDate": "1986-01-01T00:00:00",
+        "title": "Assistant Teacher"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

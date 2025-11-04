@@ -1,6 +1,13 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Constituent Assembly member"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

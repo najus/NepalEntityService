@@ -6,7 +6,66 @@
     "mother": "Heera Devi Kansakar",
     "nationality": "Nepalese",
     "nom_de_guerre": "Parvati",
-    "spouse": "Baburam Bhattarai"
+    "spouse": "Baburam Bhattarai",
+    "sys:education": [
+      {
+        "endYear": 1982,
+        "field": "Architecture",
+        "institution": "School of Planning and Architecture"
+      },
+      {
+        "degree": "M. Arch.",
+        "endYear": 1995,
+        "field": "Architecture",
+        "institution": "University of Newcastle upon Tyne"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Nepal Socialist Party",
+        "startDate": "2022-07-28T00:00:00Z",
+        "title": "Deputy chairman"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2008-09-01T00:00:00Z",
+        "title": "Minister for Tourism and Civil Aviation"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-11T00:00:00Z",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "startDate": "2007-04-01T00:00:00Z",
+        "title": "Minister of Physical Planning and Works"
+      },
+      {
+        "endDate": "2015-12-31T23:59:59Z",
+        "organization": "CPN (Maoist)",
+        "startDate": "2001-01-01T00:00:00Z",
+        "title": "Central Committee Member"
+      },
+      {
+        "endDate": "1997-12-31T23:59:59Z",
+        "organization": "All Nepal Women's Association (Revolutionary)",
+        "startDate": "1995-01-01T00:00:00Z",
+        "title": "President"
+      },
+      {
+        "endDate": "1996-12-31T23:59:59Z",
+        "organization": "Institute of Engineering, Pulchowk Campus",
+        "startDate": "1983-01-01T00:00:00Z",
+        "title": "Lecturer"
+      },
+      {
+        "endDate": "1982-12-31T23:59:59Z",
+        "organization": "All India Nepalese Students' Association",
+        "startDate": "1981-01-01T00:00:00Z",
+        "title": "General Secretary"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

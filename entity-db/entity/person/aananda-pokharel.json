@@ -2,7 +2,63 @@
   "attributes": {
     "date_of_birth": "1960-03-12",
     "nationality": "Nepali",
-    "place_of_birth": "Dolakha District"
+    "place_of_birth": "Dolakha District",
+    "sys:education": [
+      {
+        "degree": "Masters of Arts",
+        "endYear": 1983,
+        "field": "Agricultural development",
+        "institution": "Tribhuvan University"
+      },
+      {
+        "degree": "Bachelor in Law",
+        "endYear": 1979,
+        "institution": "Nepal Law Campus"
+      },
+      {
+        "field": "Agriculture and Animal Science",
+        "institution": "Institute of Agriculture and Animal Science (IAAS)"
+      },
+      {
+        "degree": "SLC",
+        "institution": "Baiteshwor Ma.Vi."
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2016-08-04T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2015-11-05T00:00:00",
+        "title": "Minister of Culture, Tourism and Civil Aviation"
+      },
+      {
+        "organization": "Nepal Communist Party (NCP)",
+        "title": "Central Committee Member"
+      },
+      {
+        "organization": "Nepal Communist Party (NCP)",
+        "title": "Bagmati Province Committee Secretary"
+      },
+      {
+        "organization": "Nepal China Himalayan Friendship Society (NeCHiFS) Nepal",
+        "title": "Chairman"
+      },
+      {
+        "startDate": "2013-01-01T00:00:00",
+        "title": "Member of the Second Constitutional Assembly"
+      },
+      {
+        "endDate": "2007-01-01T00:00:00",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "1985-01-01T00:00:00",
+        "organization": "All Nepal Free Student Union",
+        "startDate": "1980-01-01T00:00:00",
+        "title": "Chairman"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

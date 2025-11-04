@@ -2,7 +2,33 @@
   "attributes": {
     "birthDate": "1941-07-19",
     "deathDate": "2019-10-16",
-    "nationality": "Nepalese"
+    "nationality": "Nepalese",
+    "sys:positions": [
+      {
+        "endDate": "2005-12-31T23:59:59",
+        "organization": "Government of Nepal",
+        "startDate": "2005-01-01T00:00:00",
+        "title": "Minister of Finance"
+      },
+      {
+        "endDate": null,
+        "organization": "South Asian Institute of Management",
+        "startDate": null,
+        "title": "Professor of economics"
+      },
+      {
+        "endDate": null,
+        "organization": "National Trading Limited",
+        "startDate": null,
+        "title": "General Manager"
+      },
+      {
+        "endDate": null,
+        "organization": "Ministry of Foreign affairs",
+        "startDate": null,
+        "title": "chief advisor"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

@@ -10,6 +10,26 @@
       "TMLP (2007–2017)",
       "CPN (UML) (2017–2022)",
       "People's Progressive Party (2022–present)"
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2022-09-18T00:00:00Z",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2018-03-04T00:00:00Z",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2002-05-31T00:00:00Z",
+        "organization": null,
+        "startDate": "1999-05-01T00:00:00Z",
+        "title": "Member of Parliament"
+      },
+      {
+        "endDate": "2017-10-14T00:00:00Z",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-28T00:00:00Z",
+        "title": "Member of Constituent Assembly"
+      }
     ]
   },
   "attributions": [

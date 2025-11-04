@@ -1,7 +1,30 @@
 {
   "attributes": {
     "nationality": "Nepali",
-    "political_party": "Communist Party of Nepal (Maoist)"
+    "political_party": "Communist Party of Nepal (Maoist)",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "endYear": null,
+        "field": null,
+        "institution": "Jawaharlal Nehru University",
+        "startYear": null
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-07-01T00:00:00Z",
+        "title": "Member of the Constituent Assembly"
+      },
+      {
+        "endDate": null,
+        "organization": "Interim Parliament of Nepal",
+        "startDate": "2007-01-01T00:00:00Z",
+        "title": "Member of the Interim Parliament"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

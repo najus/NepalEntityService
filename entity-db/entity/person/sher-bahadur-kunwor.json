@@ -4,7 +4,33 @@
     "birthPlace": "Achham District, Nepal",
     "nationality": "Nepali",
     "otherPoliticalAffiliations": "CPN (UML) (until 2022)",
-    "politicalParty": "CPN (Unified Socialist)"
+    "politicalParty": "CPN (Unified Socialist)",
+    "sys:positions": [
+      {
+        "endDate": "2022-12-26T00:00:00",
+        "organization": null,
+        "startDate": "2022-06-27T00:00:00",
+        "title": "Minister of Labour, Employment and Social Security"
+      },
+      {
+        "endDate": null,
+        "organization": "Pratinidhi Sabha",
+        "startDate": "2022-12-22T00:00:00",
+        "title": "Member of Parliament, Pratinidhi Sabha"
+      },
+      {
+        "endDate": "2022-03-03T00:00:00",
+        "organization": "Rastriya Sabha",
+        "startDate": "2018-03-04T00:00:00",
+        "title": "Member of Parliament, Rastriya Sabha"
+      },
+      {
+        "endDate": "2012-05-28T00:00:00",
+        "organization": "1st Nepalese Constituent Assembly",
+        "startDate": "2008-05-28T00:00:00",
+        "title": "Member of 1st Nepalese Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

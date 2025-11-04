@@ -3,7 +3,93 @@
     "birth_date": "1966-12-30",
     "birth_place": "Rawalswara, Khanigaun, Nuwakot, Nepal",
     "nationality": "Nepali",
-    "political_party": "CPN (UML)"
+    "political_party": "CPN (UML)",
+    "sys:education": [
+      {
+        "degree": "PhD",
+        "endYear": 2017,
+        "field": "Education",
+        "institution": "Kathmandu University"
+      },
+      {
+        "degree": "Master's",
+        "endYear": 2002,
+        "field": "Gender and Development Studies",
+        "institution": "Asian Institute of Technology"
+      },
+      {
+        "degree": "Master's",
+        "field": "Botany",
+        "institution": "Unknown"
+      },
+      {
+        "degree": "Bachelor's",
+        "field": "Education",
+        "institution": "Unknown"
+      },
+      {
+        "degree": "Bachelor's",
+        "field": "Law",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "CPN (UML)",
+        "startDate": "2021-12-01T00:00:00",
+        "title": "Member of Standing Committee"
+      },
+      {
+        "organization": "Federal Parliament of Nepal",
+        "startDate": "2017-01-01T00:00:00",
+        "title": "Member of house of representative"
+      },
+      {
+        "organization": "CPN (UML)",
+        "startDate": "2014-01-01T00:00:00",
+        "title": "Politburo member"
+      },
+      {
+        "organization": "International Labour Organization",
+        "startDate": "2011-01-01T00:00:00",
+        "title": "Deputy Member of ILO Governing Body"
+      },
+      {
+        "organization": "CPN (UML)",
+        "startDate": "2009-01-01T00:00:00",
+        "title": "Central committee member"
+      },
+      {
+        "endDate": "2008-12-31T23:59:59",
+        "organization": "General Federation of Nepalese Trade Unions (GEFONT)",
+        "startDate": "2004-01-01T00:00:00",
+        "title": "Deputy General Secretary"
+      },
+      {
+        "endDate": "2004-12-31T23:59:59",
+        "organization": "National Women Commission (NWC)",
+        "startDate": "2002-01-01T00:00:00",
+        "title": "Member"
+      },
+      {
+        "endDate": "1997-12-31T23:59:59",
+        "organization": "Committee for Asian Women (CAW)",
+        "startDate": "1994-01-01T00:00:00",
+        "title": "Program coordinator"
+      },
+      {
+        "organization": "All Nepal Women Association (ANWA)",
+        "startDate": "1992-11-01T00:00:00",
+        "title": "Treasurer"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "title": "Member of the 1st Nepalese Constituent Assembly"
+      },
+      {
+        "title": "Gender and Workers' Right Expert"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

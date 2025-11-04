@@ -7,7 +7,21 @@
     "family": "Koirala family",
     "father": "Bishweshwar Prasad Koirala",
     "mother": "Sushila Koirala",
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:positions": [
+      {
+        "endDate": null,
+        "organization": "Government of Nepal",
+        "startDate": "2005-07-15T00:00:00",
+        "title": "Minister of Science, Technology and Environment of Nepal"
+      },
+      {
+        "endDate": "2002-12-31T23:59:59",
+        "organization": "Nepali Congress",
+        "startDate": "1999-01-01T00:00:00",
+        "title": "Member of Parliament, House of Representatives"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

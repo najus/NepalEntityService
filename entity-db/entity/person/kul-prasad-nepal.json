@@ -1,6 +1,29 @@
 {
   "attributes": {
-    "nationality": "Nepali"
+    "nationality": "Nepali",
+    "sys:education": [
+      {
+        "degree": "Graduate",
+        "field": "Political Science",
+        "institution": "Unknown"
+      }
+    ],
+    "sys:positions": [
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-04-01T00:00:00",
+        "title": "Member of the Constituent Assembly for Palpa-3"
+      },
+      {
+        "organization": "Communist Party of Nepal (Unified Marxist-Leninist)",
+        "startDate": "1991-01-01T00:00:00",
+        "title": "Member of district committee"
+      },
+      {
+        "organization": "Bammorcha",
+        "title": "President of Bammorcha's district committee for Palpa"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

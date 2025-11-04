@@ -8,7 +8,23 @@
     "nationality": "Nepali",
     "place_of_birth": "Dhankuta District, Nepal",
     "political_party": "Nepali Congress",
-    "spouse": "Uma Bastola"
+    "spouse": "Uma Bastola",
+    "sys:positions": [
+      {
+        "endDate": "1999-05-01T00:00:00",
+        "organization": "Pratinidhi Sabha",
+        "startDate": "1994-11-01T00:00:00",
+        "title": "Member of Parliament (MP)"
+      },
+      {
+        "organization": "Nepali Congress",
+        "title": "President of Sunsari District's Nepali Congress party"
+      },
+      {
+        "organization": "Pindeshwor Feed Industry",
+        "title": "Owner"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

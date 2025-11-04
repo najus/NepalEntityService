@@ -8,7 +8,41 @@
       "mother": "Rewati Acharya"
     },
     "political_party": "Nepali Congress",
-    "spouse": "Sharada Sharma"
+    "spouse": "Sharada Sharma",
+    "sys:education": [
+      {
+        "degree": "Master's Degree",
+        "field": "Humanities",
+        "institution": "Tribhuvan University"
+      }
+    ],
+    "sys:positions": [
+      {
+        "endDate": "2015-10-12T00:00:00",
+        "organization": "Government of Nepal",
+        "startDate": "2014-02-25T00:00:00",
+        "title": "Minister of Law, Justice and Constituent Assembly"
+      },
+      {
+        "endDate": "2017-12-31T00:00:00",
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-01-01T00:00:00",
+        "title": "Member of Constituent Assembly"
+      },
+      {
+        "organization": "Tribhuvan University",
+        "title": "Teacher"
+      },
+      {
+        "organization": "National Assembly of Nepal",
+        "startDate": "1992-01-01T00:00:00",
+        "title": "Member of the National Assembly"
+      },
+      {
+        "organization": "Government of Nepal",
+        "title": "Minister for Law, Justice, Constituent Assembly and Parliamentary Affairs"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"

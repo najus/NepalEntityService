@@ -2,7 +2,23 @@
   "attributes": {
     "nationality": "Nepalese",
     "origin": "Dailekh",
-    "political_party": "Nepal Workers Peasants Party"
+    "political_party": "Nepal Workers Peasants Party",
+    "sys:positions": [
+      {
+        "organization": "Nepal Revolutionary Youth Union",
+        "title": "Chairman"
+      },
+      {
+        "organization": "Interim legislature of Nepal",
+        "startDate": "2007-01-15T00:00:00",
+        "title": "Member of Parliament"
+      },
+      {
+        "organization": "Constituent Assembly of Nepal",
+        "startDate": "2008-05-15T00:00:00",
+        "title": "Member of the Constituent Assembly"
+      }
+    ]
   },
   "attributions": [
     "Wikipedia"
