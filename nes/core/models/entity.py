@@ -26,8 +26,10 @@ class GovernmentType(str, Enum):
     """Types of government entities."""
 
     FEDERAL = "federal"
-    STATE = "state"
+    PROVINCIAL = "provincial"
     LOCAL = "local"
+    OTHER = "other"
+    UNKNOWN = "unknown"
 
 
 class Entity(BaseModel):
@@ -113,7 +115,7 @@ class Entity(BaseModel):
         value = self.attributes.get(f"sys:{key}")
         if value is None:
             return None
-        return TypeAdapter(type_hint).validate_python(value, strict=True)
+        return TypeAdapter(type_hint).validate_python(value)
 
     def _set_sys_attribute(self, key: str, value):
         """Set a system attribute."""
@@ -156,9 +158,9 @@ class PoliticalParty(Organization):
 
 
 class GovernmentBody(Organization):
-    subType: Literal["government"] = Field(
-        default="government",
-        description="Organization subtype, always government",
+    subType: Literal["government_body"] = Field(
+        default="government_body",
+        description="Organization subtype, always government_body",
     )
 
     # Type of government (federal, state, local)

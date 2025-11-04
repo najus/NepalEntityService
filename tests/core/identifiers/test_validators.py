@@ -105,7 +105,7 @@ class TestEntityIdValidators:
             validate_entity_id(entity_id)
 
     def test_invalid_entity_slug_too_long(self):
-        long_slug = "a" * 65
+        long_slug = "a" * 101
         entity_id = f"entity:person/{long_slug}"
         assert is_valid_entity_id(entity_id) is False
         with pytest.raises(ValueError, match="Entity slug length invalid"):
@@ -280,7 +280,7 @@ class TestActorIdValidators:
             validate_actor_id(actor_id)
 
     def test_invalid_actor_id_slug_too_long(self):
-        long_slug = "a" * 65
+        long_slug = "a" * 101
         actor_id = f"actor:{long_slug}"
         assert is_valid_actor_id(actor_id) is False
         with pytest.raises(ValueError, match="Actor slug length invalid"):
