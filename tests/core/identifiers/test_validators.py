@@ -92,7 +92,7 @@ class TestEntityIdValidators:
             validate_entity_id(entity_id)
 
     def test_invalid_entity_subtype_too_long(self):
-        long_subtype = "a" * 17
+        long_subtype = "a" * 27
         entity_id = f"entity:person/{long_subtype}/harka-sampang"
         assert is_valid_entity_id(entity_id) is False
         with pytest.raises(ValueError, match="Entity subtype too long"):

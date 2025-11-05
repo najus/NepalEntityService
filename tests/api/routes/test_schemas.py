@@ -3,7 +3,7 @@
 from fastapi.testclient import TestClient
 
 from nes.api import app
-from nes.core.models import Entity, Person
+from nes.core.models import Entity, Location, Person
 
 client = TestClient(app)
 
@@ -14,7 +14,7 @@ def test_list_schemas():
     assert response.status_code == 200
     data = response.json()
     assert "types" in data
-    assert data["types"] == ["person", "organization"]
+    assert data["types"] == ["person", "organization", "location"]
 
 
 def test_get_person_schema():
@@ -34,6 +34,17 @@ def test_get_organization_schema():
     assert response.status_code == 200
 
     expected_schema = Entity.model_json_schema()
+    schema = response.json()
+
+    assert schema == expected_schema
+
+
+def test_get_location_schema():
+    """Test GET /schemas/location returns Location JSON schema."""
+    response = client.get("/schemas/location")
+    assert response.status_code == 200
+
+    expected_schema = Location.model_json_schema()
     schema = response.json()
 
     assert schema == expected_schema

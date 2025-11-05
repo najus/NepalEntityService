@@ -18,8 +18,8 @@ from .base import ContactInfo, Name
 from .person import Education, Position
 from .version import VersionSummary
 
-EntityType = Literal["person", "organization"]
-ENTITY_TYPES = ["person", "organization"]
+EntityType = Literal["person", "organization", "location"]
+ENTITY_TYPES = ["person", "organization", "location"]
 
 
 class GovernmentType(str, Enum):
@@ -30,6 +30,32 @@ class GovernmentType(str, Enum):
     LOCAL = "local"
     OTHER = "other"
     UNKNOWN = "unknown"
+
+
+class LocationType(str, Enum):
+    """Types of location entities."""
+
+    PROVINCE = "province"
+    DISTRICT = "district"
+    METROPOLITAN_CITY = "metropolitan_city"
+    SUB_METROPOLITAN_CITY = "sub_metropolitan_city"
+    MUNICIPALITY = "municipality"
+    RURAL_MUNICIPALITY = "rural_municipality"
+    WARD = "ward"
+    CONSTITUENCY = "constituency"
+
+
+# Administrative levels for location entities
+ADMINISTRATIVE_LEVELS = {
+    LocationType.PROVINCE.value: 1,
+    LocationType.DISTRICT.value: 2,
+    LocationType.METROPOLITAN_CITY.value: 3,
+    LocationType.SUB_METROPOLITAN_CITY.value: 3,
+    LocationType.MUNICIPALITY.value: 3,
+    LocationType.RURAL_MUNICIPALITY: 3,
+    LocationType.WARD.value: 4,
+    LocationType.CONSTITUENCY.value: None,  # Electoral boundary, not administrative
+}
 
 
 class Entity(BaseModel):
@@ -167,6 +193,19 @@ class GovernmentBody(Organization):
     governmentType = Entity._sys_prop("governmentType", Optional[GovernmentType])
 
 
+class Location(Entity):
+    type: Literal["location"] = Field(
+        default="location", description="Entity type, always location"
+    )
+
+    # Location-specific system properties
+    locationType = Entity._sys_prop("locationType", Optional[LocationType])
+    parentLocation = Entity._sys_prop(
+        "parentLocation", Optional[str]
+    )  # Entity ID of parent
+    administrativeLevel = Entity._sys_prop("administrativeLevel", Optional[int])
+
+
 # Entity type/subtype to class mapping
 # NOTE: When adding new subclasses of Entity, this dict must be updated for deserialization to work properly
 ENTITY_TYPE_MAP = {
@@ -178,4 +217,5 @@ ENTITY_TYPE_MAP = {
         "political_party": PoliticalParty,
         "government": GovernmentBody,
     },
+    "location": {None: Location, **{key.value: Location for key in LocationType}},
 }

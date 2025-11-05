@@ -5,7 +5,7 @@ from typing import Any, Dict
 from fastapi import APIRouter, HTTPException, Path
 
 from nes.api.responses import SchemaListResponse
-from nes.core.models import ENTITY_TYPES, Entity, EntityType, Person
+from nes.core.models import ENTITY_TYPES, Entity, EntityType, Location, Person
 
 router = APIRouter(tags=["Schemas"])
 
@@ -21,6 +21,8 @@ async def get_schema(type: EntityType = Path(...)):
     """Get JSON Schema for a specific entity type."""
     if type == "person":
         return Person.model_json_schema()
+    elif type == "location":
+        return Location.model_json_schema()
     elif type in ["organization"]:
         return Entity.model_json_schema()
     raise HTTPException(status_code=404, detail="Schema not found")

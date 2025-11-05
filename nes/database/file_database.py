@@ -12,7 +12,11 @@ from .entity_database import EntityDatabase
 
 
 class FileDatabase(EntityDatabase):
-    """File-based implementation of EntityDatabase."""
+    """File-based implementation of EntityDatabase.
+
+    Note: Instead of instantiating this class directly, consider calling
+    nes.database.get_database() for a consistent database instance.
+    """
 
     def __init__(self, root_path: str = "entity-db"):
         self.root_path = Path(root_path)
