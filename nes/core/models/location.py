@@ -36,7 +36,7 @@ ADMINISTRATIVE_LEVELS = {
 
 
 # Import at the end to avoid circular dependency
-from .entity import Entity
+from .entity import Entity, EntitySubType
 
 
 class Location(Entity):
@@ -45,12 +45,16 @@ class Location(Entity):
     type: Literal["location"] = Field(
         default="location", description="Entity type, always location"
     )
-    # TODO: Expose an API endpoint that allows internationalization of static fields like this one
-    location_type: LocationType = Field(..., description="Type of location")
     parent: Optional[str] = Field(None, description="Entity ID of parent location")
+
+    @computed_field
+    @property
+    def location_type(self) -> LocationType:
+        """Type of location from subtype."""
+        return LocationType(self.sub_type)
 
     @computed_field
     @property
     def administrative_level(self) -> Optional[int]:
         """Administrative level in hierarchy."""
-        return ADMINISTRATIVE_LEVELS.get(self.location_type.value)
+        return ADMINISTRATIVE_LEVELS.get(self.sub_type.value) if self.sub_type else None

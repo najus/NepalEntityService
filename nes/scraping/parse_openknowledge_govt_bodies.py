@@ -14,6 +14,7 @@ from urllib.request import urlopen
 from nes.core.models.base import ContactInfo, Name, NameKind, NameParts
 from nes.core.models.entity import GovernmentBody, GovernmentType
 from nes.core.models.version import Actor, Version, VersionSummary
+from nes.database import get_database
 from nes.database.file_database import FileDatabase
 
 
@@ -62,7 +63,7 @@ def determine_government_type(name: str, district: str) -> GovernmentType:
 
 async def parse_and_create_entities():
     """Parse CSV and create government body entities."""
-    db = FileDatabase("entity-db")
+    db = get_database()
 
     # Create system actor
     actor = Actor(slug="csv-importer", name="CSV Data Importer")

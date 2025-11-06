@@ -3,13 +3,28 @@
 import json
 from collections import OrderedDict
 from datetime import datetime
+from typing import List
 from urllib.request import urlopen
 
 from nes.core.identifiers import build_entity_id
-from nes.core.models import ADMINISTRATIVE_LEVELS, Location
-from nes.core.models.base import Name
-from nes.core.models.entity import LocationType
-from nes.core.models.version import Actor, Version, VersionSummary
+from nes.core.models import Location
+from nes.core.models.base import (
+    Attribution,
+    LangText,
+    LangTextValue,
+    Name,
+    NameKind,
+    NameParts,
+    ProvenanceMethod,
+)
+from nes.core.models.entity import (
+    Attributes,
+    EntityType,
+    ExternalIdentifier,
+    IdentifierScheme,
+)
+from nes.core.models.location import ADMINISTRATIVE_LEVELS, LocationType
+from nes.core.models.version import Actor, Version, VersionSummary, VersionType
 from nes.database import get_database
 
 NEPALI = "https://raw.githubusercontent.com/sagautam5/local-states-nepal/refs/heads/master/dataset/alldataset/np.json"
@@ -29,19 +44,34 @@ def create_slug(name: str) -> str:
 
 def extract_identifiers_and_attributes(
     data_en: dict, data_ne: dict
-) -> tuple[dict, dict]:
+) -> tuple[List[ExternalIdentifier], Attributes]:
     """Extract identifiers and attributes from location data."""
-    identifiers = {}
-    attributes = {}
+    identifiers = []
+    attributes: Attributes = {}
 
     if data_en.get("website", "").strip():
-        identifiers["website"] = data_en["website"].strip()
+        identifiers.append(
+            ExternalIdentifier(
+                scheme=IdentifierScheme.WEBSITE,
+                value=data_en["website"].strip(),
+            )
+        )
+
+    # TODO: Make native field for location
     if data_en.get("area_sq_km", "").strip():
         attributes["sys:area"] = float(data_en["area_sq_km"].strip())
+
     if data_en.get("headquarter", "").strip():
-        attributes["sys:headquarter_en"] = data_en["headquarter"].strip()
-    if data_ne.get("headquarter", "").strip():
-        attributes["sys:headquarter_ne"] = data_ne["headquarter"].strip()
+        attributes["headquarter"] = LangText(
+            en=LangTextValue(
+                value=data_en["headquarter"].strip(),
+                provenance=ProvenanceMethod.IMPORTED,
+            ),
+            ne=LangTextValue(
+                value=data_ne["headquarter"].strip(),
+                provenance=ProvenanceMethod.IMPORTED,
+            ),
+        )
 
     return identifiers, attributes
 
@@ -49,7 +79,7 @@ def extract_identifiers_and_attributes(
 def create_location_entity(
     name_en: str,
     name_ne: str,
-    subtype: str,
+    location_type: LocationType,
     parent_id: str = None,
     actor: Actor = None,
     **kwargs,
@@ -59,31 +89,48 @@ def create_location_entity(
     now = datetime.now()
 
     names = [
-        Name(value=name_en.strip(), lang="en", kind=NameKind.PRIMARY),
-        Name(value=name_ne.strip(), lang="ne", kind=NameKind.PRIMARY),
+        Name(
+            kind=NameKind.PRIMARY,
+            en=NameParts(full=name_en.strip()),
+            ne=NameParts(full=name_ne.strip()),
+        )
     ]
 
     entity = Location(
         slug=slug,
-        subType=subtype,
+        type=EntityType.LOCATION,
+        sub_type=location_type.value,
+        parent=parent_id,
         names=names,
         created_at=now,
         version_summary=VersionSummary(
-            entity_or_relationship_id=build_entity_id("location", subtype, slug),
-            type="ENTITY",
+            entity_or_relationship_id=build_entity_id(
+                "location", location_type.value, slug
+            ),
+            type=VersionType.ENTITY,
             version_number=1,
             actor=actor,
             change_description="Imported from Nepal administrative map data",
             created_at=now,
         ),
-        attributions=["https://github.com/sagautam5/local-states-nepal"],
+        attributions=[
+            Attribution(
+                title=LangText(
+                    en=LangTextValue(
+                        value="GitHub.com/sagautam5/local-states-nepal",
+                        provenance=ProvenanceMethod.IMPORTED,
+                    )
+                ),
+                details=LangText(
+                    en=LangTextValue(
+                        value="Imported on 2025-11-05",
+                        provenance=ProvenanceMethod.IMPORTED,
+                    )
+                ),
+            )
+        ],
         **kwargs,
     )
-
-    entity.locationType = subtype
-    if parent_id:
-        entity.parentLocation = parent_id
-    entity.administrativeLevel = ADMINISTRATIVE_LEVELS.get(subtype)
 
     return entity
 
@@ -131,7 +178,7 @@ async def parse_administrative_map():
         province = create_location_entity(
             province_en["name"],
             province_ne["name"],
-            "province",
+            LocationType.PROVINCE,
             actor=actor,
             identifiers=identifiers,
             attributes=attributes,
@@ -164,7 +211,7 @@ async def parse_administrative_map():
             district = create_location_entity(
                 district_en["name"],
                 district_ne["name"],
-                "district",
+                LocationType.DISTRICT,
                 province_id,
                 actor,
                 identifiers=identifiers,
@@ -194,13 +241,13 @@ async def parse_administrative_map():
 
                 # Determine municipality type based on category_id
                 category_map = {
-                    1: "metropolitan_city",
-                    2: "sub_metropolitan_city",
-                    3: "municipality",
-                    4: "rural_municipality",
+                    1: LocationType.METROPOLITAN_CITY,
+                    2: LocationType.SUB_METROPOLITAN_CITY,
+                    3: LocationType.MUNICIPALITY,
+                    4: LocationType.RURAL_MUNICIPALITY,
                 }
-                subtype = category_map.get(
-                    municipality_en["category_id"], "municipality"
+                location_type = category_map.get(
+                    municipality_en["category_id"], LocationType.MUNICIPALITY
                 )
 
                 identifiers, attributes = extract_identifiers_and_attributes(
@@ -209,7 +256,7 @@ async def parse_administrative_map():
                 municipality = create_location_entity(
                     municipality_en["name"],
                     municipality_ne["name"],
-                    subtype,
+                    location_type,
                     district_id,
                     actor,
                     identifiers=identifiers,
@@ -217,11 +264,13 @@ async def parse_administrative_map():
                 )
                 await save_entity(db, municipality)
                 print(
-                    f"Created {subtype}: {municipality_en['name']} ({municipality_ne['name']})"
+                    f"Created {location_type.value}: {municipality_en['name']} ({municipality_ne['name']})"
                 )
 
                 municipality_id = build_entity_id(
-                    "location", subtype, create_slug(municipality_en["name"])
+                    "location",
+                    location_type.value,
+                    create_slug(municipality_en["name"]),
                 )
 
                 # Create wards
@@ -233,7 +282,7 @@ async def parse_administrative_map():
                     ward_en = f"{municipality_en['name'].strip()} - Ward {ward_num}"
                     ward_ne = f"{municipality_ne['name'].strip()} वडा नं.– {ward_num}"
                     ward = create_location_entity(
-                        ward_en, ward_ne, "ward", municipality_id, actor
+                        ward_en, ward_ne, LocationType.WARD, municipality_id, actor
                     )
                     await save_entity(db, ward)
                     print(f"Created ward: {ward_en} ({ward_ne})")

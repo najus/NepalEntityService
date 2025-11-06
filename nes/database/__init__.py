@@ -4,7 +4,7 @@ from .entity_database import EntityDatabase
 from .file_database import FileDatabase
 
 
-def get_database(root_path: str = "entity-db") -> EntityDatabase:
+def get_database(root_path: str = "nes-db/v2") -> EntityDatabase:
     """Get a database instance.
 
     Args:

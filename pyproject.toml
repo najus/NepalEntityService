@@ -44,8 +44,9 @@ exclude = '''
   | \.git
   | __pycache__
   | entity-db
+  | nes-db
 )/
 '''
 
 [tool.isort]
-skip = ["entity-db", ".venv"]
+skip = ["entity-db", "nes-db", ".venv"]

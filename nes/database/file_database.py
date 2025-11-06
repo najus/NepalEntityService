@@ -19,7 +19,7 @@ class FileDatabase(EntityDatabase):
     nes.database.get_database() for a consistent database instance.
     """
 
-    def __init__(self, root_path: str = "entity-db"):
+    def __init__(self, root_path: str):
         self.root_path = Path(root_path)
         self.root_path.mkdir(exist_ok=True)
 

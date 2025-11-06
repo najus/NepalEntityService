@@ -196,3 +196,12 @@ class EntityPicture(BaseModel):
     width: Optional[int] = Field(None, description="Picture width in pixels")
     height: Optional[int] = Field(None, description="Picture height in pixels")
     description: Optional[str] = Field(None, description="Picture description")
+
+
+class Attribution(BaseModel):
+    """Attribution with title and details."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    title: LangText = Field(..., description="Attribution title")
+    details: Optional[LangText] = Field(..., description="Attribution details")

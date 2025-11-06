@@ -10,7 +10,7 @@ from pydantic import (AnyUrl, BaseModel, ConfigDict, Field, computed_field,
 from nes.core.identifiers import build_entity_id
 
 from ..constraints import MAX_SLUG_LENGTH, MIN_SLUG_LENGTH, SLUG_PATTERN
-from .base import Contact, EntityPicture, LangText, Name, NameKind
+from .base import Attribution, Contact, EntityPicture, LangText, Name, NameKind
 from .version import VersionSummary
 
 
@@ -24,10 +24,8 @@ class IdentifierScheme(str, Enum):
     INSTAGRAM = "instagram"
     LINKEDIN = "linkedin"
     YOUTUBE = "youtube"
-    GITHUB = "github"
-    DOI = "doi"
-    ORCID = "orcid"
-    OFFICIAL_WEBSITE = "official_website"
+    TIKTOK = "tiktok"
+    WEBSITE = "website"
     OTHER = "other"
 
 
@@ -63,6 +61,8 @@ class EntitySubType(str, Enum):
     RURAL_MUNICIPALITY = "rural_municipality"
     WARD = "ward"
     CONSTITUENCY = "constituency"
+
+Attributes = Dict[str, Any]
 
 
 class Entity(BaseModel):
@@ -103,7 +103,7 @@ class Entity(BaseModel):
     tags: Optional[List[str]] = Field(
         None, description="Tags for categorizing the entity"
     )
-    attributes: Optional[Dict[str, Any]] = Field(
+    attributes: Optional[Attributes] = Field(
         None,
         description="Additional attributes for the entity.",
     )
@@ -118,7 +118,7 @@ class Entity(BaseModel):
         None,
         description="Detailed description of the entity",
     )
-    attributions: Optional[List[LangText]] = Field(
+    attributions: Optional[List[Attribution]] = Field(
         None, description="Sources and attributions for the entity data"
     )
     pictures: Optional[List[EntityPicture]] = Field(
