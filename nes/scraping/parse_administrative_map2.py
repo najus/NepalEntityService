@@ -3,6 +3,7 @@
 import json
 from collections import OrderedDict
 from datetime import datetime
+import re
 from typing import List
 from urllib.request import urlopen
 
@@ -33,13 +34,9 @@ ENGLISH = "https://raw.githubusercontent.com/sagautam5/local-states-nepal/refs/h
 
 def create_slug(name: str) -> str:
     """Create URL-friendly slug from name."""
-    return (
-        name.lower()
-        .replace(" ", "-")
-        .replace("'", "")
-        .replace(".", "")
-        .replace(r"\-+", r"\-")
-    )
+    # TODO: Move to shared utils
+    name = name.lower().replace(" ", "-").replace("'", "").replace(".", "")
+    return re.sub(r"-{2,}", "-", name)
 
 
 def extract_identifiers_and_attributes(
