@@ -12,6 +12,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.12"
 pydantic = "^2.12.3"
+click = "^8.1.0"
 
 # API extras
 fastapi = {extras = ["standard"], version = "^0.120.4", optional = true}

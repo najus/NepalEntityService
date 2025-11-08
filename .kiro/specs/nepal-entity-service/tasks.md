@@ -478,29 +478,29 @@
 
 ## Phase 5: CLI and Tooling (TDD)
 
-- [ ] 8. Implement comprehensive CLI
-  - [ ] 8.1 Write CLI tests FIRST
+- [-] 8. Implement comprehensive CLI
+  - [x] 8.1 Write CLI tests FIRST
     - Write tests for all command groups
     - Write tests for command arguments and options
     - Write tests for output formatting
     - Write tests for error handling
     - _Requirements: 6.1, 15.1, TDD_
 
-  - [ ] 8.2 Implement CLI foundation (Green)
+  - [x] 8.2 Implement CLI foundation (Green)
     - Create `nes2/cli.py` with Click framework
     - Set up command groups structure
     - Configure entry points in pyproject.toml for `nes2` command
     - Ensure foundation tests pass
     - _Requirements: 6.1, 15.1_
 
-  - [ ] 8.3 Implement server commands (Green)
+  - [x] 8.3 Implement server commands (Green)
     - Add `nes2 server start` command for production
     - Add `nes2 server dev` command for development
     - Implement proper help text and documentation
     - Ensure server command tests pass
     - _Requirements: 6.1, 15.1_
 
-  - [ ] 8.4 Implement search commands (Green)
+  - [-] 8.4 Implement search commands (Green)
     - Add `nes2 search <query>` command
     - Implement `nes2 search entities` with filters
     - Add `nes2 search relationships` command
@@ -544,8 +544,8 @@
 
 ## Phase 6: Data Maintainer Interface
 
-- [ ] 9. Create Data Maintainer Interface examples
-  - [ ] 9.1 Create example scripts
+- [x] 9. Create Data Maintainer Interface examples
+  - [x] 9.1 Create example scripts
     - Write `examples/update_entity.py` demonstrating entity updates
     - Create `examples/create_relationship.py` for relationship creation
     - Write `examples/batch_import.py` for bulk operations
@@ -554,7 +554,7 @@
     - Use authentic Nepali data in all examples
     - _Requirements: 2.4, 9.3_
 
-  - [ ] 9.2 Create Jupyter notebook examples
+  - [x] 9.2 Create Jupyter notebook examples
     - Create `notebooks/01_entity_management.ipynb`
     - Write `notebooks/02_relationship_management.ipynb`
     - Create `notebooks/03_data_import_workflow.ipynb`
@@ -563,7 +563,7 @@
     - Use authentic Nepali data in all notebooks
     - _Requirements: 9.3_
 
-  - [ ] 9.3 Write Data Maintainer documentation
+  - [x] 9.3 Write Data Maintainer documentation
     - Create `docs/data-maintainer-guide.md`
     - Document Publication Service API
     - Add code examples for common operations
