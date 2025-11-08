@@ -54,21 +54,42 @@ class EntityType(str, Enum):
 
 
 class EntitySubType(str, Enum):
-    """Subtypes for entities. Note: Person entities do not have subtypes."""
+    """Subtypes for entities with Nepali-specific classifications.
+    
+    Note: Person entities do not have subtypes in this system.
+    
+    Organization Subtypes:
+    - POLITICAL_PARTY: Registered political parties in Nepal (e.g., Nepali Congress, CPN-UML)
+    - GOVERNMENT_BODY: Government ministries, departments, and constitutional bodies
+    - NGO: Non-governmental organizations operating in Nepal
+    - INTERNATIONAL_ORG: International organizations with presence in Nepal
+    
+    Location Subtypes (Nepal's Administrative Hierarchy):
+    - PROVINCE: Nepal's 7 provinces (प्रदेश) - highest administrative division
+    - DISTRICT: Nepal's 77 districts (जिल्ला) - second-level administrative division
+    - METROPOLITAN_CITY: Mahanagarpalika (महानगरपालिका) - 6 cities with >300k population
+    - SUB_METROPOLITAN_CITY: Upamahanagarpalika (उपमहानगरपालिका) - cities with 100k-300k population
+    - MUNICIPALITY: Nagarpalika (नगरपालिका) - urban local bodies
+    - RURAL_MUNICIPALITY: Gaunpalika (गाउँपालिका) - rural local bodies
+    - WARD: Smallest administrative unit within municipalities
+    - CONSTITUENCY: Electoral constituencies for parliamentary elections
+    """
 
     # Organization subtypes
-    POLITICAL_PARTY = "political_party"
-    GOVERNMENT_BODY = "government_body"
+    POLITICAL_PARTY = "political_party"  # राजनीतिक दल
+    GOVERNMENT_BODY = "government_body"  # सरकारी निकाय
+    NGO = "ngo"  # गैर सरकारी संस्था
+    INTERNATIONAL_ORG = "international_org"  # अन्तर्राष्ट्रिय संस्था
 
-    # Location subtypes
-    PROVINCE = "province"
-    DISTRICT = "district"
-    METROPOLITAN_CITY = "metropolitan_city"
-    SUB_METROPOLITAN_CITY = "sub_metropolitan_city"
-    MUNICIPALITY = "municipality"
-    RURAL_MUNICIPALITY = "rural_municipality"
-    WARD = "ward"
-    CONSTITUENCY = "constituency"
+    # Location subtypes - Nepal's administrative hierarchy
+    PROVINCE = "province"  # प्रदेश (7 provinces)
+    DISTRICT = "district"  # जिल्ला (77 districts)
+    METROPOLITAN_CITY = "metropolitan_city"  # महानगरपालिका (6 metropolitan cities)
+    SUB_METROPOLITAN_CITY = "sub_metropolitan_city"  # उपमहानगरपालिका (11 sub-metropolitan cities)
+    MUNICIPALITY = "municipality"  # नगरपालिका (276 municipalities)
+    RURAL_MUNICIPALITY = "rural_municipality"  # गाउँपालिका (460 rural municipalities)
+    WARD = "ward"  # वडा (smallest unit)
+    CONSTITUENCY = "constituency"  # निर्वाचन क्षेत्र (electoral constituency)
 
 
 Attributes = Dict[str, Any]

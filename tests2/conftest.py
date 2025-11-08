@@ -123,81 +123,41 @@ def sample_version():
 @pytest.fixture
 def authentic_nepali_politicians():
     """List of authentic Nepali politician names for testing."""
-    return [
-        {
-            "slug": "harka-sampang",
-            "en": "Harka Sampang",
-            "ne": "हर्क साम्पाङ",
-            "party": "Shram Sanskriti Party"
-        },
-        {
-            "slug": "toshima-karki",
-            "en": "Toshima Karki",
-            "ne": "तोषिमा वाग्ले",
-            "party": "Rastriya Swatantra Party"
-        },
-        {
-            "slug": "bishwo-bhakta-dulal",
-            "en": "Bishwo Bhakta Dulal (Ahuti)",
-            "ne": "विश्वभक्त दुलाल (आहुति)",
-            "party": "Nepal Scientific Socialist Communist Party"
-        },
-        {
-            "slug": "baburam-bhattarai",
-            "en": "Baburam Bhattarai",
-            "ne": "बाबुराम भट्टराई",
-            "party": "Nepal Samajbadi Party"
-        }
-    ]
+    from tests2.fixtures.nepali_data import NEPALI_POLITICIANS
+    return NEPALI_POLITICIANS
 
 
 @pytest.fixture
 def authentic_nepali_parties():
     """List of authentic Nepali political parties for testing."""
-    return [
-        {
-            "slug": "nepali-congress",
-            "en": "Nepali Congress",
-            "ne": "नेपाली कांग्रेस"
-        },
-        {
-            "slug": "shram-sanskriti-party",
-            "en": "Shram Sanskriti Party",
-            "ne": "श्रम संस्कृति पार्टी"
-        },
-        {
-            "slug": "rastriya-swatantra-party",
-            "en": "Rastriya Swatantra Party",
-            "ne": "राष्ट्रिय स्वतन्त्र पार्टी"
-        },
-        {
-            "slug": "nepal-scientific-socialist-communist-party",
-            "en": "Nepal Scientific Socialist Communist Party",
-            "ne": "नेपाल वैज्ञानिक समाजवादी कम्युनिष्ट पार्टी"
-        }
-    ]
+    from tests2.fixtures.nepali_data import NEPALI_POLITICAL_PARTIES
+    return NEPALI_POLITICAL_PARTIES
 
 
 @pytest.fixture
 def authentic_nepali_locations():
     """List of authentic Nepali administrative divisions for testing."""
-    return [
-        {
-            "slug": "bagmati-province",
-            "type": "province",
-            "en": "Bagmati Province",
-            "ne": "बागमती प्रदेश"
-        },
-        {
-            "slug": "kathmandu-district",
-            "type": "district",
-            "en": "Kathmandu District",
-            "ne": "काठमाडौं जिल्ला"
-        },
-        {
-            "slug": "pokhara-metropolitan-city",
-            "type": "metropolitan_city",
-            "en": "Pokhara Metropolitan City",
-            "ne": "पोखरा महानगरपालिका"
-        }
-    ]
+    from tests2.fixtures.nepali_data import (
+        NEPALI_PROVINCES,
+        NEPALI_DISTRICTS,
+        NEPALI_MUNICIPALITIES
+    )
+    return {
+        "provinces": NEPALI_PROVINCES,
+        "districts": NEPALI_DISTRICTS,
+        "municipalities": NEPALI_MUNICIPALITIES
+    }
+
+
+@pytest.fixture
+def authentic_nepali_government_bodies():
+    """List of authentic Nepali government bodies for testing."""
+    from tests2.fixtures.nepali_data import NEPALI_GOVERNMENT_BODIES
+    return NEPALI_GOVERNMENT_BODIES
+
+
+@pytest.fixture
+def authentic_nepali_constituencies():
+    """List of authentic Nepali electoral constituencies for testing."""
+    from tests2.fixtures.nepali_data import NEPALI_CONSTITUENCIES
+    return NEPALI_CONSTITUENCIES
