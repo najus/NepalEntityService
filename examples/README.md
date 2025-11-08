@@ -1,10 +1,10 @@
 # Nepal Entity Service - Examples
 
-This directory contains example scripts demonstrating how to use the Nepal Entity Service (nes2) for data maintenance operations. All examples use authentic Nepali political data.
+This directory contains example scripts demonstrating how to use the Nepal Entity Service (nes) for data maintenance operations. All examples use authentic Nepali political data.
 
 ## Prerequisites
 
-1. Install the nes2 package:
+1. Install the nes package:
    ```bash
    poetry install
    ```
@@ -98,8 +98,8 @@ All examples follow this pattern:
 
 ```python
 from pathlib import Path
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 # Initialize database
 db_path = Path("nes-db/v2")
@@ -170,7 +170,7 @@ relationship = await pub_service.create_relationship(
 ### Query Relationships
 
 ```python
-from nes2.services.search import SearchService
+from nes.services.search import SearchService
 
 search_service = SearchService(database=db)
 
@@ -243,5 +243,5 @@ After running these examples, you can:
 
 For questions or issues:
 - Check the documentation in `docs/`
-- Review the test files in `tests2/` for more examples
+- Review the test files in `tests/` for more examples
 - Refer to the API documentation at `/docs` when running the server

@@ -60,14 +60,14 @@ For detailed database setup instructions, see [DATABASE_SETUP.md](DATABASE_SETUP
 ### Scripts
 
 ```bash
-# Start API server (nes2)
-poetry run nes2-api
+# Start API server (nes)
+poetry run nes-api
 
-# Start development server with auto-reload (nes2)
-poetry run nes2-dev
+# Start development server with auto-reload (nes)
+poetry run nes-dev
 
 # Check relationship integrity
-poetry run nes2 integrity check
+poetry run nes integrity check
 
 # Legacy nes commands
 poetry run nes-api

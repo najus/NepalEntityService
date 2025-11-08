@@ -1,6 +1,6 @@
 # Data Maintainer Guide
 
-This guide is for data maintainers who manage entity data in the Nepal Entity Service (nes2). It covers the Publication Service API, common operations, best practices, and troubleshooting.
+This guide is for data maintainers who manage entity data in the Nepal Entity Service (nes). It covers the Publication Service API, common operations, best practices, and troubleshooting.
 
 ## Table of Contents
 
@@ -46,7 +46,7 @@ The Nepal Entity Service provides a Pythonic interface for data maintenance thro
 
 ### Installation
 
-Install the nes2 package using poetry:
+Install the nes package using poetry:
 
 ```bash
 poetry install
@@ -56,8 +56,8 @@ poetry install
 
 ```python
 from pathlib import Path
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 # Initialize database
 db_path = Path("nes-db/v2")
@@ -398,7 +398,7 @@ async def batch_import_entities(entities_data, author_id):
     
     for entity_data in entities_data:
         try:
-            from nes2.core.identifiers import build_entity_id
+            from nes.core.identifiers import build_entity_id
             entity_id = build_entity_id(
                 entity_data["type"],
                 entity_data.get("sub_type"),
@@ -691,7 +691,7 @@ async def audit_recent_changes(days=7):
 **Solution:** Check if the entity exists first:
 
 ```python
-from nes2.core.identifiers import build_entity_id
+from nes.core.identifiers import build_entity_id
 
 entity_id = build_entity_id("person", "politician", "ram-chandra-poudel")
 existing = await pub_service.get_entity(entity_id)
@@ -820,7 +820,7 @@ async def import_politician_complete():
         return
     
     # 4. Check for duplicates
-    from nes2.core.identifiers import build_entity_id
+    from nes.core.identifiers import build_entity_id
     entity_id = build_entity_id("person", "politician", "gagan-thapa")
     existing = await pub_service.get_entity(entity_id)
     
@@ -859,7 +859,7 @@ await import_politician_complete()
 ```python
 async def update_politicians_by_party(party_slug, new_attribute):
     """Update all politicians from a specific party."""
-    from nes2.services.search import SearchService
+    from nes.services.search import SearchService
     
     search_service = SearchService(database=db)
     

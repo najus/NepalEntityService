@@ -48,7 +48,7 @@ jobs:
         id: pending
         run: |
           # Get list of pending migrations
-          PENDING=$(nes2 migrate pending --format=json 2>/dev/null || echo "[]")
+          PENDING=$(nes migrate pending --format=json 2>/dev/null || echo "[]")
           
           # Count pending migrations
           COUNT=$(echo "$PENDING" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0")
@@ -77,7 +77,7 @@ jobs:
           # 3. Commit changes to Database Repository
           # 4. Track execution statistics
           
-          if nes2 migrate run --all --auto-commit 2>&1 | tee migration_output.txt; then
+          if nes migrate run --all --auto-commit 2>&1 | tee migration_output.txt; then
             echo "success=true" >> $GITHUB_OUTPUT
             
             # Extract summary statistics

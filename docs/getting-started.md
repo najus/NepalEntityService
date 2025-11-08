@@ -35,7 +35,7 @@ cd nepal-entity-service
 poetry install
 
 # Start the API server
-poetry run nes2 server start
+poetry run nes server start
 ```
 
 The API will be available at `http://localhost:8000`.

@@ -118,7 +118,7 @@ NepalEntityService/
 │       ├── relationships/     # Relationship JSON files
 │       ├── versions/          # Version history
 │       └── authors/           # Author records
-├── nes2/                      # Application code
+├── nes/                      # Application code
 │   └── config.py              # Configuration with DATABASE_URL support
 └── .env                       # Local environment configuration
 ```
@@ -178,7 +178,7 @@ NES_DB_URL=file://nes-db/v2
 
 3. **Run the service:**
    ```bash
-   poetry run nes2 server dev
+   poetry run nes server dev
    ```
 
 4. **Make database changes** through the API or CLI

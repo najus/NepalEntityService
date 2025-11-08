@@ -13,19 +13,19 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 1.1, 1.2, 2.1, 2.2, 2.4_
 
 - [x] 1.1 Create migration service package
-  - Create `nes2/services/migration/` directory
+  - Create `nes/services/migration/` directory
   - Add `__init__.py` with package exports
   - _Requirements: 1.1_
 
 - [x] 1.2 Define migration data models
-  - Create `nes2/services/migration/models.py`
+  - Create `nes/services/migration/models.py`
   - Implement `Migration` dataclass with prefix, name, folder_path, script_path, metadata
   - Implement `MigrationResult` dataclass with status, duration, statistics, error
   - Implement `MigrationStatus` enum (RUNNING, COMPLETED, FAILED, SKIPPED)
   - _Requirements: 1.1, 1.2, 2.4_
 
 - [x] 1.3 Implement migration folder validation
-  - Create `nes2/services/migration/validation.py`
+  - Create `nes/services/migration/validation.py`
   - Implement function to validate migration folder structure (has migrate.py, README.md)
   - Implement function to validate migration naming convention (NNN-descriptive-name)
   - Implement function to validate migration metadata (AUTHOR, DATE, DESCRIPTION)
@@ -38,7 +38,7 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 1.1, 1.2, 1.4, 1.8, 6.8_
 
 - [x] 2.1 Implement migration discovery
-  - Create `nes2/services/migration/manager.py`
+  - Create `nes/services/migration/manager.py`
   - Implement `MigrationManager` class with `discover_migrations()` method
   - Scan migrations/ directory for folders matching NNN-* pattern
   - Sort migrations by numeric prefix
@@ -66,7 +66,7 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 2.5, 2.6, 3.6_
 
 - [x] 3.1 Create Migration Context class
-  - Create `nes2/services/migration/context.py`
+  - Create `nes/services/migration/context.py`
   - Implement `MigrationContext` class with service references
   - Provide direct access to publication, search, scraping, and db services
   - Provide migration_dir property
@@ -92,7 +92,7 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 1.2, 3.1, 3.2, 3.3, 3.4, 3.5, 6.1, 6.5, 6.6, 6.7, 6.8_
 
 - [x] 4.1 Create Migration Runner class
-  - Create `nes2/services/migration/runner.py`
+  - Create `nes/services/migration/runner.py`
   - Implement `MigrationRunner` class with service dependencies
   - Implement `create_context()` method to build MigrationContext
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
@@ -156,14 +156,14 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 8.4_
 
 - [x] 6. Implement CLI commands
-  - Implement `nes2 migrate list` command
-  - Implement `nes2 migrate pending` command
-  - Implement `nes2 migrate run` command
-  - Implement `nes2 migrate create` command
+  - Implement `nes migrate list` command
+  - Implement `nes migrate pending` command
+  - Implement `nes migrate run` command
+  - Implement `nes migrate create` command
   - _Requirements: 1.6, 5.3, 5.4, 6.1, 6.2_
 
 - [x] 6.1 Implement migrate list command
-  - Create `nes2/cli/migrate.py` with Click command group
+  - Create `nes/cli/migrate.py` with Click command group
   - Implement `list` command to show all migrations with status
   - Display migration metadata (author, date, description)
   - Show applied vs pending status
@@ -197,14 +197,14 @@ This implementation plan breaks down the Open Database Updates feature into disc
   - _Requirements: 2.3, 5.3, 5.4_
 
 - [x] 7.1 Create migrate.py template
-  - Create `nes2/services/migration/templates/migrate.py.template`
+  - Create `nes/services/migration/templates/migrate.py.template`
   - Include metadata placeholders (AUTHOR, DATE, DESCRIPTION)
   - Include comprehensive documentation of context methods
   - Include example code patterns
   - _Requirements: 2.3, 5.3_
 
 - [x] 7.2 Create README.md template
-  - Create `nes2/services/migration/templates/README.md.template`
+  - Create `nes/services/migration/templates/README.md.template`
   - Include sections for Purpose, Data Sources, Changes, Dependencies, Notes
   - _Requirements: 2.3, 5.3_
 

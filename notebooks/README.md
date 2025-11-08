@@ -1,6 +1,6 @@
 # Nepal Entity Service - Jupyter Notebooks
 
-This directory contains interactive Jupyter notebooks demonstrating data maintenance workflows with the Nepal Entity Service (nes2). All notebooks use authentic Nepali political data.
+This directory contains interactive Jupyter notebooks demonstrating data maintenance workflows with the Nepal Entity Service (nes). All notebooks use authentic Nepali political data.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This directory contains interactive Jupyter notebooks demonstrating data mainten
    poetry add --group dev jupyter
    ```
 
-2. Install the nes2 package:
+2. Install the nes package:
    ```bash
    poetry install
    ```
@@ -151,8 +151,8 @@ Notebooks automatically save, but you can also:
 
 ```python
 from pathlib import Path
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 db_path = Path("../nes-db/v2")
 db = FileDatabase(base_path=str(db_path))
@@ -185,7 +185,7 @@ entity = await pub_service.create_entity(
 ### Search Entities
 
 ```python
-from nes2.services.search import SearchService
+from nes.services.search import SearchService
 
 search_service = SearchService(database=db)
 results = await search_service.search_entities(

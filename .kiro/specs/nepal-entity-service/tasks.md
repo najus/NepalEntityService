@@ -1,6 +1,6 @@
 # Implementation Plan - Complete V2 Rewrite (TDD Approach)
 
-> **IMPORTANT**: This is a complete rewrite in a new `nes2` package with breaking changes. The existing `nes` package will remain untouched during development and will be deleted after v2 is complete. The new database will use `nes-db/v2` instead of `entity-db`.
+> **IMPORTANT**: This is a complete rewrite in a new `nes` package with breaking changes. The existing `nes` package will remain untouched during development and will be deleted after v2 is complete. The new database will use `nes-db/v2` instead of `entity-db`.
 
 > **TDD METHODOLOGY**: All implementation tasks follow Red-Green-Refactor. Write failing tests first (Red), implement minimal code to pass (Green), then refactor for quality (Refactor).
 
@@ -8,35 +8,35 @@
 
 ## Phase 0: Project Setup
 
-- [x] 0. Initialize nes2 package structure
-  - [x] 0.1 Create nes2 package foundation
-    - Create `nes2/` directory with `__init__.py`
+- [x] 0. Initialize nes package structure
+  - [x] 0.1 Create nes package foundation
+    - Create `nes/` directory with `__init__.py`
     - Create subdirectories: `core/`, `database/`, `services/`, `api/`, `cli/`, `scraping/`
-    - Set up `pyproject.toml` for nes2 package (separate from nes v1)
+    - Set up `pyproject.toml` for nes package (separate from nes v1)
     - Configure package metadata, dependencies, and entry points
     - _Requirements: Package structure_
 
   - [x] 0.2 Set up testing infrastructure
-    - Create `tests2/` directory for nes2 tests
-    - Set up pytest configuration for nes2
+    - Create `tests/` directory for nes tests
+    - Set up pytest configuration for nes
     - Create test fixtures with authentic Nepali data
     - Set up test utilities and helpers
     - _Requirements: Testing infrastructure, TDD foundation_
 
   - [x] 0.3 Set up core models package
     - Write tests for Entity, Relationship, Version, and base models FIRST
-    - Create `nes2/core/models/` with `__init__.py`
+    - Create `nes/core/models/` with `__init__.py`
     - Create model files: `entity.py`, `relationship.py`, `version.py`, `base.py`
     - Copy and refactor models from v1 with breaking changes as needed
-    - Update imports and package references to nes2
+    - Update imports and package references to nes
     - Ensure all model tests pass
     - _Requirements: 1.1, 1.4, 7.1, 7.2, 8.1, 8.3_
 
   - [x] 0.4 Set up core utilities
     - Write tests for ID generation and validation FIRST
-    - Create `nes2/core/identifiers/` for ID generation and validation
-    - Create `nes2/core/constraints.py` for validation rules
-    - Create `nes2/core/utils/` for shared utilities
+    - Create `nes/core/identifiers/` for ID generation and validation
+    - Create `nes/core/constraints.py` for validation rules
+    - Create `nes/core/utils/` for shared utilities
     - Copy and refactor utilities from v1 with improvements
     - Ensure all utility tests pass
     - _Requirements: Core infrastructure_
@@ -97,9 +97,9 @@
     - _Requirements: Database abstraction, TDD_
 
   - [x] 2.2 Implement database foundation (Green)
-    - Create `nes2/database/` directory with `__init__.py`
-    - Create `nes2/database/entity_database.py` with abstract EntityDatabase class
-    - Create `nes2/database/file_database.py` with FileDatabase implementation
+    - Create `nes/database/` directory with `__init__.py`
+    - Create `nes/database/entity_database.py` with abstract EntityDatabase class
+    - Create `nes/database/file_database.py` with FileDatabase implementation
     - Implement minimal CRUD operations to pass tests
     - Use `nes-db/v2` as default database path
     - Ensure all foundation tests pass
@@ -207,8 +207,8 @@
     - _Requirements: 9.1, 9.2, 2.4, TDD_
 
   - [x] 3.2 Implement Publication Service foundation (Green)
-    - Create `nes2/services/publication/` directory with `__init__.py`
-    - Create `nes2/services/publication/service.py` with PublicationService class
+    - Create `nes/services/publication/` directory with `__init__.py`
+    - Create `nes/services/publication/service.py` with PublicationService class
     - Initialize with database instance
     - Set up service coordination logic
     - Ensure foundation tests pass
@@ -269,8 +269,8 @@
     - _Requirements: 9.3, 3.1, 3.2, TDD_
 
   - [x] 4.2 Implement Search Service foundation (Green)
-    - Create `nes2/services/search/` directory with `__init__.py`
-    - Create `nes2/services/search/service.py` with SearchService class
+    - Create `nes/services/search/` directory with `__init__.py`
+    - Create `nes/services/search/service.py` with SearchService class
     - Initialize with database instance
     - Implement basic query interface
     - Ensure foundation tests pass
@@ -314,15 +314,15 @@
     - _Requirements: 9.5, 5.1, TDD_
 
   - [x] 5.2 Implement Scraping Service foundation (Green)
-    - Create `nes2/services/scraping/` directory with `__init__.py`
-    - Create `nes2/services/scraping/service.py` with ScrapingService class
+    - Create `nes/services/scraping/` directory with `__init__.py`
+    - Create `nes/services/scraping/service.py` with ScrapingService class
     - Initialize with LLM providers and web scraping tools
     - Implement pluggable extractor architecture
     - Ensure foundation tests pass
     - _Requirements: 9.5, 5.1_
 
   - [x] 5.3 Implement Web Scraper component (Green)
-    - Create `nes2/services/scraping/web_scraper.py` with WebScraper class
+    - Create `nes/services/scraping/web_scraper.py` with WebScraper class
     - Add multi-source extraction (Wikipedia, government sites, news)
     - Implement rate limiting and respectful scraping
     - Add error handling and retry logic
@@ -331,7 +331,7 @@
     - _Requirements: 5.1_
 
   - [x] 5.4 Implement Translation component (Green)
-    - Create `nes2/services/scraping/translation.py` with translation utilities
+    - Create `nes/services/scraping/translation.py` with translation utilities
     - Add Nepali to English translation
     - Add English to Nepali translation
     - Implement transliteration handling
@@ -340,7 +340,7 @@
     - _Requirements: 5.1, 7.1_
 
   - [x] 5.5 Implement Data Normalization component (Green)
-    - Create `nes2/services/scraping/normalization.py` with normalization utilities
+    - Create `nes/services/scraping/normalization.py` with normalization utilities
     - Add LLM-powered data structuring
     - Implement extraction of structured data from unstructured text
     - Add relationship discovery from narrative text
@@ -382,12 +382,12 @@
     - _Requirements: 1.1, 1.5, TDD_
 
   - [x] 6.2 Implement API foundation (Green)
-    - Create `nes2/api/` directory with `__init__.py`
-    - Create `nes2/api/app.py` with FastAPI application
-    - Create `nes2/api/routes/` for endpoint modules
-    - Create `nes2/api/responses.py` for response models
+    - Create `nes/api/` directory with `__init__.py`
+    - Create `nes/api/app.py` with FastAPI application
+    - Create `nes/api/routes/` for endpoint modules
+    - Create `nes/api/responses.py` for response models
     - Set up CORS, error handling, and middleware
-    - Configure API to use nes2 services
+    - Configure API to use nes services
     - Ensure foundation tests pass
     - _Requirements: 1.1, 1.5_
 
@@ -487,46 +487,46 @@
     - _Requirements: 6.1, 15.1, TDD_
 
   - [x] 8.2 Implement CLI foundation (Green)
-    - Create `nes2/cli.py` with Click framework
+    - Create `nes/cli.py` with Click framework
     - Set up command groups structure
-    - Configure entry points in pyproject.toml for `nes2` command
+    - Configure entry points in pyproject.toml for `nes` command
     - Ensure foundation tests pass
     - _Requirements: 6.1, 15.1_
 
   - [x] 8.3 Implement server commands (Green)
-    - Add `nes2 server start` command for production
-    - Add `nes2 server dev` command for development
+    - Add `nes server start` command for production
+    - Add `nes server dev` command for development
     - Implement proper help text and documentation
     - Ensure server command tests pass
     - _Requirements: 6.1, 15.1_
 
   - [-] 8.4 Implement search commands (Green)
-    - Add `nes2 search <query>` command
-    - Implement `nes2 search entities` with filters
-    - Add `nes2 search relationships` command
-    - Implement `nes2 show <entity-id>` for entity details
-    - Add `nes2 versions <entity-id>` for version history
+    - Add `nes search <query>` command
+    - Implement `nes search entities` with filters
+    - Add `nes search relationships` command
+    - Implement `nes show <entity-id>` for entity details
+    - Add `nes versions <entity-id>` for version history
     - Ensure search command tests pass
     - _Requirements: 3.1, 3.2, 15.1_
 
   - [ ] 8.5 Implement scraping commands (Green)
-    - Add `nes2 scrape wikipedia <page>` command
-    - Implement `nes2 scrape search <query>` for external search
-    - Add `nes2 scrape info <query>` for entity information
+    - Add `nes scrape wikipedia <page>` command
+    - Implement `nes scrape search <query>` for external search
+    - Add `nes scrape info <query>` for entity information
     - Implement preview and confirmation for imports
     - Ensure scraping command tests pass
     - _Requirements: 5.1, 15.1_
 
   - [ ] 8.6 Implement data management commands (Green)
-    - Add `nes2 data import <file>` command
-    - Implement `nes2 data export <query>` command
-    - Add `nes2 data validate` for data quality checks
-    - Implement `nes2 data stats` for database statistics
+    - Add `nes data import <file>` command
+    - Implement `nes data export <query>` command
+    - Add `nes data validate` for data quality checks
+    - Implement `nes data stats` for database statistics
     - Ensure data management command tests pass
     - _Requirements: 15.1_
 
   - [ ] 8.7 Implement analytics commands (Green)
-    - Add `nes2 analytics report` command
+    - Add `nes analytics report` command
     - Implement HTML/Markdown report generation
     - Add JSON metadata export
     - Implement data completeness analysis
@@ -550,7 +550,7 @@
     - Create `examples/create_relationship.py` for relationship creation
     - Write `examples/batch_import.py` for bulk operations
     - Create `examples/version_history.py` for version exploration
-    - Update all examples to use nes2 package
+    - Update all examples to use nes package
     - Use authentic Nepali data in all examples
     - _Requirements: 2.4, 9.3_
 
@@ -559,7 +559,7 @@
     - Write `notebooks/02_relationship_management.ipynb`
     - Create `notebooks/03_data_import_workflow.ipynb`
     - Write `notebooks/04_data_quality_analysis.ipynb`
-    - Update all notebooks to use nes2 package
+    - Update all notebooks to use nes package
     - Use authentic Nepali data in all notebooks
     - _Requirements: 9.3_
 
@@ -719,7 +719,7 @@
     - Update README.md for v2
     - Update USAGE_EXAMPLES.md for v2
     - Create MIGRATION.md guide
-    - Update all references from nes to nes2
+    - Update all references from nes to nes
     - Add Nepali-specific documentation
     - _Requirements: Documentation_
 
@@ -730,11 +730,11 @@
     - Update pyproject.toml to remove v1 references
     - _Requirements: Cleanup_
 
-  - [ ] 14.3 Rename nes2 to nes
-    - Rename `nes2/` directory to `nes/`
-    - Update all imports from nes2 to nes
+  - [ ] 14.3 Rename nes to nes
+    - Rename `nes/` directory to `nes/`
+    - Update all imports from nes to nes
     - Update pyproject.toml package name
-    - Update CLI command from nes2 to nes
+    - Update CLI command from nes to nes
     - Update all documentation
     - Run full test suite to verify rename
     - _Requirements: Final rename_

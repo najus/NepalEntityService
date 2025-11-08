@@ -14,8 +14,8 @@ import asyncio
 from datetime import datetime
 from pathlib import Path
 
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 
 def format_datetime(dt: datetime) -> str:

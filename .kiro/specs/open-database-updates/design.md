@@ -26,7 +26,7 @@ The system operates across two GitHub repositories:
 1. Contributor creates migration folder in Service API Repository
 2. Contributor submits PR to Service API Repository
 3. Maintainer reviews migration code and merges PR
-4. Maintainer executes migration locally using `nes2 migrate run`
+4. Maintainer executes migration locally using `nes migrate run`
 5. Migration modifies files in Database Repository (nes-db/ submodule)
 6. Migration system commits changes to Database Repository with metadata
 7. Migration system pushes commits to Database Repository remote
@@ -104,10 +104,10 @@ The system operates across two GitHub repositories:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    CLI Interface                             │
-│  nes2 migrate list                                          │
-│  nes2 migrate status                                        │
-│  nes2 migrate run [migration_name]                         │
-│  nes2 migrate validate [migration_name]                    │
+│  nes migrate list                                          │
+│  nes migrate status                                        │
+│  nes migrate run [migration_name]                         │
+│  nes migrate validate [migration_name]                    │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -229,7 +229,7 @@ class MigrationRunner:
 
 **Design Decision**: The Migration Runner checks persisted snapshots before executing migrations to prevent re-execution. Once a migration is committed to the Database Repository, the data snapshot is persisted and the migration is considered applied. This ensures:
 - **Determinism**: Re-running a migration produces the same result (no-op if already applied)
-- **Idempotency**: Safe to run `nes2 migrate run --all` multiple times
+- **Idempotency**: Safe to run `nes migrate run --all` multiple times
 - **Data Integrity**: Prevents duplicate entities from accidental re-execution
 - **Audit Trail**: Git history serves as the source of truth for applied migrations
 
@@ -378,7 +378,7 @@ NepalEntityService/
 │   ├── 000-initial-locations/
 │   ├── 001-political-parties/
 │   └── 002-update-names/
-├── nes2/
+├── nes/
 │   ├── services/
 │   │   └── migration/  (new)
 │   └── ...
@@ -552,7 +552,7 @@ migrations/
 
 **Migration Script Template** (migrate.py):
 
-The `nes2 migrate create <name>` command generates a migration folder from this template:
+The `nes migrate create <name>` command generates a migration folder from this template:
 
 ```python
 """
@@ -655,7 +655,7 @@ async def migrate(context):
     context.log(f"Imported {len(locations)} locations")
 ```
 
-**Design Decision**: The `nes2 migrate create` command provides a standardized template that:
+**Design Decision**: The `nes migrate create` command provides a standardized template that:
 - Automatically assigns the next available prefix number
 - Pre-fills the current date
 - Includes comprehensive documentation of available context methods
@@ -715,7 +715,7 @@ This is a deterministic migration that will produce identical results on each ru
    git pull origin main
    
    # Run migration (modifies files in nes-db/ submodule)
-   nes2 migrate run 003-new-entities
+   nes migrate run 003-new-entities
    
    # Migration system automatically:
    # 1. Checks if migration already applied (looks for persisted snapshot in nes-db/)
@@ -904,7 +904,7 @@ git revert <migration-commit-sha>
 **Manual Rollback**:
 ```bash
 # If git revert is not sufficient, create a rollback migration
-nes2 migrate create 010-rollback-009
+nes migrate create 010-rollback-009
 
 # In 010-rollback-009/migrate.py:
 # - Delete entities created by migration 009
@@ -1114,9 +1114,9 @@ async def test_migration_creates_entities(test_db, publication_service):
 
 **Test Checklist**:
 - [ ] Create a new migration folder with CSV data
-- [ ] Run `nes2 migrate list` to see pending migration
-- [ ] Run `nes2 migrate validate 000-test` to validate
-- [ ] Run `nes2 migrate run 000-test` to execute
+- [ ] Run `nes migrate list` to see pending migration
+- [ ] Run `nes migrate validate 000-test` to validate
+- [ ] Run `nes migrate run 000-test` to execute
 - [ ] Verify entities created in database
 - [ ] Check migration history recorded
 - [ ] Test error handling with invalid migration
@@ -1128,53 +1128,53 @@ async def test_migration_creates_entities(test_db, publication_service):
 
 ```bash
 # List all migrations and their status (applied/pending)
-nes2 migrate list
+nes migrate list
 
 # Show migration history (applied migrations from Git log)
-nes2 migrate history
+nes migrate history
 
 # Show pending migrations (not yet applied)
-nes2 migrate pending
+nes migrate pending
 
 # Validate a specific migration
-nes2 migrate validate <migration_name>
+nes migrate validate <migration_name>
 
 # Validate all pending migrations
-nes2 migrate validate --all
+nes migrate validate --all
 
 # Run a specific migration
-nes2 migrate run <migration_name>
+nes migrate run <migration_name>
 
 # Run all pending migrations
-nes2 migrate run --all
+nes migrate run --all
 
 # Run migration in dry-run mode (no changes applied)
-nes2 migrate run <migration_name> --dry-run
+nes migrate run <migration_name> --dry-run
 
 # Create a new migration folder from template
-nes2 migrate create <descriptive-name>
+nes migrate create <descriptive-name>
 ```
 
 **Command Implementation Details**:
 
-**`nes2 migrate list`**: 
+**`nes migrate list`**: 
 - Discovers all migrations in migrations/ directory
 - Queries Git history in Database Repository to determine which are applied
 - Shows each migration with status (✓ Applied / ○ Pending)
 - Displays metadata (author, date, description) from migration script
 
-**`nes2 migrate history`**:
+**`nes migrate history`**:
 - Queries Git log in Database Repository for migration commits
 - Parses commit messages to extract migration metadata
 - Shows applied migrations in chronological order with statistics
 
-**`nes2 migrate pending`**:
+**`nes migrate pending`**:
 - Discovers all migrations in migrations/ directory
 - Queries Git history to find applied migrations
 - Returns only migrations not yet applied
-- Useful for seeing what will run with `nes2 migrate run --all`
+- Useful for seeing what will run with `nes migrate run --all`
 
-**`nes2 migrate create <name>`**:
+**`nes migrate create <name>`**:
 - Creates a new migration folder with next available prefix
 - Copies template files (migrate.py, README.md) into folder
 - Pre-fills metadata with current date and prompts for author
@@ -1182,7 +1182,7 @@ nes2 migrate create <descriptive-name>
 
 ### Command Output Examples
 
-**`nes2 migrate list`**:
+**`nes migrate list`**:
 ```
 Migrations:
   ✓ 000-initial-locations (Applied)
@@ -1208,7 +1208,7 @@ Migrations:
 Total: 4 migrations (2 applied, 2 pending)
 ```
 
-**`nes2 migrate history`**:
+**`nes migrate history`**:
 ```
 Applied Migrations (from Git history):
 
@@ -1229,7 +1229,7 @@ Applied Migrations (from Git history):
 Total: 2 migrations applied
 ```
 
-**`nes2 migrate pending`**:
+**`nes migrate pending`**:
 ```
 Pending Migrations:
 
@@ -1246,7 +1246,7 @@ Pending Migrations:
 Total: 2 pending migrations
 ```
 
-**`nes2 migrate run 002-update-names`**:
+**`nes migrate run 002-update-names`**:
 ```
 Running migration: 002-update-names
 Reading corrections.xlsx...
@@ -1266,7 +1266,7 @@ Committing changes to database repository...
 Migration applied and persisted.
 ```
 
-**`nes2 migrate run 002-update-names` (already applied)**:
+**`nes migrate run 002-update-names` (already applied)**:
 ```
 Migration 002-update-names has already been applied.
 Applied on: 2024-01-22 15:30:00
@@ -1343,7 +1343,7 @@ This ensures full traceability from entity version back to the migration that cr
 
 **Conflict Prevention**:
 - Contributors must pull latest migrations before creating new ones
-- Next available prefix assigned automatically by `nes2 migrate create`
+- Next available prefix assigned automatically by `nes migrate create`
 - PR review ensures no duplicate prefixes
 - Automated service processes migrations in order
 
@@ -1402,7 +1402,7 @@ async def run_migration(
 
 1. **Single Execution**: Each migration executes at most once (unless forced)
 2. **Persisted State**: The resulting data snapshot is committed to Git
-3. **Idempotent Commands**: Running `nes2 migrate run --all` multiple times is safe
+3. **Idempotent Commands**: Running `nes migrate run --all` multiple times is safe
 4. **No Duplicates**: Entities created by a migration won't be duplicated on re-run
 5. **Consistent Results**: The data snapshot in Git represents the canonical result
 
@@ -1410,19 +1410,19 @@ async def run_migration(
 
 ```bash
 # First execution
-$ nes2 migrate run 003-add-entities
+$ nes migrate run 003-add-entities
 Running migration: 003-add-entities
 Created 100 entities
 Committed to nes-db (commit: abc123)
 ✓ Migration applied
 
 # Second execution (deterministic - no-op)
-$ nes2 migrate run 003-add-entities
+$ nes migrate run 003-add-entities
 Migration 003-add-entities has already been applied.
 Skipping execution.
 
 # Force re-execution (if needed for testing)
-$ nes2 migrate run 003-add-entities --force
+$ nes migrate run 003-add-entities --force
 Warning: Re-executing already-applied migration
 Running migration: 003-add-entities
 Created 100 entities (duplicates!)
@@ -1586,7 +1586,7 @@ This section describes the complete end-to-end workflow for updating data in the
                               │
                               ▼
                     1. Create Migration Folder
-                       (nes2 migrate create)
+                       (nes migrate create)
                               │
                               ▼
                     2. Add Data Files (CSV/Excel)
@@ -1689,7 +1689,7 @@ This section describes the complete end-to-end workflow for updating data in the
    cd NepalEntityService
    
    # Create migration from template
-   nes2 migrate create add-new-ministers
+   nes migrate create add-new-ministers
    # Creates: migrations/005-add-new-ministers/
    ```
 
@@ -1748,10 +1748,10 @@ This section describes the complete end-to-end workflow for updating data in the
    - name: Execute Migration
      run: |
        # Run migration in dry-run mode first
-       nes2 migrate run 005-add-new-ministers --dry-run
+       nes migrate run 005-add-new-ministers --dry-run
        
        # Execute migration and generate snapshot
-       nes2 migrate run 005-add-new-ministers --generate-snapshot
+       nes migrate run 005-add-new-ministers --generate-snapshot
    ```
 
 7. **Generate Snapshot Statistics**
@@ -2004,7 +2004,7 @@ jobs:
         run: |
           for migration in ${{ steps.detect.outputs.migrations }}; do
             echo "Executing migration: $migration"
-            nes2 migrate run $migration --generate-snapshot
+            nes migrate run $migration --generate-snapshot
           done
       
       - name: Generate statistics
@@ -2068,14 +2068,14 @@ jobs:
       - name: Check for pending migrations
         id: pending
         run: |
-          PENDING=$(nes2 migrate pending --format=json)
+          PENDING=$(nes migrate pending --format=json)
           echo "migrations=$PENDING" >> $GITHUB_OUTPUT
       
       - name: Apply pending migrations
         if: steps.pending.outputs.migrations != '[]'
         run: |
           # Execute each pending migration and persist to Database Repository
-          nes2 migrate apply-pending --auto-commit
+          nes migrate apply-pending --auto-commit
       
       - name: Push to Database Repository
         if: steps.pending.outputs.migrations != '[]'
@@ -2216,7 +2216,7 @@ PR: #42
 2. **Create Migration Folder**
    ```bash
    # Use CLI to create migration from template
-   nes2 migrate create add-new-politicians
+   nes migrate create add-new-politicians
    
    # This creates: migrations/003-add-new-politicians/
    # - migrate.py (template script)
@@ -2244,10 +2244,10 @@ PR: #42
 6. **Test Locally (Optional)**
    ```bash
    # Validate migration structure
-   nes2 migrate validate 003-add-new-politicians
+   nes migrate validate 003-add-new-politicians
    
    # Test in dry-run mode (if you have database setup)
-   nes2 migrate run 003-add-new-politicians --dry-run
+   nes migrate run 003-add-new-politicians --dry-run
    ```
 
 7. **Submit Pull Request**
@@ -2261,7 +2261,7 @@ PR: #42
 
 **What Contributors Need**:
 - Fork of Service API Repository
-- Python environment with nes2 package installed
+- Python environment with nes package installed
 - Data files (CSV, Excel, JSON) to import
 - Basic understanding of Entity data model
 - NO access to Database Repository required
@@ -2271,7 +2271,7 @@ PR: #42
 - Ability to execute migrations (maintainers do this)
 - Large disk space for database files
 
-**Design Decision**: The contributor workflow is designed to be as simple as possible. Contributors only interact with the Service API Repository, which is lightweight and easy to clone. The `nes2 migrate create` command provides templates and scaffolding, lowering the barrier to entry. Contributors don't need to set up the full database or execute migrations—they only need to write and test the migration script logic.
+**Design Decision**: The contributor workflow is designed to be as simple as possible. Contributors only interact with the Service API Repository, which is lightweight and easy to clone. The `nes migrate create` command provides templates and scaffolding, lowering the barrier to entry. Contributors don't need to set up the full database or execute migrations—they only need to write and test the migration script logic.
 
 ## Deployment and Rollout
 

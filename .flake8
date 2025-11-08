@@ -14,4 +14,4 @@ extend-ignore = E203,E501,W503,W291,W293,F401,F541,F821
 per-file-ignores =
     tests*/*:F841
     */migration/*:F841
-    nes2/core/utils/devanagari.py:F601,F541,F601
+    nes/core/utils/devanagari.py:F601,F541,F601

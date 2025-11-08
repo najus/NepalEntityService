@@ -1,6 +1,6 @@
 # Nepal Entity Service - Usage Examples
 
-This document provides an overview of all available examples, notebooks, and documentation for the Nepal Entity Service (nes2).
+This document provides an overview of all available examples, notebooks, and documentation for the Nepal Entity Service (nes).
 
 ## Quick Start
 
@@ -116,7 +116,7 @@ Comprehensive guides and reference documentation.
 2. Work through all notebooks in `notebooks/`
 3. Study all example scripts in `examples/`
 4. Build your own data maintenance tools
-5. Explore the test files in `tests2/` for advanced patterns
+5. Explore the test files in `tests/` for advanced patterns
 
 ## Common Use Cases
 
@@ -186,10 +186,10 @@ Start the server to access interactive API documentation:
 
 ```bash
 # Start development server
-poetry run nes2 server dev
+poetry run nes server dev
 
 # Or production server
-poetry run nes2 server start
+poetry run nes server start
 ```
 
 Then visit:
@@ -203,8 +203,8 @@ Then visit:
 
 ```python
 from pathlib import Path
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 db = FileDatabase(base_path="nes-db/v2")
 pub_service = PublicationService(database=db)
@@ -254,20 +254,20 @@ Run the test suite to see more examples:
 
 ```bash
 # Run all tests
-poetry run pytest tests2/
+poetry run pytest tests/
 
 # Run specific test file
-poetry run pytest tests2/services/test_publication_service.py
+poetry run pytest tests/services/test_publication_service.py
 
 # Run with coverage
-poetry run pytest tests2/ --cov=nes2
+poetry run pytest tests/ --cov=nes
 ```
 
 ## Getting Help
 
 1. **Documentation:** Check `docs/` directory
 2. **Examples:** Review `examples/` and `notebooks/`
-3. **Tests:** Look at `tests2/` for advanced patterns
+3. **Tests:** Look at `tests/` for advanced patterns
 4. **API Docs:** Visit `/docs` when server is running
 
 ## Contributing

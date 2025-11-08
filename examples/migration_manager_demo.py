@@ -10,7 +10,7 @@ This script demonstrates how to use the MigrationManager to:
 import asyncio
 from pathlib import Path
 
-from nes2.services.migration import MigrationManager
+from nes.services.migration import MigrationManager
 
 
 async def main():

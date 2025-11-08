@@ -14,8 +14,8 @@ import asyncio
 from pathlib import Path
 from typing import Any, Dict, List
 
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 # Sample data: Nepali political parties
 POLITICAL_PARTIES = [
@@ -149,7 +149,7 @@ async def batch_import_entities(
     for entity_data in entities_data:
         try:
             # Check if entity already exists
-            from nes2.core.identifiers import build_entity_id
+            from nes.core.identifiers import build_entity_id
 
             entity_id = build_entity_id(
                 entity_data["type"], entity_data.get("sub_type"), entity_data["slug"]
@@ -239,7 +239,7 @@ async def main():
     print(f"\n4. Verifying imported entities...")
 
     for party_data in POLITICAL_PARTIES:
-        from nes2.core.identifiers import build_entity_id
+        from nes.core.identifiers import build_entity_id
 
         entity_id = build_entity_id(
             party_data["type"], party_data.get("sub_type"), party_data["slug"]

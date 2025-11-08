@@ -73,7 +73,7 @@ NepalEntityService/
 │   └── 002-update-names/
 │       ├── migrate.py
 │       └── README.md
-├── nes2/
+├── nes/
 │   ├── services/
 │   │   └── migration/
 │   │       ├── manager.py
@@ -160,7 +160,7 @@ nes-db/
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
 │         4. Execute migration locally                         │
-│            nes2 migrate run 005-add-ministers                │
+│            nes migrate run 005-add-ministers                │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -381,7 +381,7 @@ Date: 2024-03-15 10:30:00 +0000
 ### Benefits
 
 **Determinism**:
-- Running `nes2 migrate run --all` multiple times is safe
+- Running `nes migrate run --all` multiple times is safe
 - First run executes pending migrations
 - Subsequent runs skip already-applied migrations (detect persisted snapshots)
 
@@ -442,10 +442,10 @@ Git commits in Database Repository:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    CLI Interface                             │
-│  nes2 migrate list                                          │
-│  nes2 migrate pending                                       │
-│  nes2 migrate run [name]                                    │
-│  nes2 migrate create <name>                                 │
+│  nes migrate list                                          │
+│  nes migrate pending                                       │
+│  nes migrate run [name]                                    │
+│  nes migrate create <name>                                 │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -594,7 +594,7 @@ class MigrationContext:
 ### Migration Execution Flow
 
 ```
-1. User runs: nes2 migrate run 005-add-ministers
+1. User runs: nes migrate run 005-add-ministers
                               │
                               ▼
 2. CLI calls Migration Manager
@@ -643,7 +643,7 @@ class MigrationContext:
 ### Read Flow (Checking Applied Migrations)
 
 ```
-1. User runs: nes2 migrate pending
+1. User runs: nes migrate pending
                               │
                               ▼
 2. Migration Manager discovers all migrations

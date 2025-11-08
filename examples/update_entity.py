@@ -13,8 +13,8 @@ The example uses authentic Nepali politician data.
 import asyncio
 from pathlib import Path
 
-from nes2.database.file_database import FileDatabase
-from nes2.services.publication import PublicationService
+from nes.database.file_database import FileDatabase
+from nes.services.publication import PublicationService
 
 
 async def main():

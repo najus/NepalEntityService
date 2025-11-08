@@ -78,7 +78,7 @@ jobs:
             echo "## Migration: $migration" >> migration_stats.md
             
             # Run migration and capture output
-            if nes2 migrate run $migration --dry-run 2>&1 | tee migration_output.txt; then
+            if nes migrate run $migration --dry-run 2>&1 | tee migration_output.txt; then
               echo "✓ Migration executed successfully" >> migration_stats.md
               
               # Extract statistics from output (if available)

@@ -171,7 +171,7 @@ git checkout pr-123
 git submodule update
 
 # Run migration in dry-run mode
-nes2 migrate run NNN-migration-name --dry-run
+nes migrate run NNN-migration-name --dry-run
 
 # Review output for errors or warnings
 ```
@@ -223,7 +223,7 @@ git push origin main
 
 ```bash
 # See all pending migrations
-nes2 migrate pending
+nes migrate pending
 
 # Output:
 # Pending migrations:
@@ -235,7 +235,7 @@ nes2 migrate pending
 
 ```bash
 # Run specific migration
-nes2 migrate run 005-add-cabinet-ministers
+nes migrate run 005-add-cabinet-ministers
 
 # Output:
 # Running migration: 005-add-cabinet-ministers
@@ -258,7 +258,7 @@ nes2 migrate run 005-add-cabinet-ministers
 
 ```bash
 # Run all pending migrations in order
-nes2 migrate run --all
+nes migrate run --all
 
 # Output:
 # Running 2 pending migrations...
@@ -405,7 +405,7 @@ ValueError: Entity with slug 'ram-sharma' already exists
 1. Check if entity exists before creating:
 
 ```python
-from nes2.core.identifiers import build_entity_id
+from nes.core.identifiers import build_entity_id
 
 entity_id = build_entity_id("person", None, "ram-sharma")
 existing = await context.db.get_entity(entity_id)
@@ -428,7 +428,7 @@ Migration already applied, skipping
 
 **Solution**:
 - This is expected behavior (ensures determinism)
-- To force re-execution (for testing): `nes2 migrate run --force NNN-name`
+- To force re-execution (for testing): `nes migrate run --force NNN-name`
 - For production, create a new migration instead
 
 ### Issue 4: Large Commit Performance
@@ -676,8 +676,8 @@ Use this checklist when executing migrations:
 
 ## Execution
 
-- [ ] Run `nes2 migrate pending` to see pending migrations
-- [ ] Run `nes2 migrate run <name>` or `--all`
+- [ ] Run `nes migrate pending` to see pending migrations
+- [ ] Run `nes migrate run <name>` or `--all`
 - [ ] Monitor output for errors
 - [ ] Verify entities/relationships created
 

@@ -103,8 +103,8 @@ The `context` object passed to your migration provides:
 
 6. **Test locally** (if you have the database setup):
    ```bash
-   nes2 migrate validate 001-your-migration-name
-   nes2 migrate run 001-your-migration-name --dry-run
+   nes migrate validate 001-your-migration-name
+   nes migrate run 001-your-migration-name --dry-run
    ```
 
 7. **Submit a pull request** with your migration folder
@@ -123,7 +123,7 @@ Use the Migration Manager to check migration status:
 
 ```python
 from pathlib import Path
-from nes2.services.migration import MigrationManager
+from nes.services.migration import MigrationManager
 
 manager = MigrationManager(Path("migrations"), Path("nes-db"))
 

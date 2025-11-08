@@ -25,7 +25,7 @@ ENV/
 .coverage
 htmlcov/
 tests/
-tests2/
+tests/
 
 # Git
 .git/

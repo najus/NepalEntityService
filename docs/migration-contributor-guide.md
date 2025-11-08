@@ -98,7 +98,7 @@ git submodule update
 Use the CLI command to generate a migration from the template:
 
 ```bash
-nes2 migrate create "add-new-ministers"
+nes migrate create "add-new-ministers"
 ```
 
 This creates:
@@ -252,8 +252,8 @@ context.log(f"Created {count} entities")
 ### Creating Entities
 
 ```python
-from nes2.core.models.entity import Entity, EntityType
-from nes2.core.models.name import Name, NameKind, NameParts
+from nes.core.models.entity import Entity, EntityType
+from nes.core.models.name import Name, NameKind, NameParts
 
 # Create author ID for this migration
 author_id = "author:migration:005-add-new-ministers"
@@ -546,28 +546,28 @@ async def migrate(context):
 
 ```bash
 # See all migrations
-nes2 migrate list
+nes migrate list
 
 # See pending migrations
-nes2 migrate pending
+nes migrate pending
 ```
 
 ### Step 2: Run Your Migration
 
 ```bash
 # Run specific migration (dry run - no commit)
-nes2 migrate run 005-add-new-ministers --dry-run
+nes migrate run 005-add-new-ministers --dry-run
 
 # Run with commit to database
-nes2 migrate run 005-add-new-ministers
+nes migrate run 005-add-new-ministers
 ```
 
 ### Step 3: Verify Results
 
 ```python
 # Use Python to verify entities were created
-from nes2.database.file_database import FileDatabase
-from nes2.services.search import SearchService
+from nes.database.file_database import FileDatabase
+from nes.services.search import SearchService
 
 db = FileDatabase(base_path="nes-db/v2")
 search = SearchService(database=db)
@@ -598,7 +598,7 @@ git log -1
 
 ```bash
 # Run migration again - should skip (already applied)
-nes2 migrate run 005-add-new-ministers
+nes migrate run 005-add-new-ministers
 
 # Output should show: "Migration already applied, skipping"
 ```
@@ -646,7 +646,7 @@ Import current cabinet ministers from the 2024 government formation.
 - Updates existing entities if ministers were already in database
 
 ### Testing
-- [x] Tested locally with `nes2 migrate run --dry-run`
+- [x] Tested locally with `nes migrate run --dry-run`
 - [x] Verified entities created correctly
 - [x] Tested idempotency (re-running skips execution)
 - [x] Checked data quality
