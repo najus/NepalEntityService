@@ -14,7 +14,13 @@ from .base import (
     NameParts,
     ProvenanceMethod,
 )
-from .entity import Entity, EntitySubType, EntityType, ExternalIdentifier, IdentifierScheme
+from .entity import (
+    Entity,
+    EntitySubType,
+    EntityType,
+    ExternalIdentifier,
+    IdentifierScheme,
+)
 from .location import ADMINISTRATIVE_LEVELS, Location, LocationType
 from .organization import GovernmentBody, GovernmentType, Organization, PoliticalParty
 from .person import (

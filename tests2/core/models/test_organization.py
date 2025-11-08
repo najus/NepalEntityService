@@ -1,18 +1,24 @@
 """Tests for Organization models in nes2."""
 
+from datetime import UTC, datetime
+
 import pytest
-from datetime import datetime, UTC
 from pydantic import ValidationError
 
 from nes2.core.models.base import Name, NameKind
 from nes2.core.models.entity import EntitySubType
-from nes2.core.models.organization import GovernmentBody, GovernmentType, Organization, PoliticalParty
+from nes2.core.models.organization import (
+    GovernmentBody,
+    GovernmentType,
+    Organization,
+    PoliticalParty,
+)
 from nes2.core.models.version import Author, VersionSummary, VersionType
 
 
 def test_organization_basic_creation():
     """Test creating a basic Organization entity."""
-    
+
     org = Organization(
         slug="test-organization",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Test Organization"})],
@@ -22,11 +28,11 @@ def test_organization_basic_creation():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert org.type == "organization"
     assert org.slug == "test-organization"
     assert org.id == "entity:organization/test-organization"
@@ -34,14 +40,14 @@ def test_organization_basic_creation():
 
 def test_political_party_creation():
     """Test creating a PoliticalParty entity."""
-    
+
     party = PoliticalParty(
         slug="shram-sanskriti-party",
         names=[
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Shram Sanskriti Party"},
-                ne={"full": "श्रम संस्कृति पार्टी"}
+                ne={"full": "श्रम संस्कृति पार्टी"},
             )
         ],
         version_summary=VersionSummary(
@@ -50,11 +56,11 @@ def test_political_party_creation():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert party.type == "organization"
     assert party.sub_type == EntitySubType.POLITICAL_PARTY
     assert party.slug == "shram-sanskriti-party"
@@ -63,20 +69,20 @@ def test_political_party_creation():
 
 def test_political_party_with_attributes():
     """Test PoliticalParty with additional attributes."""
-    
+
     party = PoliticalParty(
         slug="rastriya-swatantra-party",
         names=[
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Rastriya Swatantra Party"},
-                ne={"full": "राष्ट्रिय स्वतन्त्र पार्टी"}
+                ne={"full": "राष्ट्रिय स्वतन्त्र पार्टी"},
             )
         ],
         attributes={
             "founded": "2022",
             "ideology": "liberal",
-            "leader": "Rabi Lamichhane"
+            "leader": "Rabi Lamichhane",
         },
         version_summary=VersionSummary(
             entity_or_relationship_id="entity:organization/political_party/rastriya-swatantra-party",
@@ -84,11 +90,11 @@ def test_political_party_with_attributes():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert party.attributes is not None
     assert party.attributes["founded"] == "2022"
     assert party.attributes["ideology"] == "liberal"
@@ -96,14 +102,14 @@ def test_political_party_with_attributes():
 
 def test_government_body_creation():
     """Test creating a GovernmentBody entity."""
-    
+
     gov_body = GovernmentBody(
         slug="election-commission",
         names=[
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Election Commission of Nepal"},
-                ne={"full": "निर्वाचन आयोग"}
+                ne={"full": "निर्वाचन आयोग"},
             )
         ],
         government_type=GovernmentType.FEDERAL,
@@ -113,11 +119,11 @@ def test_government_body_creation():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert gov_body.type == "organization"
     assert gov_body.sub_type == EntitySubType.GOVERNMENT_BODY
     assert gov_body.government_type == GovernmentType.FEDERAL
@@ -126,7 +132,7 @@ def test_government_body_creation():
 
 def test_government_body_types():
     """Test different government body types."""
-    
+
     # Federal government body
     federal_body = GovernmentBody(
         slug="supreme-court",
@@ -138,13 +144,13 @@ def test_government_body_types():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert federal_body.government_type == GovernmentType.FEDERAL
-    
+
     # Provincial government body
     provincial_body = GovernmentBody(
         slug="bagmati-assembly",
@@ -156,13 +162,13 @@ def test_government_body_types():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert provincial_body.government_type == GovernmentType.PROVINCIAL
-    
+
     # Local government body
     local_body = GovernmentBody(
         slug="kathmandu-municipality",
@@ -174,17 +180,17 @@ def test_government_body_types():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert local_body.government_type == GovernmentType.LOCAL
 
 
 def test_organization_subtype_enforcement():
     """Test that PoliticalParty and GovernmentBody enforce their subtypes."""
-    
+
     # PoliticalParty should have POLITICAL_PARTY subtype
     party = PoliticalParty(
         slug="test-party",
@@ -195,13 +201,13 @@ def test_organization_subtype_enforcement():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert party.sub_type == EntitySubType.POLITICAL_PARTY
-    
+
     # GovernmentBody should have GOVERNMENT_BODY subtype
     gov = GovernmentBody(
         slug="test-gov",
@@ -212,9 +218,9 @@ def test_organization_subtype_enforcement():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert gov.sub_type == EntitySubType.GOVERNMENT_BODY

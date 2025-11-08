@@ -39,14 +39,8 @@ jobs:
     - name: Install project
       run: poetry install --no-interaction
     
-    - name: Check formatting with black
-      run: poetry run black --check .
-    
-    - name: Check import sorting with isort
-      run: poetry run isort --check-only .
-    
-    - name: Lint with flake8
-      run: poetry run flake8 .
+    - name: Check formatting
+      run: ./scripts/check-format.sh
     
     - name: Run tests
       run: poetry run pytest

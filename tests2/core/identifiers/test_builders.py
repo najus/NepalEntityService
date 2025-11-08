@@ -6,7 +6,7 @@ import pytest
 def test_build_entity_id_with_subtype():
     """Test building entity ID with subtype."""
     from nes2.core.identifiers.builders import build_entity_id
-    
+
     entity_id = build_entity_id("person", "politician", "ram-chandra-poudel")
     assert entity_id == "entity:person/politician/ram-chandra-poudel"
 
@@ -14,7 +14,7 @@ def test_build_entity_id_with_subtype():
 def test_build_entity_id_without_subtype():
     """Test building entity ID without subtype."""
     from nes2.core.identifiers.builders import build_entity_id
-    
+
     entity_id = build_entity_id("person", None, "ram-chandra-poudel")
     assert entity_id == "entity:person/ram-chandra-poudel"
 
@@ -22,7 +22,7 @@ def test_build_entity_id_without_subtype():
 def test_break_entity_id_with_subtype():
     """Test breaking entity ID with subtype."""
     from nes2.core.identifiers.builders import break_entity_id
-    
+
     components = break_entity_id("entity:person/politician/ram-chandra-poudel")
     assert components.type == "person"
     assert components.subtype == "politician"
@@ -32,7 +32,7 @@ def test_break_entity_id_with_subtype():
 def test_break_entity_id_without_subtype():
     """Test breaking entity ID without subtype."""
     from nes2.core.identifiers.builders import break_entity_id
-    
+
     components = break_entity_id("entity:person/ram-chandra-poudel")
     assert components.type == "person"
     assert components.subtype is None
@@ -42,19 +42,22 @@ def test_break_entity_id_without_subtype():
 def test_build_relationship_id():
     """Test building relationship ID."""
     from nes2.core.identifiers.builders import build_relationship_id
-    
+
     rel_id = build_relationship_id(
         "entity:person/ram-chandra-poudel",
         "entity:organization/political_party/nepali-congress",
-        "MEMBER_OF"
+        "MEMBER_OF",
     )
-    assert rel_id == "relationship:person/ram-chandra-poudel:organization/political_party/nepali-congress:MEMBER_OF"
+    assert (
+        rel_id
+        == "relationship:person/ram-chandra-poudel:organization/political_party/nepali-congress:MEMBER_OF"
+    )
 
 
 def test_break_relationship_id():
     """Test breaking relationship ID."""
     from nes2.core.identifiers.builders import break_relationship_id
-    
+
     components = break_relationship_id(
         "relationship:person/ram-chandra-poudel:organization/political_party/nepali-congress:MEMBER_OF"
     )
@@ -66,7 +69,7 @@ def test_break_relationship_id():
 def test_build_version_id():
     """Test building version ID."""
     from nes2.core.identifiers.builders import build_version_id
-    
+
     version_id = build_version_id("entity:person/ram-chandra-poudel", 1)
     assert version_id == "version:entity:person/ram-chandra-poudel:1"
 
@@ -74,7 +77,7 @@ def test_build_version_id():
 def test_break_version_id():
     """Test breaking version ID."""
     from nes2.core.identifiers.builders import break_version_id
-    
+
     components = break_version_id("version:entity:person/ram-chandra-poudel:2")
     assert components.entity_or_relationship_id == "entity:person/ram-chandra-poudel"
     assert components.version_number == 2
@@ -83,7 +86,7 @@ def test_break_version_id():
 def test_build_author_id():
     """Test building author ID."""
     from nes2.core.identifiers.builders import build_author_id
-    
+
     author_id = build_author_id("csv-importer")
     assert author_id == "author:csv-importer"
 
@@ -91,6 +94,6 @@ def test_build_author_id():
 def test_break_author_id():
     """Test breaking author ID."""
     from nes2.core.identifiers.builders import break_author_id
-    
+
     components = break_author_id("author:csv-importer")
     assert components.slug == "csv-importer"

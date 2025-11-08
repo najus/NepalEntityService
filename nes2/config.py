@@ -1,7 +1,7 @@
 """Configuration for Nepal Entity Service v2."""
 
-import os
 import logging
+import os
 from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
@@ -14,11 +14,11 @@ class Config:
 
     # Default database path for v2
     DEFAULT_DB_PATH = "nes-db/v2"
-    
+
     # Global instances for database and services
-    _database: Optional["EntityDatabase"] = None
-    _search_service: Optional["SearchService"] = None
-    _publication_service: Optional["PublicationService"] = None
+    _database: Optional[object] = None  # type: EntityDatabase
+    _search_service: Optional[object] = None  # type: SearchService
+    _publication_service: Optional[object] = None  # type: PublicationService
 
     @classmethod
     def get_db_path(cls, override_path: Optional[str] = None) -> Path:
@@ -34,7 +34,7 @@ class Config:
 
         Returns:
             Path object for the database directory
-            
+
         Raises:
             ValueError: If NES_DB_URL uses unsupported protocol
         """
@@ -75,68 +75,70 @@ class Config:
 
         db_path.mkdir(parents=True, exist_ok=True)
         return db_path
-    
+
     @classmethod
     def initialize_database(cls, base_path: str = "./nes-db/v2") -> "EntityDatabase":
         """Initialize the global database instance.
-        
+
         Args:
             base_path: Path to the database directory
-            
+
         Returns:
             Initialized database instance
         """
         from nes2.database.file_database import FileDatabase
-        
+
         cls._database = FileDatabase(base_path=base_path)
         logger.info(f"Database initialized at {base_path}")
-        
+
         return cls._database
 
     @classmethod
     def get_database(cls) -> "EntityDatabase":
         """Get the global database instance.
-        
+
         Returns:
             EntityDatabase instance
-            
+
         Raises:
             RuntimeError: If database is not initialized
         """
         if cls._database is None:
-            raise RuntimeError("Database not initialized. Call initialize_database() first.")
+            raise RuntimeError(
+                "Database not initialized. Call initialize_database() first."
+            )
         return cls._database
 
     @classmethod
     def get_search_service(cls) -> "SearchService":
         """Get or create the global search service instance.
-        
+
         Returns:
             SearchService instance
         """
         if cls._search_service is None:
             from nes2.services.search import SearchService
-            
+
             db = cls.get_database()
             cls._search_service = SearchService(database=db)
             logger.info("Search service initialized")
-        
+
         return cls._search_service
 
     @classmethod
     def get_publication_service(cls) -> "PublicationService":
         """Get or create the global publication service instance.
-        
+
         Returns:
             PublicationService instance
         """
         if cls._publication_service is None:
             from nes2.services.publication import PublicationService
-            
+
             db = cls.get_database()
             cls._publication_service = PublicationService(database=db)
             logger.info("Publication service initialized")
-        
+
         return cls._publication_service
 
     @classmethod

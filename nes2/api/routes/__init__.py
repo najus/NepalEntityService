@@ -7,6 +7,6 @@ This module contains all API endpoint route definitions organized by resource ty
 - health: Health check and status endpoints
 """
 
-from . import entities, relationships, schemas, health
+from . import entities, health, relationships, schemas
 
 __all__ = ["entities", "relationships", "schemas", "health"]

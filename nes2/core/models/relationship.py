@@ -5,8 +5,6 @@ from typing import Any, Dict, List, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, computed_field, field_validator
 
-from nes2.core.identifiers import build_relationship_id, validate_entity_id
-
 from .version import VersionSummary
 
 RelationshipType = Literal[
@@ -43,15 +41,17 @@ class Relationship(BaseModel):
     @field_validator("source_entity_id", "target_entity_id")
     @classmethod
     def validate_entity_ids(cls, v):
-        from nes2.core.identifiers import validate_entity_id
+        from nes2.core.identifiers import validate_entity_id as _validate_entity_id
 
-        return validate_entity_id(v)
+        return _validate_entity_id(v)
 
     @computed_field
     @property
     def id(self) -> str:
-        from nes2.core.identifiers import build_relationship_id
+        from nes2.core.identifiers import (
+            build_relationship_id as _build_relationship_id,
+        )
 
-        return build_relationship_id(
+        return _build_relationship_id(
             self.source_entity_id, self.target_entity_id, self.type
         )

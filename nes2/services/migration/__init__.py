@@ -7,11 +7,7 @@ migrations that update the Nepal Entity Service database.
 
 from nes2.services.migration.context import MigrationContext
 from nes2.services.migration.manager import MigrationManager
-from nes2.services.migration.models import (
-    Migration,
-    MigrationResult,
-    MigrationStatus,
-)
+from nes2.services.migration.models import Migration, MigrationResult, MigrationStatus
 from nes2.services.migration.runner import MigrationRunner
 from nes2.services.migration.validation import (
     ValidationResult,

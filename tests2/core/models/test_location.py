@@ -1,7 +1,8 @@
 """Tests for Location model in nes2."""
 
+from datetime import UTC, datetime
+
 import pytest
-from datetime import datetime, UTC
 from pydantic import ValidationError
 
 from nes2.core.models.base import Name, NameKind
@@ -12,7 +13,7 @@ from nes2.core.models.version import Author, VersionSummary, VersionType
 
 def test_location_basic_creation():
     """Test creating a basic Location entity."""
-    
+
     location = Location(
         slug="test-location",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Test Location"})],
@@ -22,11 +23,11 @@ def test_location_basic_creation():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert location.type == "location"
     assert location.slug == "test-location"
     assert location.id == "entity:location/test-location"
@@ -34,7 +35,7 @@ def test_location_basic_creation():
 
 def test_location_province():
     """Test creating a Province location."""
-    
+
     province = Location(
         slug="bagmati-province",
         sub_type=EntitySubType.PROVINCE,
@@ -42,7 +43,7 @@ def test_location_province():
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Bagmati Province"},
-                ne={"full": "बागमती प्रदेश"}
+                ne={"full": "बागमती प्रदेश"},
             )
         ],
         version_summary=VersionSummary(
@@ -51,11 +52,11 @@ def test_location_province():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert province.sub_type == EntitySubType.PROVINCE
     assert province.location_type == LocationType.PROVINCE
     assert province.administrative_level == 1
@@ -64,7 +65,7 @@ def test_location_province():
 
 def test_location_district():
     """Test creating a District location."""
-    
+
     district = Location(
         slug="kathmandu-district",
         sub_type=EntitySubType.DISTRICT,
@@ -72,7 +73,7 @@ def test_location_district():
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Kathmandu District"},
-                ne={"full": "काठमाडौं जिल्ला"}
+                ne={"full": "काठमाडौं जिल्ला"},
             )
         ],
         parent="entity:location/province/bagmati-province",
@@ -82,11 +83,11 @@ def test_location_district():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert district.sub_type == EntitySubType.DISTRICT
     assert district.location_type == LocationType.DISTRICT
     assert district.administrative_level == 2
@@ -95,7 +96,7 @@ def test_location_district():
 
 def test_location_metropolitan_city():
     """Test creating a Metropolitan City location."""
-    
+
     metro = Location(
         slug="kathmandu-metropolitan-city",
         sub_type=EntitySubType.METROPOLITAN_CITY,
@@ -103,7 +104,7 @@ def test_location_metropolitan_city():
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Kathmandu Metropolitan City"},
-                ne={"full": "काठमाडौं महानगरपालिका"}
+                ne={"full": "काठमाडौं महानगरपालिका"},
             )
         ],
         parent="entity:location/district/kathmandu-district",
@@ -116,11 +117,11 @@ def test_location_metropolitan_city():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert metro.sub_type == EntitySubType.METROPOLITAN_CITY
     assert metro.location_type == LocationType.METROPOLITAN_CITY
     assert metro.administrative_level == 3
@@ -131,7 +132,7 @@ def test_location_metropolitan_city():
 
 def test_location_municipality():
     """Test creating a Municipality location."""
-    
+
     municipality = Location(
         slug="pokhara-metropolitan-city",
         sub_type=EntitySubType.METROPOLITAN_CITY,
@@ -139,7 +140,7 @@ def test_location_municipality():
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Pokhara Metropolitan City"},
-                ne={"full": "पोखरा महानगरपालिका"}
+                ne={"full": "पोखरा महानगरपालिका"},
             )
         ],
         version_summary=VersionSummary(
@@ -148,18 +149,18 @@ def test_location_municipality():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert municipality.location_type == LocationType.METROPOLITAN_CITY
     assert municipality.administrative_level == 3
 
 
 def test_location_ward():
     """Test creating a Ward location."""
-    
+
     ward = Location(
         slug="kathmandu-ward-1",
         sub_type=EntitySubType.WARD,
@@ -171,11 +172,11 @@ def test_location_ward():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert ward.sub_type == EntitySubType.WARD
     assert ward.location_type == LocationType.WARD
     assert ward.administrative_level == 4
@@ -183,7 +184,7 @@ def test_location_ward():
 
 def test_location_constituency():
     """Test creating a Constituency location."""
-    
+
     constituency = Location(
         slug="kathmandu-1",
         sub_type=EntitySubType.CONSTITUENCY,
@@ -194,19 +195,21 @@ def test_location_constituency():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert constituency.sub_type == EntitySubType.CONSTITUENCY
     assert constituency.location_type == LocationType.CONSTITUENCY
-    assert constituency.administrative_level is None  # Electoral boundary, not administrative
+    assert (
+        constituency.administrative_level is None
+    )  # Electoral boundary, not administrative
 
 
 def test_location_with_coordinates():
     """Test Location with geographic coordinates."""
-    
+
     location = Location(
         slug="test-location",
         sub_type=EntitySubType.MUNICIPALITY,
@@ -220,11 +223,11 @@ def test_location_with_coordinates():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert location.lat == 27.7172
     assert location.lng == 85.3240
     assert location.area == 100.5
@@ -232,7 +235,7 @@ def test_location_with_coordinates():
 
 def test_location_hierarchy():
     """Test location parent-child hierarchy."""
-    
+
     # Province (level 1)
     province = Location(
         slug="bagmati-province",
@@ -244,11 +247,11 @@ def test_location_hierarchy():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     # District (level 2) - child of province
     district = Location(
         slug="kathmandu-district",
@@ -261,11 +264,11 @@ def test_location_hierarchy():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     # Municipality (level 3) - child of district
     municipality = Location(
         slug="kathmandu-metro",
@@ -278,11 +281,11 @@ def test_location_hierarchy():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert province.administrative_level == 1
     assert district.administrative_level == 2
     assert municipality.administrative_level == 3

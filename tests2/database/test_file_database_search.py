@@ -12,14 +12,15 @@ Test Coverage:
 - Search result ranking
 """
 
+from datetime import UTC, datetime
+
 import pytest
-from datetime import datetime, UTC
 
 from nes2.core.models.base import Name, NameKind
-from nes2.core.models.person import Person
-from nes2.core.models.organization import PoliticalParty
-from nes2.core.models.location import Location
 from nes2.core.models.entity import EntitySubType
+from nes2.core.models.location import Location
+from nes2.core.models.organization import PoliticalParty
+from nes2.core.models.person import Person
 from nes2.core.models.version import Author, VersionSummary, VersionType
 
 
@@ -29,11 +30,12 @@ class TestTextBasedEntitySearch:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database populated with test entities."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Create multiple entities with different names
         entities = [
             Person(
@@ -41,8 +43,16 @@ class TestTextBasedEntitySearch:
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Ram Chandra Poudel", "given": "Ram Chandra", "family": "Poudel"},
-                        ne={"full": "राम चन्द्र पौडेल", "given": "राम चन्द्र", "family": "पौडेल"}
+                        en={
+                            "full": "Ram Chandra Poudel",
+                            "given": "Ram Chandra",
+                            "family": "Poudel",
+                        },
+                        ne={
+                            "full": "राम चन्द्र पौडेल",
+                            "given": "राम चन्द्र",
+                            "family": "पौडेल",
+                        },
                     )
                 ],
                 version_summary=VersionSummary(
@@ -51,18 +61,26 @@ class TestTextBasedEntitySearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "nepali-congress"}
+                attributes={"party": "nepali-congress"},
             ),
             Person(
                 slug="sher-bahadur-deuba",
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Sher Bahadur Deuba", "given": "Sher Bahadur", "family": "Deuba"},
-                        ne={"full": "शेरबहादुर देउवा", "given": "शेरबहादुर", "family": "देउवा"}
+                        en={
+                            "full": "Sher Bahadur Deuba",
+                            "given": "Sher Bahadur",
+                            "family": "Deuba",
+                        },
+                        ne={
+                            "full": "शेरबहादुर देउवा",
+                            "given": "शेरबहादुर",
+                            "family": "देउवा",
+                        },
                     )
                 ],
                 version_summary=VersionSummary(
@@ -71,24 +89,32 @@ class TestTextBasedEntitySearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "nepali-congress"}
+                attributes={"party": "nepali-congress"},
             ),
             Person(
                 slug="pushpa-kamal-dahal",
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Pushpa Kamal Dahal", "given": "Pushpa Kamal", "family": "Dahal"},
-                        ne={"full": "पुष्पकमल दाहाल", "given": "पुष्पकमल", "family": "दाहाल"}
+                        en={
+                            "full": "Pushpa Kamal Dahal",
+                            "given": "Pushpa Kamal",
+                            "family": "Dahal",
+                        },
+                        ne={
+                            "full": "पुष्पकमल दाहाल",
+                            "given": "पुष्पकमल",
+                            "family": "दाहाल",
+                        },
                     ),
                     Name(
                         kind=NameKind.ALIAS,
                         en={"full": "Prachanda"},
-                        ne={"full": "प्रचण्ड"}
-                    )
+                        ne={"full": "प्रचण्ड"},
+                    ),
                 ],
                 version_summary=VersionSummary(
                     entity_or_relationship_id="entity:person/pushpa-kamal-dahal",
@@ -96,10 +122,10 @@ class TestTextBasedEntitySearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "cpn-maoist-centre"}
+                attributes={"party": "cpn-maoist-centre"},
             ),
             PoliticalParty(
                 slug="nepali-congress",
@@ -107,7 +133,7 @@ class TestTextBasedEntitySearch:
                     Name(
                         kind=NameKind.PRIMARY,
                         en={"full": "Nepali Congress"},
-                        ne={"full": "नेपाली कांग्रेस"}
+                        ne={"full": "नेपाली कांग्रेस"},
                     )
                 ],
                 version_summary=VersionSummary(
@@ -116,10 +142,10 @@ class TestTextBasedEntitySearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"founded": "1947"}
+                attributes={"founded": "1947"},
             ),
             Location(
                 slug="kathmandu-metropolitan-city",
@@ -128,7 +154,7 @@ class TestTextBasedEntitySearch:
                     Name(
                         kind=NameKind.PRIMARY,
                         en={"full": "Kathmandu Metropolitan City"},
-                        ne={"full": "काठमाडौं महानगरपालिका"}
+                        ne={"full": "काठमाडौं महानगरपालिका"},
                     )
                 ],
                 version_summary=VersionSummary(
@@ -137,18 +163,18 @@ class TestTextBasedEntitySearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"province": "Bagmati"}
-            )
+                attributes={"province": "Bagmati"},
+            ),
         ]
-        
+
         # Store all entities
         async def populate():
             for entity in entities:
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -157,7 +183,7 @@ class TestTextBasedEntitySearch:
         """Test that search_entities can find entities by text query."""
         # This test will fail until search_entities method is implemented
         results = await populated_db.search_entities(query="Poudel")
-        
+
         # Should find Ram Chandra Poudel
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -166,7 +192,7 @@ class TestTextBasedEntitySearch:
     async def test_search_entities_by_partial_name(self, populated_db):
         """Test that search can find entities by partial name match."""
         results = await populated_db.search_entities(query="Ram")
-        
+
         # Should find Ram Chandra Poudel
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -175,7 +201,7 @@ class TestTextBasedEntitySearch:
     async def test_search_entities_by_alias(self, populated_db):
         """Test that search can find entities by alias names."""
         results = await populated_db.search_entities(query="Prachanda")
-        
+
         # Should find Pushpa Kamal Dahal by his alias
         assert len(results) >= 1
         assert any(e.slug == "pushpa-kamal-dahal" for e in results)
@@ -184,7 +210,7 @@ class TestTextBasedEntitySearch:
     async def test_search_entities_returns_empty_for_no_match(self, populated_db):
         """Test that search returns empty list when no entities match."""
         results = await populated_db.search_entities(query="NonexistentName")
-        
+
         # Should return empty list
         assert len(results) == 0
 
@@ -195,18 +221,19 @@ class TestCaseInsensitiveSearch:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with entities for case-insensitive testing."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         entity = Person(
             slug="ram-chandra-poudel",
             names=[
                 Name(
                     kind=NameKind.PRIMARY,
                     en={"full": "Ram Chandra Poudel"},
-                    ne={"full": "राम चन्द्र पौडेल"}
+                    ne={"full": "राम चन्द्र पौडेल"},
                 )
             ],
             version_summary=VersionSummary(
@@ -215,11 +242,11 @@ class TestCaseInsensitiveSearch:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
-        
+
         asyncio.run(db.put_entity(entity))
         return db
 
@@ -227,7 +254,7 @@ class TestCaseInsensitiveSearch:
     async def test_search_case_insensitive_lowercase(self, populated_db):
         """Test that search is case-insensitive with lowercase query."""
         results = await populated_db.search_entities(query="poudel")
-        
+
         # Should find entity regardless of case
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -236,7 +263,7 @@ class TestCaseInsensitiveSearch:
     async def test_search_case_insensitive_uppercase(self, populated_db):
         """Test that search is case-insensitive with uppercase query."""
         results = await populated_db.search_entities(query="POUDEL")
-        
+
         # Should find entity regardless of case
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -245,7 +272,7 @@ class TestCaseInsensitiveSearch:
     async def test_search_case_insensitive_mixed_case(self, populated_db):
         """Test that search is case-insensitive with mixed case query."""
         results = await populated_db.search_entities(query="RaM cHaNdRa")
-        
+
         # Should find entity regardless of case
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -257,11 +284,12 @@ class TestMultilingualSearch:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with multilingual entities."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         entities = [
             Person(
                 slug="ram-chandra-poudel",
@@ -269,7 +297,7 @@ class TestMultilingualSearch:
                     Name(
                         kind=NameKind.PRIMARY,
                         en={"full": "Ram Chandra Poudel"},
-                        ne={"full": "राम चन्द्र पौडेल"}
+                        ne={"full": "राम चन्द्र पौडेल"},
                     )
                 ],
                 version_summary=VersionSummary(
@@ -278,9 +306,9 @@ class TestMultilingualSearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             PoliticalParty(
                 slug="nepali-congress",
@@ -288,7 +316,7 @@ class TestMultilingualSearch:
                     Name(
                         kind=NameKind.PRIMARY,
                         en={"full": "Nepali Congress"},
-                        ne={"full": "नेपाली कांग्रेस"}
+                        ne={"full": "नेपाली कांग्रेस"},
                     )
                 ],
                 version_summary=VersionSummary(
@@ -297,16 +325,16 @@ class TestMultilingualSearch:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
-            )
+                created_at=datetime.now(UTC),
+            ),
         ]
-        
+
         async def populate():
             for entity in entities:
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -314,7 +342,7 @@ class TestMultilingualSearch:
     async def test_search_by_english_name(self, populated_db):
         """Test that search can find entities by English name."""
         results = await populated_db.search_entities(query="Poudel")
-        
+
         # Should find entity by English name
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -323,7 +351,7 @@ class TestMultilingualSearch:
     async def test_search_by_nepali_name(self, populated_db):
         """Test that search can find entities by Nepali (Devanagari) name."""
         results = await populated_db.search_entities(query="पौडेल")
-        
+
         # Should find entity by Nepali name
         assert len(results) >= 1
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -332,7 +360,7 @@ class TestMultilingualSearch:
     async def test_search_by_nepali_organization_name(self, populated_db):
         """Test that search can find organizations by Nepali name."""
         results = await populated_db.search_entities(query="कांग्रेस")
-        
+
         # Should find Nepali Congress by Nepali name
         assert len(results) >= 1
         assert any(e.slug == "nepali-congress" for e in results)
@@ -342,10 +370,10 @@ class TestMultilingualSearch:
         """Test that search returns results regardless of query language."""
         # Search with English query
         english_results = await populated_db.search_entities(query="Congress")
-        
+
         # Search with Nepali query
         nepali_results = await populated_db.search_entities(query="कांग्रेस")
-        
+
         # Both should find the same entity
         assert len(english_results) >= 1
         assert len(nepali_results) >= 1
@@ -358,11 +386,12 @@ class TestTypeAndSubtypeFiltering:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with entities of different types."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         entities = [
             Person(
                 slug="ram-chandra-poudel",
@@ -373,9 +402,9 @@ class TestTypeAndSubtypeFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             PoliticalParty(
                 slug="nepali-congress",
@@ -386,30 +415,35 @@ class TestTypeAndSubtypeFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             Location(
                 slug="kathmandu-metropolitan-city",
                 sub_type=EntitySubType.METROPOLITAN_CITY,
-                names=[Name(kind=NameKind.PRIMARY, en={"full": "Kathmandu Metropolitan City"})],
+                names=[
+                    Name(
+                        kind=NameKind.PRIMARY,
+                        en={"full": "Kathmandu Metropolitan City"},
+                    )
+                ],
                 version_summary=VersionSummary(
                     entity_or_relationship_id="entity:location/metropolitan_city/kathmandu-metropolitan-city",
                     type=VersionType.ENTITY,
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
-            )
+                created_at=datetime.now(UTC),
+            ),
         ]
-        
+
         async def populate():
             for entity in entities:
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -417,7 +451,7 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_filter_by_type_person(self, populated_db):
         """Test that search can filter by entity type (person)."""
         results = await populated_db.search_entities(entity_type="person")
-        
+
         # Should only return person entities
         assert len(results) >= 1
         assert all(e.type == "person" for e in results)
@@ -427,7 +461,7 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_filter_by_type_organization(self, populated_db):
         """Test that search can filter by entity type (organization)."""
         results = await populated_db.search_entities(entity_type="organization")
-        
+
         # Should only return organization entities
         assert len(results) >= 1
         assert all(e.type == "organization" for e in results)
@@ -437,7 +471,7 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_filter_by_type_location(self, populated_db):
         """Test that search can filter by entity type (location)."""
         results = await populated_db.search_entities(entity_type="location")
-        
+
         # Should only return location entities
         assert len(results) >= 1
         assert all(e.type == "location" for e in results)
@@ -447,10 +481,9 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_filter_by_subtype_political_party(self, populated_db):
         """Test that search can filter by entity subtype (political_party)."""
         results = await populated_db.search_entities(
-            entity_type="organization",
-            sub_type="political_party"
+            entity_type="organization", sub_type="political_party"
         )
-        
+
         # Should only return political party entities
         assert len(results) >= 1
         assert all(e.sub_type == EntitySubType.POLITICAL_PARTY for e in results)
@@ -460,10 +493,9 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_filter_by_subtype_metropolitan_city(self, populated_db):
         """Test that search can filter by entity subtype (metropolitan_city)."""
         results = await populated_db.search_entities(
-            entity_type="location",
-            sub_type="metropolitan_city"
+            entity_type="location", sub_type="metropolitan_city"
         )
-        
+
         # Should only return metropolitan city entities
         assert len(results) >= 1
         assert all(e.sub_type == EntitySubType.METROPOLITAN_CITY for e in results)
@@ -473,10 +505,9 @@ class TestTypeAndSubtypeFiltering:
     async def test_search_combined_query_and_type_filter(self, populated_db):
         """Test that search can combine text query with type filtering."""
         results = await populated_db.search_entities(
-            query="Congress",
-            entity_type="organization"
+            query="Congress", entity_type="organization"
         )
-        
+
         # Should find Nepali Congress but not Ram Chandra Poudel
         assert len(results) >= 1
         assert all(e.type == "organization" for e in results)
@@ -490,11 +521,12 @@ class TestAttributeBasedFiltering:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with entities having various attributes."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         entities = [
             Person(
                 slug="ram-chandra-poudel",
@@ -505,10 +537,10 @@ class TestAttributeBasedFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "nepali-congress", "constituency": "Tanahun-1"}
+                attributes={"party": "nepali-congress", "constituency": "Tanahun-1"},
             ),
             Person(
                 slug="sher-bahadur-deuba",
@@ -519,10 +551,10 @@ class TestAttributeBasedFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "nepali-congress", "constituency": "Dadeldhura-1"}
+                attributes={"party": "nepali-congress", "constituency": "Dadeldhura-1"},
             ),
             Person(
                 slug="pushpa-kamal-dahal",
@@ -533,10 +565,10 @@ class TestAttributeBasedFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"party": "cpn-maoist-centre", "constituency": "Gorkha-2"}
+                attributes={"party": "cpn-maoist-centre", "constituency": "Gorkha-2"},
             ),
             PoliticalParty(
                 slug="nepali-congress",
@@ -547,17 +579,17 @@ class TestAttributeBasedFiltering:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"founded": "1947", "ideology": "social-democracy"}
-            )
+                attributes={"founded": "1947", "ideology": "social-democracy"},
+            ),
         ]
-        
+
         async def populate():
             for entity in entities:
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -567,7 +599,7 @@ class TestAttributeBasedFiltering:
         results = await populated_db.search_entities(
             attr_filters={"party": "nepali-congress"}
         )
-        
+
         # Should find both Nepali Congress members
         assert len(results) >= 2
         assert any(e.slug == "ram-chandra-poudel" for e in results)
@@ -580,7 +612,7 @@ class TestAttributeBasedFiltering:
         results = await populated_db.search_entities(
             attr_filters={"party": "nepali-congress", "constituency": "Tanahun-1"}
         )
-        
+
         # Should only find Ram Chandra Poudel (matches both criteria)
         assert len(results) == 1
         assert results[0].slug == "ram-chandra-poudel"
@@ -591,7 +623,7 @@ class TestAttributeBasedFiltering:
         results = await populated_db.search_entities(
             attr_filters={"party": "nonexistent-party"}
         )
-        
+
         # Should return empty list
         assert len(results) == 0
 
@@ -601,9 +633,9 @@ class TestAttributeBasedFiltering:
         results = await populated_db.search_entities(
             query="Deuba",
             entity_type="person",
-            attr_filters={"party": "nepali-congress"}
+            attr_filters={"party": "nepali-congress"},
         )
-        
+
         # Should find only Sher Bahadur Deuba
         assert len(results) == 1
         assert results[0].slug == "sher-bahadur-deuba"
@@ -612,10 +644,9 @@ class TestAttributeBasedFiltering:
     async def test_search_filter_by_numeric_attribute(self, populated_db):
         """Test that search can filter by numeric attributes."""
         results = await populated_db.search_entities(
-            entity_type="organization",
-            attr_filters={"founded": "1947"}
+            entity_type="organization", attr_filters={"founded": "1947"}
         )
-        
+
         # Should find Nepali Congress (founded in 1947)
         assert len(results) >= 1
         assert any(e.slug == "nepali-congress" for e in results)
@@ -627,18 +658,23 @@ class TestSearchResultRanking:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with entities for ranking tests."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         entities = [
             Person(
                 slug="ram-chandra-poudel",
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Ram Chandra Poudel", "given": "Ram Chandra", "family": "Poudel"}
+                        en={
+                            "full": "Ram Chandra Poudel",
+                            "given": "Ram Chandra",
+                            "family": "Poudel",
+                        },
                     )
                 ],
                 version_summary=VersionSummary(
@@ -647,16 +683,20 @@ class TestSearchResultRanking:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             Person(
                 slug="ram-prasad-sharma",
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Ram Prasad Sharma", "given": "Ram Prasad", "family": "Sharma"}
+                        en={
+                            "full": "Ram Prasad Sharma",
+                            "given": "Ram Prasad",
+                            "family": "Sharma",
+                        },
                     )
                 ],
                 version_summary=VersionSummary(
@@ -665,16 +705,20 @@ class TestSearchResultRanking:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             Person(
                 slug="ramesh-lekhak",
                 names=[
                     Name(
                         kind=NameKind.PRIMARY,
-                        en={"full": "Ramesh Lekhak", "given": "Ramesh", "family": "Lekhak"}
+                        en={
+                            "full": "Ramesh Lekhak",
+                            "given": "Ramesh",
+                            "family": "Lekhak",
+                        },
                     )
                 ],
                 version_summary=VersionSummary(
@@ -683,16 +727,16 @@ class TestSearchResultRanking:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
-            )
+                created_at=datetime.now(UTC),
+            ),
         ]
-        
+
         async def populate():
             for entity in entities:
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -700,7 +744,7 @@ class TestSearchResultRanking:
     async def test_search_ranks_exact_match_higher(self, populated_db):
         """Test that exact matches are ranked higher than partial matches."""
         results = await populated_db.search_entities(query="Ram")
-        
+
         # Should return results with "Ram" in the name
         assert len(results) >= 2
         # Exact word match "Ram" should rank higher than "Ramesh"
@@ -712,18 +756,12 @@ class TestSearchResultRanking:
         """Test that matches in primary names rank higher than alias matches."""
         # Add entity with alias
         from nes2.database.file_database import FileDatabase
-        
+
         entity_with_alias = Person(
             slug="pushpa-kamal-dahal",
             names=[
-                Name(
-                    kind=NameKind.PRIMARY,
-                    en={"full": "Pushpa Kamal Dahal"}
-                ),
-                Name(
-                    kind=NameKind.ALIAS,
-                    en={"full": "Prachanda Ram"}
-                )
+                Name(kind=NameKind.PRIMARY, en={"full": "Pushpa Kamal Dahal"}),
+                Name(kind=NameKind.ALIAS, en={"full": "Prachanda Ram"}),
             ],
             version_summary=VersionSummary(
                 entity_or_relationship_id="entity:person/pushpa-kamal-dahal",
@@ -731,22 +769,19 @@ class TestSearchResultRanking:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
-        
+
         await populated_db.put_entity(entity_with_alias)
-        
+
         results = await populated_db.search_entities(query="Ram")
-        
+
         # Should return results, with primary name matches potentially ranked higher
         assert len(results) >= 3
         # All results should contain "Ram" somewhere in their names
-        assert all(
-            any("Ram" in name.en.full for name in e.names)
-            for e in results
-        )
+        assert all(any("Ram" in name.en.full for name in e.names) for e in results)
 
     @pytest.mark.asyncio
     async def test_search_returns_consistent_ordering(self, populated_db):
@@ -754,7 +789,7 @@ class TestSearchResultRanking:
         # Run the same search multiple times
         results1 = await populated_db.search_entities(query="Ram")
         results2 = await populated_db.search_entities(query="Ram")
-        
+
         # Should return same results in same order
         assert len(results1) == len(results2)
         assert [e.id for e in results1] == [e.id for e in results2]
@@ -766,11 +801,12 @@ class TestSearchPagination:
     @pytest.fixture
     def populated_db(self, temp_db_path):
         """Create a database with many entities for pagination testing."""
-        from nes2.database.file_database import FileDatabase
         import asyncio
-        
+
+        from nes2.database.file_database import FileDatabase
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Create 10 entities with "Ram" in their names
         async def populate():
             for i in range(10):
@@ -783,12 +819,12 @@ class TestSearchPagination:
                         version_number=1,
                         author=Author(slug="system"),
                         change_description="Initial",
-                        created_at=datetime.now(UTC)
+                        created_at=datetime.now(UTC),
                     ),
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 )
                 await db.put_entity(entity)
-        
+
         asyncio.run(populate())
         return db
 
@@ -796,7 +832,7 @@ class TestSearchPagination:
     async def test_search_with_limit(self, populated_db):
         """Test that search respects limit parameter."""
         results = await populated_db.search_entities(query="Ram", limit=5)
-        
+
         # Should return at most 5 results
         assert len(results) <= 5
 
@@ -805,10 +841,10 @@ class TestSearchPagination:
         """Test that search respects offset parameter."""
         # Get first page
         page1 = await populated_db.search_entities(query="Ram", limit=3, offset=0)
-        
+
         # Get second page
         page2 = await populated_db.search_entities(query="Ram", limit=3, offset=3)
-        
+
         # Pages should have different entities
         page1_ids = [e.id for e in page1]
         page2_ids = [e.id for e in page2]
@@ -819,14 +855,14 @@ class TestSearchPagination:
         """Test that pagination can retrieve all matching results."""
         # Get all results
         all_results = await populated_db.search_entities(query="Ram", limit=100)
-        
+
         # Get results in pages
         page1 = await populated_db.search_entities(query="Ram", limit=5, offset=0)
         page2 = await populated_db.search_entities(query="Ram", limit=5, offset=5)
-        
+
         # Combined pages should cover the results
         combined_ids = [e.id for e in page1] + [e.id for e in page2]
         all_ids = [e.id for e in all_results]
-        
+
         # All IDs from pages should be in the full result set
         assert all(id in all_ids for id in combined_ids)

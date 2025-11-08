@@ -2,16 +2,12 @@
 
 PORT = 8195
 
+
 def api():
     """Run the production API server."""
     import uvicorn
 
-    uvicorn.run(
-        "nes2.api.app:app",
-        host="0.0.0.0",
-        port=PORT,
-        log_level="info"
-    )
+    uvicorn.run("nes2.api.app:app", host="0.0.0.0", port=PORT, log_level="info")
 
 
 def dev():
@@ -25,9 +21,5 @@ def dev():
     print("\nPress CTRL+C to stop the server\n")
 
     uvicorn.run(
-        "nes2.api.app:app",
-        host="127.0.0.1",
-        port=PORT,
-        reload=True,
-        log_level="info"
+        "nes2.api.app:app", host="127.0.0.1", port=PORT, reload=True, log_level="info"
     )

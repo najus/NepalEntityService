@@ -10,10 +10,11 @@ Test Coverage:
 - Cache warming
 """
 
-import pytest
 import asyncio
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 from time import sleep
+
+import pytest
 
 from nes2.core.models.base import Name, NameKind
 from nes2.core.models.person import Person
@@ -27,7 +28,7 @@ class TestCacheHitMissBehavior:
     def db_with_cache(self, temp_db_path):
         """Create a database with caching enabled."""
         from nes2.database.file_database import FileDatabase
-        
+
         # Initialize database with caching enabled
         db = FileDatabase(base_path=str(temp_db_path), enable_cache=True)
         return db
@@ -45,22 +46,22 @@ class TestCacheHitMissBehavior:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_cache.put_entity(entity)
-        
+
         # Clear cache to ensure clean state
         db_with_cache.clear_cache()
-        
+
         # First access should be a cache miss
         result = await db_with_cache.get_entity("entity:person/ram-chandra-poudel")
-        
+
         # Verify entity was retrieved
         assert result is not None
         assert result.slug == "ram-chandra-poudel"
-        
+
         # Verify cache miss was recorded
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["misses"] == 1
@@ -79,25 +80,25 @@ class TestCacheHitMissBehavior:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_cache.put_entity(entity)
-        
+
         # Clear cache stats
         db_with_cache.clear_cache_stats()
-        
+
         # First access (cache miss)
         await db_with_cache.get_entity("entity:person/sher-bahadur-deuba")
-        
+
         # Second access (should be cache hit)
         result = await db_with_cache.get_entity("entity:person/sher-bahadur-deuba")
-        
+
         # Verify entity was retrieved
         assert result is not None
         assert result.slug == "sher-bahadur-deuba"
-        
+
         # Verify cache hit was recorded
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 1
@@ -108,13 +109,13 @@ class TestCacheHitMissBehavior:
         """Test that accessing nonexistent entity results in cache miss."""
         # Clear cache stats
         db_with_cache.clear_cache_stats()
-        
+
         # Try to access nonexistent entity
         result = await db_with_cache.get_entity("entity:person/nonexistent")
-        
+
         # Verify entity was not found
         assert result is None
-        
+
         # Verify cache miss was recorded
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["misses"] == 1
@@ -133,25 +134,25 @@ class TestCacheHitMissBehavior:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(3)
         ]
-        
+
         for entity in entities:
             await db_with_cache.put_entity(entity)
-        
+
         # Clear cache stats
         db_with_cache.clear_cache_stats()
-        
+
         # Access entities: 3 misses, then 3 hits
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Verify hit rate is 50% (3 hits out of 6 total accesses)
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 3
@@ -166,9 +167,11 @@ class TestCacheTTLExpiration:
     def db_with_short_ttl(self, temp_db_path):
         """Create a database with short cache TTL for testing."""
         from nes2.database.file_database import FileDatabase
-        
+
         # Initialize database with 1 second TTL
-        db = FileDatabase(base_path=str(temp_db_path), enable_cache=True, cache_ttl_seconds=1)
+        db = FileDatabase(
+            base_path=str(temp_db_path), enable_cache=True, cache_ttl_seconds=1
+        )
         return db
 
     @pytest.mark.asyncio
@@ -184,27 +187,27 @@ class TestCacheTTLExpiration:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_short_ttl.put_entity(entity)
-        
+
         # Clear cache stats
         db_with_short_ttl.clear_cache_stats()
-        
+
         # First access (cache miss)
         await db_with_short_ttl.get_entity("entity:person/ram-chandra-poudel")
-        
+
         # Second access immediately (cache hit)
         await db_with_short_ttl.get_entity("entity:person/ram-chandra-poudel")
-        
+
         # Wait for TTL to expire
         await asyncio.sleep(1.5)
-        
+
         # Third access after TTL (should be cache miss)
         await db_with_short_ttl.get_entity("entity:person/ram-chandra-poudel")
-        
+
         # Verify cache behavior
         cache_stats = db_with_short_ttl.get_cache_stats()
         assert cache_stats["hits"] == 1  # Only the second access was a hit
@@ -223,23 +226,23 @@ class TestCacheTTLExpiration:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_short_ttl.put_entity(entity)
-        
+
         # Clear cache stats
         db_with_short_ttl.clear_cache_stats()
-        
+
         # First access (cache miss)
         await db_with_short_ttl.get_entity("entity:person/sher-bahadur-deuba")
-        
+
         # Access every 0.5 seconds for 2 seconds (should keep refreshing TTL)
         for _ in range(4):
             await asyncio.sleep(0.5)
             await db_with_short_ttl.get_entity("entity:person/sher-bahadur-deuba")
-        
+
         # All accesses after first should be cache hits
         cache_stats = db_with_short_ttl.get_cache_stats()
         assert cache_stats["hits"] == 4
@@ -259,30 +262,30 @@ class TestCacheTTLExpiration:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(3)
         ]
-        
+
         for entity in entities:
             await db_with_short_ttl.put_entity(entity)
-        
+
         # Access all entities to populate cache
         for i in range(3):
             await db_with_short_ttl.get_entity(f"entity:person/person-{i}")
-        
+
         # Verify cache size
         cache_stats = db_with_short_ttl.get_cache_stats()
         assert cache_stats["size"] == 3
-        
+
         # Wait for TTL to expire
         await asyncio.sleep(1.5)
-        
+
         # Trigger cache cleanup
         db_with_short_ttl.cleanup_expired_cache_entries()
-        
+
         # Verify expired entries were removed
         cache_stats = db_with_short_ttl.get_cache_stats()
         assert cache_stats["size"] == 0
@@ -295,7 +298,7 @@ class TestCacheInvalidationOnUpdates:
     def db_with_cache(self, temp_db_path):
         """Create a database with caching enabled."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path), enable_cache=True)
         return db
 
@@ -312,21 +315,21 @@ class TestCacheInvalidationOnUpdates:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_cache.put_entity(entity)
-        
+
         # Access entity to populate cache
         result1 = await db_with_cache.get_entity("entity:person/ram-chandra-poudel")
         assert result1.names[0].en.full == "Ram Chandra Poudel"
-        
+
         # Update entity
         entity.names[0].en.full = "Ram Chandra Poudel (Updated)"
         entity.version_summary.version_number = 2
         await db_with_cache.put_entity(entity)
-        
+
         # Access entity again (should get updated version, not cached)
         result2 = await db_with_cache.get_entity("entity:person/ram-chandra-poudel")
         assert result2.names[0].en.full == "Ram Chandra Poudel (Updated)"
@@ -344,19 +347,19 @@ class TestCacheInvalidationOnUpdates:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_cache.put_entity(entity)
-        
+
         # Access entity to populate cache
         result1 = await db_with_cache.get_entity("entity:person/sher-bahadur-deuba")
         assert result1 is not None
-        
+
         # Delete entity
         await db_with_cache.delete_entity("entity:person/sher-bahadur-deuba")
-        
+
         # Access entity again (should return None, not cached version)
         result2 = await db_with_cache.get_entity("entity:person/sher-bahadur-deuba")
         assert result2 is None
@@ -364,10 +367,11 @@ class TestCacheInvalidationOnUpdates:
     @pytest.mark.asyncio
     async def test_cache_invalidated_on_relationship_update(self, db_with_cache):
         """Test that cache is invalidated when relationship is updated."""
-        from nes2.core.models.relationship import Relationship
-        from nes2.core.models.organization import PoliticalParty
         from datetime import date
-        
+
+        from nes2.core.models.organization import PoliticalParty
+        from nes2.core.models.relationship import Relationship
+
         # Create entities
         person = Person(
             slug="ram-chandra-poudel",
@@ -378,11 +382,11 @@ class TestCacheInvalidationOnUpdates:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
-        
+
         party = PoliticalParty(
             slug="nepali-congress",
             names=[Name(kind=NameKind.PRIMARY, en={"full": "Nepali Congress"})],
@@ -392,14 +396,14 @@ class TestCacheInvalidationOnUpdates:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
-        
+
         await db_with_cache.put_entity(person)
         await db_with_cache.put_entity(party)
-        
+
         # Create relationship
         relationship = Relationship(
             source_entity_id="entity:person/ram-chandra-poudel",
@@ -412,27 +416,29 @@ class TestCacheInvalidationOnUpdates:
                 version_number=1,
                 author=Author(slug="system"),
                 change_description="Initial",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         )
         await db_with_cache.put_relationship(relationship)
-        
+
         # Access relationship to populate cache
         result1 = await db_with_cache.get_relationship(relationship.id)
         assert result1.start_date == date(2000, 1, 1)
-        
+
         # Update relationship
         relationship.start_date = date(2005, 1, 1)
         relationship.version_summary.version_number = 2
         await db_with_cache.put_relationship(relationship)
-        
+
         # Access relationship again (should get updated version)
         result2 = await db_with_cache.get_relationship(relationship.id)
         assert result2.start_date == date(2005, 1, 1)
 
     @pytest.mark.asyncio
-    async def test_cache_invalidation_does_not_affect_other_entries(self, db_with_cache):
+    async def test_cache_invalidation_does_not_affect_other_entries(
+        self, db_with_cache
+    ):
         """Test that invalidating one entry doesn't affect others."""
         # Create and store multiple entities
         entities = [
@@ -445,33 +451,37 @@ class TestCacheInvalidationOnUpdates:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(3)
         ]
-        
+
         for entity in entities:
             await db_with_cache.put_entity(entity)
-        
+
         # Access all entities to populate cache
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Clear cache stats
         db_with_cache.clear_cache_stats()
-        
+
         # Update one entity
         entities[0].names[0].en.full = "Person 0 (Updated)"
         entities[0].version_summary.version_number = 2
         await db_with_cache.put_entity(entities[0])
-        
+
         # Access all entities
         await db_with_cache.get_entity("entity:person/person-0")  # Miss (invalidated)
-        await db_with_cache.get_entity("entity:person/person-1")  # Hit (not invalidated)
-        await db_with_cache.get_entity("entity:person/person-2")  # Hit (not invalidated)
-        
+        await db_with_cache.get_entity(
+            "entity:person/person-1"
+        )  # Hit (not invalidated)
+        await db_with_cache.get_entity(
+            "entity:person/person-2"
+        )  # Hit (not invalidated)
+
         # Verify cache behavior
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 2
@@ -485,7 +495,7 @@ class TestCacheWarming:
     def db_with_cache(self, temp_db_path):
         """Create a database with caching enabled."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path), enable_cache=True)
         return db
 
@@ -503,32 +513,32 @@ class TestCacheWarming:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(5)
         ]
-        
+
         for entity in entities:
             await db_with_cache.put_entity(entity)
-        
+
         # Clear cache
         db_with_cache.clear_cache()
         db_with_cache.clear_cache_stats()
-        
+
         # Warm cache with specific entities
         entity_ids = [f"entity:person/person-{i}" for i in range(3)]
         await db_with_cache.warm_cache(entity_ids=entity_ids)
-        
+
         # Access warmed entities (should be cache hits)
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Access non-warmed entities (should be cache misses)
         for i in range(3, 5):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Verify cache behavior
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 3  # Warmed entities
@@ -538,7 +548,7 @@ class TestCacheWarming:
     async def test_warm_cache_with_entity_type(self, db_with_cache):
         """Test warming cache with all entities of a specific type."""
         from nes2.core.models.organization import PoliticalParty
-        
+
         # Create and store entities of different types
         persons = [
             Person(
@@ -550,13 +560,13 @@ class TestCacheWarming:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(3)
         ]
-        
+
         parties = [
             PoliticalParty(
                 slug=f"party-{i}",
@@ -567,31 +577,33 @@ class TestCacheWarming:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(2)
         ]
-        
+
         for entity in persons + parties:
             await db_with_cache.put_entity(entity)
-        
+
         # Clear cache
         db_with_cache.clear_cache()
         db_with_cache.clear_cache_stats()
-        
+
         # Warm cache with person entities only
         await db_with_cache.warm_cache(entity_type="person")
-        
+
         # Access person entities (should be cache hits)
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Access party entities (should be cache misses)
         for i in range(2):
-            await db_with_cache.get_entity(f"entity:organization/political_party/party-{i}")
-        
+            await db_with_cache.get_entity(
+                f"entity:organization/political_party/party-{i}"
+            )
+
         # Verify cache behavior
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 3  # Person entities
@@ -601,7 +613,7 @@ class TestCacheWarming:
     async def test_warm_cache_on_startup(self, db_with_cache):
         """Test automatic cache warming on database initialization."""
         from nes2.database.file_database import FileDatabase
-        
+
         # Create and store frequently accessed entities
         entities = [
             Person(
@@ -613,32 +625,32 @@ class TestCacheWarming:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
                 created_at=datetime.now(UTC),
-                attributes={"popular": "true"}
+                attributes={"popular": "true"},
             )
             for i in range(3)
         ]
-        
+
         for entity in entities:
             await db_with_cache.put_entity(entity)
-        
+
         # Create new database instance with cache warming enabled
         new_db = FileDatabase(
             base_path=str(db_with_cache.base_path),
             enable_cache=True,
             warm_cache_on_startup=True,
-            warm_cache_filter={"attributes.popular": "true"}
+            warm_cache_filter={"attributes.popular": "true"},
         )
-        
+
         # Clear cache stats
         new_db.clear_cache_stats()
-        
+
         # Access entities (should be cache hits if warmed)
         for i in range(3):
             await new_db.get_entity(f"entity:person/person-{i}")
-        
+
         # Verify cache was warmed
         cache_stats = new_db.get_cache_stats()
         assert cache_stats["hits"] >= 1  # At least some entities were warmed
@@ -657,36 +669,36 @@ class TestCacheWarming:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             for i in range(10)
         ]
-        
+
         for entity in entities:
             await db_with_cache.put_entity(entity)
-        
+
         # Simulate access patterns (access first 3 entities more frequently)
         for _ in range(10):
             for i in range(3):
                 await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         for _ in range(2):
             for i in range(3, 10):
                 await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Clear cache
         db_with_cache.clear_cache()
         db_with_cache.clear_cache_stats()
-        
+
         # Warm cache with top 5 most accessed entities
         await db_with_cache.warm_cache_most_accessed(limit=5)
-        
+
         # Access top 3 entities (should be cache hits)
         for i in range(3):
             await db_with_cache.get_entity(f"entity:person/person-{i}")
-        
+
         # Verify cache behavior
         cache_stats = db_with_cache.get_cache_stats()
         assert cache_stats["hits"] == 3

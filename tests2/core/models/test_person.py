@@ -1,10 +1,17 @@
 """Tests for Person model in nes2."""
 
+from datetime import UTC, date, datetime
+
 import pytest
-from datetime import date, datetime, UTC
 from pydantic import ValidationError
 
-from nes2.core.models.base import LangText, LangTextValue, Name, NameKind, ProvenanceMethod
+from nes2.core.models.base import (
+    LangText,
+    LangTextValue,
+    Name,
+    NameKind,
+    ProvenanceMethod,
+)
 from nes2.core.models.person import (
     Candidacy,
     Education,
@@ -20,7 +27,7 @@ from nes2.core.models.version import Author, VersionSummary, VersionType
 
 def test_person_basic_creation():
     """Test creating a basic Person entity."""
-    
+
     person = Person(
         slug="harka-sampang",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Harka Sampang"})],
@@ -30,11 +37,11 @@ def test_person_basic_creation():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.type == "person"
     assert person.sub_type is None
     assert person.slug == "harka-sampang"
@@ -43,14 +50,14 @@ def test_person_basic_creation():
 
 def test_person_with_personal_details():
     """Test Person with personal details."""
-    
+
     person = Person(
         slug="harka-sampang",
         names=[
             Name(
                 kind=NameKind.PRIMARY,
                 en={"full": "Harka Sampang"},
-                ne={"full": "हर्क साम्पाङ"}
+                ne={"full": "हर्क साम्पाङ"},
             )
         ],
         personal_details=PersonDetails(
@@ -61,7 +68,7 @@ def test_person_with_personal_details():
             ),
             mother_name=LangText(
                 en=LangTextValue(value="Mother Name", provenance=ProvenanceMethod.HUMAN)
-            )
+            ),
         ),
         version_summary=VersionSummary(
             entity_or_relationship_id="entity:person/harka-sampang",
@@ -69,11 +76,11 @@ def test_person_with_personal_details():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.personal_details is not None
     assert person.personal_details.birth_date == "1975"
     assert person.personal_details.gender == Gender.MALE
@@ -82,7 +89,7 @@ def test_person_with_personal_details():
 
 def test_person_with_education():
     """Test Person with education records."""
-    
+
     person = Person(
         slug="harka-sampang",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Harka Sampang"})],
@@ -90,13 +97,18 @@ def test_person_with_education():
             education=[
                 Education(
                     institution=LangText(
-                        en=LangTextValue(value="Tribhuvan University", provenance=ProvenanceMethod.HUMAN)
+                        en=LangTextValue(
+                            value="Tribhuvan University",
+                            provenance=ProvenanceMethod.HUMAN,
+                        )
                     ),
                     degree=LangText(
-                        en=LangTextValue(value="Bachelor's Degree", provenance=ProvenanceMethod.HUMAN)
+                        en=LangTextValue(
+                            value="Bachelor's Degree", provenance=ProvenanceMethod.HUMAN
+                        )
                     ),
                     start_year=1995,
-                    end_year=1999
+                    end_year=1999,
                 )
             ]
         ),
@@ -106,20 +118,23 @@ def test_person_with_education():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.personal_details.education is not None
     assert len(person.personal_details.education) == 1
-    assert person.personal_details.education[0].institution.en.value == "Tribhuvan University"
+    assert (
+        person.personal_details.education[0].institution.en.value
+        == "Tribhuvan University"
+    )
     assert person.personal_details.education[0].start_year == 1995
 
 
 def test_person_with_positions():
     """Test Person with professional positions."""
-    
+
     person = Person(
         slug="harka-sampang",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Harka Sampang"})],
@@ -127,13 +142,18 @@ def test_person_with_positions():
             positions=[
                 Position(
                     title=LangText(
-                        en=LangTextValue(value="Party Leader", provenance=ProvenanceMethod.HUMAN)
+                        en=LangTextValue(
+                            value="Party Leader", provenance=ProvenanceMethod.HUMAN
+                        )
                     ),
                     organization=LangText(
-                        en=LangTextValue(value="Shram Sanskriti Party", provenance=ProvenanceMethod.HUMAN)
+                        en=LangTextValue(
+                            value="Shram Sanskriti Party",
+                            provenance=ProvenanceMethod.HUMAN,
+                        )
                     ),
                     start_date=date(2020, 1, 1),
-                    description="Leader of the party"
+                    description="Leader of the party",
                 )
             ]
         ),
@@ -143,11 +163,11 @@ def test_person_with_positions():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.personal_details.positions is not None
     assert len(person.personal_details.positions) == 1
     assert person.personal_details.positions[0].title.en.value == "Party Leader"
@@ -156,7 +176,7 @@ def test_person_with_positions():
 
 def test_person_with_electoral_details():
     """Test Person with electoral candidacy records."""
-    
+
     person = Person(
         slug="harka-sampang",
         names=[Name(kind=NameKind.PRIMARY, en={"full": "Harka Sampang"})],
@@ -167,14 +187,16 @@ def test_person_with_electoral_details():
                     election_year=2022,
                     symbol=Symbol(
                         name=LangText(
-                            en=LangTextValue(value="Hammer", provenance=ProvenanceMethod.HUMAN)
+                            en=LangTextValue(
+                                value="Hammer", provenance=ProvenanceMethod.HUMAN
+                            )
                         ),
-                        id="hammer"
+                        id="hammer",
                     ),
                     serial_no="1",
                     party_id="entity:organization/political_party/shram-sanskriti-party",
                     votes_received=5000,
-                    elected=False
+                    elected=False,
                 )
             ]
         ),
@@ -184,11 +206,11 @@ def test_person_with_electoral_details():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.electoral_details is not None
     assert len(person.electoral_details.candidacies) == 1
     candidacy = person.electoral_details.candidacies[0]
@@ -200,7 +222,7 @@ def test_person_with_electoral_details():
 
 def test_person_cannot_have_subtype():
     """Test that Person entities cannot have a subtype."""
-    
+
     # This should work - sub_type is None
     person = Person(
         slug="harka-sampang",
@@ -212,17 +234,17 @@ def test_person_cannot_have_subtype():
             version_number=1,
             author=Author(slug="system"),
             change_description="Initial",
-            created_at=datetime.now(UTC)
+            created_at=datetime.now(UTC),
         ),
-        created_at=datetime.now(UTC)
+        created_at=datetime.now(UTC),
     )
-    
+
     assert person.sub_type is None
 
 
 def test_candidacy_validates_entity_ids():
     """Test that Candidacy validates entity IDs."""
-    
+
     # Valid entity IDs should work
     candidacy = Candidacy(
         candidate_id="entity:person/harka-sampang",
@@ -231,14 +253,14 @@ def test_candidacy_validates_entity_ids():
             name=LangText(
                 en=LangTextValue(value="Hammer", provenance=ProvenanceMethod.HUMAN)
             ),
-            id="hammer"
+            id="hammer",
         ),
         serial_no="1",
-        party_id="entity:organization/political_party/shram-sanskriti-party"
+        party_id="entity:organization/political_party/shram-sanskriti-party",
     )
-    
+
     assert candidacy.candidate_id == "entity:person/harka-sampang"
-    
+
     # Invalid entity ID should fail
     with pytest.raises(ValidationError):
         Candidacy(
@@ -248,7 +270,7 @@ def test_candidacy_validates_entity_ids():
                 name=LangText(
                     en=LangTextValue(value="Hammer", provenance=ProvenanceMethod.HUMAN)
                 ),
-                id="hammer"
+                id="hammer",
             ),
-            serial_no="1"
+            serial_no="1",
         )

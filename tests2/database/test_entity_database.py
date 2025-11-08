@@ -4,15 +4,16 @@ Following TDD approach: Write failing tests first (Red phase).
 These tests define the expected behavior of the EntityDatabase interface.
 """
 
-import pytest
 from abc import ABC
-from datetime import datetime, UTC, date
+from datetime import UTC, date, datetime
+
+import pytest
 
 from nes2.core.models.base import Name, NameKind
-from nes2.core.models.person import Person
-from nes2.core.models.organization import PoliticalParty
-from nes2.core.models.location import Location
 from nes2.core.models.entity import EntitySubType
+from nes2.core.models.location import Location
+from nes2.core.models.organization import PoliticalParty
+from nes2.core.models.person import Person
 from nes2.core.models.relationship import Relationship
 from nes2.core.models.version import Author, Version, VersionSummary, VersionType
 
@@ -23,7 +24,7 @@ class TestEntityDatabaseInterface:
     def test_entity_database_is_abstract(self):
         """Test that EntityDatabase cannot be instantiated directly."""
         from nes2.database.entity_database import EntityDatabase
-        
+
         # Should not be able to instantiate abstract class
         with pytest.raises(TypeError):
             EntityDatabase()
@@ -31,30 +32,31 @@ class TestEntityDatabaseInterface:
     def test_entity_database_has_required_methods(self):
         """Test that EntityDatabase defines all required abstract methods."""
         from nes2.database.entity_database import EntityDatabase
-        
+
         # Check that all required methods are defined
         required_methods = [
-            'put_entity',
-            'get_entity',
-            'delete_entity',
-            'list_entities',
-            'put_relationship',
-            'get_relationship',
-            'delete_relationship',
-            'list_relationships',
-            'put_version',
-            'get_version',
-            'delete_version',
-            'list_versions',
-            'put_author',
-            'get_author',
-            'delete_author',
-            'list_authors',
+            "put_entity",
+            "get_entity",
+            "delete_entity",
+            "list_entities",
+            "put_relationship",
+            "get_relationship",
+            "delete_relationship",
+            "list_relationships",
+            "put_version",
+            "get_version",
+            "delete_version",
+            "list_versions",
+            "put_author",
+            "get_author",
+            "delete_author",
+            "list_authors",
         ]
-        
+
         for method_name in required_methods:
-            assert hasattr(EntityDatabase, method_name), \
-                f"EntityDatabase must define {method_name} method"
+            assert hasattr(
+                EntityDatabase, method_name
+            ), f"EntityDatabase must define {method_name} method"
             method = getattr(EntityDatabase, method_name)
             assert callable(method), f"{method_name} must be callable"
 
@@ -70,8 +72,12 @@ class TestEntityDatabaseEntityOperations:
             names=[
                 Name(
                     kind=NameKind.PRIMARY,
-                    en={"full": "Ram Chandra Poudel", "given": "Ram Chandra", "family": "Poudel"},
-                    ne={"full": "राम चन्द्र पौडेल", "given": "राम चन्द्र", "family": "पौडेल"}
+                    en={
+                        "full": "Ram Chandra Poudel",
+                        "given": "Ram Chandra",
+                        "family": "Poudel",
+                    },
+                    ne={"full": "राम चन्द्र पौडेल", "given": "राम चन्द्र", "family": "पौडेल"},
                 )
             ],
             version_summary=VersionSummary(
@@ -80,10 +86,10 @@ class TestEntityDatabaseEntityOperations:
                 version_number=1,
                 author=Author(slug="system-importer", name="System Importer"),
                 change_description="Initial import",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             created_at=datetime.now(UTC),
-            attributes={"party": "nepali-congress", "constituency": "Tanahun-1"}
+            attributes={"party": "nepali-congress", "constituency": "Tanahun-1"},
         )
 
     @pytest.fixture
@@ -95,7 +101,7 @@ class TestEntityDatabaseEntityOperations:
                 Name(
                     kind=NameKind.PRIMARY,
                     en={"full": "Nepali Congress"},
-                    ne={"full": "नेपाली कांग्रेस"}
+                    ne={"full": "नेपाली कांग्रेस"},
                 )
             ],
             version_summary=VersionSummary(
@@ -104,10 +110,10 @@ class TestEntityDatabaseEntityOperations:
                 version_number=1,
                 author=Author(slug="system-importer", name="System Importer"),
                 change_description="Initial import",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             created_at=datetime.now(UTC),
-            attributes={"founded": "1947", "ideology": "social-democracy"}
+            attributes={"founded": "1947", "ideology": "social-democracy"},
         )
 
     @pytest.fixture
@@ -120,7 +126,7 @@ class TestEntityDatabaseEntityOperations:
                 Name(
                     kind=NameKind.PRIMARY,
                     en={"full": "Kathmandu Metropolitan City"},
-                    ne={"full": "काठमाडौं महानगरपालिका"}
+                    ne={"full": "काठमाडौं महानगरपालिका"},
                 )
             ],
             version_summary=VersionSummary(
@@ -129,40 +135,42 @@ class TestEntityDatabaseEntityOperations:
                 version_number=1,
                 author=Author(slug="system-importer", name="System Importer"),
                 change_description="Initial import",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             created_at=datetime.now(UTC),
-            attributes={"province": "Bagmati", "district": "Kathmandu"}
+            attributes={"province": "Bagmati", "district": "Kathmandu"},
         )
 
     @pytest.mark.asyncio
     async def test_put_entity_stores_entity(self, temp_db_path, sample_person_entity):
         """Test that put_entity stores an entity and returns it."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store entity
         result = await db.put_entity(sample_person_entity)
-        
+
         # Should return the same entity
         assert result.id == sample_person_entity.id
         assert result.slug == sample_person_entity.slug
         assert result.names[0].en.full == "Ram Chandra Poudel"
 
     @pytest.mark.asyncio
-    async def test_get_entity_retrieves_stored_entity(self, temp_db_path, sample_person_entity):
+    async def test_get_entity_retrieves_stored_entity(
+        self, temp_db_path, sample_person_entity
+    ):
         """Test that get_entity retrieves a previously stored entity."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store entity
         await db.put_entity(sample_person_entity)
-        
+
         # Retrieve entity
         retrieved = await db.get_entity(sample_person_entity.id)
-        
+
         # Should retrieve the same entity
         assert retrieved is not None
         assert retrieved.id == sample_person_entity.id
@@ -174,31 +182,33 @@ class TestEntityDatabaseEntityOperations:
     async def test_get_entity_returns_none_for_nonexistent(self, temp_db_path):
         """Test that get_entity returns None for non-existent entity."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Try to retrieve non-existent entity
         result = await db.get_entity("entity:person/nonexistent")
-        
+
         # Should return None
         assert result is None
 
     @pytest.mark.asyncio
-    async def test_delete_entity_removes_entity(self, temp_db_path, sample_person_entity):
+    async def test_delete_entity_removes_entity(
+        self, temp_db_path, sample_person_entity
+    ):
         """Test that delete_entity removes an entity."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store entity
         await db.put_entity(sample_person_entity)
-        
+
         # Delete entity
         result = await db.delete_entity(sample_person_entity.id)
-        
+
         # Should return True
         assert result is True
-        
+
         # Entity should no longer exist
         retrieved = await db.get_entity(sample_person_entity.id)
         assert retrieved is None
@@ -207,31 +217,36 @@ class TestEntityDatabaseEntityOperations:
     async def test_delete_entity_returns_false_for_nonexistent(self, temp_db_path):
         """Test that delete_entity returns False for non-existent entity."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Try to delete non-existent entity
         result = await db.delete_entity("entity:person/nonexistent")
-        
+
         # Should return False
         assert result is False
 
     @pytest.mark.asyncio
-    async def test_list_entities_returns_all_entities(self, temp_db_path, sample_person_entity, 
-                                                      sample_organization_entity, sample_location_entity):
+    async def test_list_entities_returns_all_entities(
+        self,
+        temp_db_path,
+        sample_person_entity,
+        sample_organization_entity,
+        sample_location_entity,
+    ):
         """Test that list_entities returns all stored entities."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store multiple entities
         await db.put_entity(sample_person_entity)
         await db.put_entity(sample_organization_entity)
         await db.put_entity(sample_location_entity)
-        
+
         # List all entities
         entities = await db.list_entities(limit=100)
-        
+
         # Should return all 3 entities
         assert len(entities) == 3
         entity_ids = [e.id for e in entities]
@@ -240,42 +255,43 @@ class TestEntityDatabaseEntityOperations:
         assert sample_location_entity.id in entity_ids
 
     @pytest.mark.asyncio
-    async def test_list_entities_filters_by_type(self, temp_db_path, sample_person_entity, 
-                                                  sample_organization_entity):
+    async def test_list_entities_filters_by_type(
+        self, temp_db_path, sample_person_entity, sample_organization_entity
+    ):
         """Test that list_entities can filter by entity type."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store entities of different types
         await db.put_entity(sample_person_entity)
         await db.put_entity(sample_organization_entity)
-        
+
         # List only person entities
         entities = await db.list_entities(entity_type="person", limit=100)
-        
+
         # Should return only person entities
         assert len(entities) == 1
         assert entities[0].type == "person"
         assert entities[0].id == sample_person_entity.id
 
     @pytest.mark.asyncio
-    async def test_list_entities_filters_by_subtype(self, temp_db_path, sample_organization_entity):
+    async def test_list_entities_filters_by_subtype(
+        self, temp_db_path, sample_organization_entity
+    ):
         """Test that list_entities can filter by entity subtype."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store organization entity
         await db.put_entity(sample_organization_entity)
-        
+
         # List only political_party entities
         entities = await db.list_entities(
-            entity_type="organization",
-            sub_type="political_party",
-            limit=100
+            entity_type="organization", sub_type="political_party", limit=100
         )
-        
+
         # Should return only political party entities
         assert len(entities) == 1
         assert entities[0].sub_type == EntitySubType.POLITICAL_PARTY
@@ -285,9 +301,9 @@ class TestEntityDatabaseEntityOperations:
     async def test_list_entities_supports_pagination(self, temp_db_path):
         """Test that list_entities supports pagination with limit and offset."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store multiple entities
         for i in range(5):
             entity = Person(
@@ -299,20 +315,20 @@ class TestEntityDatabaseEntityOperations:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             await db.put_entity(entity)
-        
+
         # Get first page
         page1 = await db.list_entities(limit=2, offset=0)
         assert len(page1) == 2
-        
+
         # Get second page
         page2 = await db.list_entities(limit=2, offset=2)
         assert len(page2) == 2
-        
+
         # Pages should have different entities
         page1_ids = [e.id for e in page1]
         page2_ids = [e.id for e in page2]
@@ -336,22 +352,24 @@ class TestEntityDatabaseRelationshipOperations:
                 version_number=1,
                 author=Author(slug="system-importer", name="System Importer"),
                 change_description="Initial import",
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             ),
             created_at=datetime.now(UTC),
-            attributes={"position": "President"}
+            attributes={"position": "President"},
         )
 
     @pytest.mark.asyncio
-    async def test_put_relationship_stores_relationship(self, temp_db_path, sample_relationship):
+    async def test_put_relationship_stores_relationship(
+        self, temp_db_path, sample_relationship
+    ):
         """Test that put_relationship stores a relationship and returns it."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store relationship
         result = await db.put_relationship(sample_relationship)
-        
+
         # Should return the same relationship
         assert result.id == sample_relationship.id
         assert result.source_entity_id == sample_relationship.source_entity_id
@@ -359,18 +377,20 @@ class TestEntityDatabaseRelationshipOperations:
         assert result.type == "MEMBER_OF"
 
     @pytest.mark.asyncio
-    async def test_get_relationship_retrieves_stored_relationship(self, temp_db_path, sample_relationship):
+    async def test_get_relationship_retrieves_stored_relationship(
+        self, temp_db_path, sample_relationship
+    ):
         """Test that get_relationship retrieves a previously stored relationship."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store relationship
         await db.put_relationship(sample_relationship)
-        
+
         # Retrieve relationship
         retrieved = await db.get_relationship(sample_relationship.id)
-        
+
         # Should retrieve the same relationship
         assert retrieved is not None
         assert retrieved.id == sample_relationship.id
@@ -382,31 +402,33 @@ class TestEntityDatabaseRelationshipOperations:
     async def test_get_relationship_returns_none_for_nonexistent(self, temp_db_path):
         """Test that get_relationship returns None for non-existent relationship."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Try to retrieve non-existent relationship
         result = await db.get_relationship("relationship:nonexistent")
-        
+
         # Should return None
         assert result is None
 
     @pytest.mark.asyncio
-    async def test_delete_relationship_removes_relationship(self, temp_db_path, sample_relationship):
+    async def test_delete_relationship_removes_relationship(
+        self, temp_db_path, sample_relationship
+    ):
         """Test that delete_relationship removes a relationship."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store relationship
         await db.put_relationship(sample_relationship)
-        
+
         # Delete relationship
         result = await db.delete_relationship(sample_relationship.id)
-        
+
         # Should return True
         assert result is True
-        
+
         # Relationship should no longer exist
         retrieved = await db.get_relationship(sample_relationship.id)
         assert retrieved is None
@@ -415,9 +437,9 @@ class TestEntityDatabaseRelationshipOperations:
     async def test_list_relationships_returns_all_relationships(self, temp_db_path):
         """Test that list_relationships returns all stored relationships."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store multiple relationships
         for i in range(3):
             rel = Relationship(
@@ -430,15 +452,15 @@ class TestEntityDatabaseRelationshipOperations:
                     version_number=1,
                     author=Author(slug="system"),
                     change_description="Initial",
-                    created_at=datetime.now(UTC)
+                    created_at=datetime.now(UTC),
                 ),
-                created_at=datetime.now(UTC)
+                created_at=datetime.now(UTC),
             )
             await db.put_relationship(rel)
-        
+
         # List all relationships
         relationships = await db.list_relationships(limit=100)
-        
+
         # Should return all 3 relationships
         assert len(relationships) == 3
 
@@ -459,38 +481,40 @@ class TestEntityDatabaseVersionOperations:
             snapshot={
                 "slug": "ram-chandra-poudel",
                 "type": "person",
-                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}]
-            }
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}],
+            },
         )
 
     @pytest.mark.asyncio
     async def test_put_version_stores_version(self, temp_db_path, sample_version):
         """Test that put_version stores a version and returns it."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store version
         result = await db.put_version(sample_version)
-        
+
         # Should return the same version
         assert result.id == sample_version.id
         assert result.version_number == 1
         assert result.entity_or_relationship_id == "entity:person/ram-chandra-poudel"
 
     @pytest.mark.asyncio
-    async def test_get_version_retrieves_stored_version(self, temp_db_path, sample_version):
+    async def test_get_version_retrieves_stored_version(
+        self, temp_db_path, sample_version
+    ):
         """Test that get_version retrieves a previously stored version."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store version
         await db.put_version(sample_version)
-        
+
         # Retrieve version
         retrieved = await db.get_version(sample_version.id)
-        
+
         # Should retrieve the same version
         assert retrieved is not None
         assert retrieved.id == sample_version.id
@@ -501,9 +525,9 @@ class TestEntityDatabaseVersionOperations:
     async def test_list_versions_returns_all_versions(self, temp_db_path):
         """Test that list_versions returns all stored versions."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store multiple versions
         for i in range(3):
             version = Version(
@@ -513,13 +537,13 @@ class TestEntityDatabaseVersionOperations:
                 author=Author(slug="system"),
                 change_description=f"Update {i + 1}",
                 created_at=datetime.now(UTC),
-                snapshot={"version": i + 1}
+                snapshot={"version": i + 1},
             )
             await db.put_version(version)
-        
+
         # List all versions
         versions = await db.list_versions(limit=100)
-        
+
         # Should return all 3 versions
         assert len(versions) == 3
 
@@ -530,39 +554,38 @@ class TestEntityDatabaseAuthorOperations:
     @pytest.fixture
     def sample_author(self):
         """Create a sample author for testing."""
-        return Author(
-            slug="system-importer",
-            name="System Importer"
-        )
+        return Author(slug="system-importer", name="System Importer")
 
     @pytest.mark.asyncio
     async def test_put_author_stores_author(self, temp_db_path, sample_author):
         """Test that put_author stores an author and returns it."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store author
         result = await db.put_author(sample_author)
-        
+
         # Should return the same author
         assert result.id == sample_author.id
         assert result.slug == sample_author.slug
         assert result.name == "System Importer"
 
     @pytest.mark.asyncio
-    async def test_get_author_retrieves_stored_author(self, temp_db_path, sample_author):
+    async def test_get_author_retrieves_stored_author(
+        self, temp_db_path, sample_author
+    ):
         """Test that get_author retrieves a previously stored author."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store author
         await db.put_author(sample_author)
-        
+
         # Retrieve author
         retrieved = await db.get_author(sample_author.id)
-        
+
         # Should retrieve the same author
         assert retrieved is not None
         assert retrieved.id == sample_author.id
@@ -573,16 +596,16 @@ class TestEntityDatabaseAuthorOperations:
     async def test_list_authors_returns_all_authors(self, temp_db_path):
         """Test that list_authors returns all stored authors."""
         from nes2.database.file_database import FileDatabase
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
-        
+
         # Store multiple authors
         for i in range(3):
             author = Author(slug=f"author-{i}", name=f"Author {i}")
             await db.put_author(author)
-        
+
         # List all authors
         authors = await db.list_authors(limit=100)
-        
+
         # Should return all 3 authors
         assert len(authors) == 3

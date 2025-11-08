@@ -11,9 +11,9 @@ import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request, status
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.exceptions import RequestValidationError
 from pydantic import ValidationError
 
 from nes2 import config
@@ -28,12 +28,12 @@ async def lifespan(app: FastAPI):
     """Lifespan context manager for startup and shutdown events."""
     # Startup
     logger.info("Starting Nepal Entity Service API v2")
-    
+
     # Initialize database
     config.Config.initialize_database(base_path="./nes-db/v2")
-    
+
     yield
-    
+
     # Shutdown
     logger.info("Shutting down Nepal Entity Service API v2")
     config.Config.cleanup()
@@ -46,7 +46,7 @@ app = FastAPI(
     version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
-    lifespan=lifespan
+    lifespan=lifespan,
 )
 
 # Configure CORS
@@ -73,26 +73,29 @@ get_publication_service = config.Config.get_publication_service
 # Error Handlers
 # ============================================================================
 
+
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     """Handle request validation errors."""
     errors = []
     for error in exc.errors():
-        errors.append({
-            "field": ".".join(str(loc) for loc in error["loc"]),
-            "message": error["msg"],
-            "type": error["type"]
-        })
-    
+        errors.append(
+            {
+                "field": ".".join(str(loc) for loc in error["loc"]),
+                "message": error["msg"],
+                "type": error["type"],
+            }
+        )
+
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,
         content={
             "error": {
                 "code": "VALIDATION_ERROR",
                 "message": "Request validation failed",
-                "details": errors
+                "details": errors,
             }
-        }
+        },
     )
 
 
@@ -101,21 +104,23 @@ async def pydantic_validation_exception_handler(request: Request, exc: Validatio
     """Handle Pydantic validation errors."""
     errors = []
     for error in exc.errors():
-        errors.append({
-            "field": ".".join(str(loc) for loc in error["loc"]),
-            "message": error["msg"],
-            "type": error["type"]
-        })
-    
+        errors.append(
+            {
+                "field": ".".join(str(loc) for loc in error["loc"]),
+                "message": error["msg"],
+                "type": error["type"],
+            }
+        )
+
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         content={
             "error": {
                 "code": "VALIDATION_ERROR",
                 "message": "Data validation failed",
-                "details": errors
+                "details": errors,
             }
-        }
+        },
     )
 
 
@@ -124,12 +129,7 @@ async def value_error_handler(request: Request, exc: ValueError):
     """Handle ValueError exceptions."""
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,
-        content={
-            "error": {
-                "code": "INVALID_REQUEST",
-                "message": str(exc)
-            }
-        }
+        content={"error": {"code": "INVALID_REQUEST", "message": str(exc)}},
     )
 
 
@@ -137,15 +137,12 @@ async def value_error_handler(request: Request, exc: ValueError):
 async def general_exception_handler(request: Request, exc: Exception):
     """Handle general exceptions."""
     logger.error(f"Unhandled exception: {exc}", exc_info=True)
-    
+
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
-            "error": {
-                "code": "INTERNAL_ERROR",
-                "message": "An internal error occurred"
-            }
-        }
+            "error": {"code": "INTERNAL_ERROR", "message": "An internal error occurred"}
+        },
     )
 
 
@@ -154,7 +151,7 @@ async def general_exception_handler(request: Request, exc: Exception):
 # ============================================================================
 
 # Import and include routers
-from nes2.api.routes import entities, relationships, schemas, health
+from nes2.api.routes import entities, health, relationships, schemas  # noqa: E402
 
 app.include_router(entities.router)
 app.include_router(relationships.router)
@@ -166,18 +163,21 @@ app.include_router(health.router)
 # Documentation Endpoints (Must be last to avoid route conflicts)
 # ============================================================================
 
-from nes2.api.documentation import serve_documentation
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse  # noqa: E402
+
+from nes2.api.documentation import serve_documentation  # noqa: E402
+
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
     """Serve the documentation landing page."""
     return await serve_documentation("")
 
+
 @app.get("/{page}", response_class=HTMLResponse)
 async def documentation_page(page: str):
     """Serve a documentation page.
-    
+
     This endpoint serves documentation pages from Markdown files.
     It should be registered after all other routes to avoid conflicts.
     """

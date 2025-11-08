@@ -12,14 +12,15 @@ The Search Service provides read-optimized search capabilities for:
 - Version retrieval
 """
 
-import pytest
-from datetime import date, datetime, UTC
+from datetime import UTC, date, datetime
 from typing import Optional
 
+import pytest
+
 from nes2.core.models.base import Name, NameKind
-from nes2.core.models.person import Person
+from nes2.core.models.entity import EntitySubType, EntityType
 from nes2.core.models.organization import PoliticalParty
-from nes2.core.models.entity import EntityType, EntitySubType
+from nes2.core.models.person import Person
 from nes2.core.models.relationship import Relationship
 from nes2.core.models.version import Author, Version, VersionSummary, VersionType
 from nes2.database.file_database import FileDatabase
@@ -32,10 +33,10 @@ class TestSearchServiceFoundation:
     async def test_search_service_initialization(self, temp_db_path):
         """Test that SearchService can be initialized with a database."""
         from nes2.services.search import SearchService
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
         service = SearchService(database=db)
-        
+
         assert service is not None
         assert service.database == db
 
@@ -43,7 +44,7 @@ class TestSearchServiceFoundation:
     async def test_search_service_requires_database(self):
         """Test that SearchService requires a database instance."""
         from nes2.services.search import SearchService
-        
+
         with pytest.raises(TypeError):
             SearchService()
 
@@ -51,54 +52,68 @@ class TestSearchServiceFoundation:
 class TestSearchServiceEntityTextSearch:
     """Test entity text search capabilities."""
 
-
     @pytest.mark.asyncio
     async def test_search_entities_with_text_query(self, temp_db_path):
         """Test basic text search across entity names."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create test entities
         await pub_service.create_entity(
-            {"slug": "ram-poudel", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}]},
-            "author:test", "Test"
+            {
+                "slug": "ram-poudel",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}],
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "sher-deuba", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Sher Bahadur Deuba"}}]},
-            "author:test", "Test"
+            {
+                "slug": "sher-deuba",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Sher Bahadur Deuba"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search for "ram"
         results = await search_service.search_entities(query="ram")
-        
+
         assert len(results) == 1
         assert results[0].slug == "ram-poudel"
 
     @pytest.mark.asyncio
     async def test_search_entities_case_insensitive(self, temp_db_path):
         """Test that search is case-insensitive."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entity
         await pub_service.create_entity(
-            {"slug": "test-person", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}]},
-            "author:test", "Test"
+            {
+                "slug": "test-person",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with different cases
         results_lower = await search_service.search_entities(query="ram")
         results_upper = await search_service.search_entities(query="RAM")
         results_mixed = await search_service.search_entities(query="Ram")
-        
+
         assert len(results_lower) == 1
         assert len(results_upper) == 1
         assert len(results_mixed) == 1
@@ -106,22 +121,27 @@ class TestSearchServiceEntityTextSearch:
     @pytest.mark.asyncio
     async def test_search_entities_substring_matching(self, temp_db_path):
         """Test that search supports substring matching."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entity
         await pub_service.create_entity(
-            {"slug": "test-person", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}]},
-            "author:test", "Test"
+            {
+                "slug": "test-person",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Chandra Poudel"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with substring
         results = await search_service.search_entities(query="poudel")
-        
+
         assert len(results) == 1
         assert results[0].slug == "test-person"
 
@@ -132,61 +152,67 @@ class TestSearchServiceMultilingualSearch:
     @pytest.mark.asyncio
     async def test_search_entities_nepali_text(self, temp_db_path):
         """Test search with Nepali (Devanagari) text."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entity with Nepali name
         await pub_service.create_entity(
             {
                 "slug": "ram-poudel",
                 "type": "person",
-                "names": [{
-                    "kind": "PRIMARY",
-                    "en": {"full": "Ram Chandra Poudel"},
-                    "ne": {"full": "राम चन्द्र पौडेल"}
-                }]
+                "names": [
+                    {
+                        "kind": "PRIMARY",
+                        "en": {"full": "Ram Chandra Poudel"},
+                        "ne": {"full": "राम चन्द्र पौडेल"},
+                    }
+                ],
             },
-            "author:test", "Test"
+            "author:test",
+            "Test",
         )
-        
+
         # Search with Nepali text
         results = await search_service.search_entities(query="राम")
-        
+
         assert len(results) == 1
         assert results[0].slug == "ram-poudel"
 
     @pytest.mark.asyncio
     async def test_search_entities_both_languages(self, temp_db_path):
         """Test that search works across both English and Nepali names."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entity with both English and Nepali names
         await pub_service.create_entity(
             {
                 "slug": "test-person",
                 "type": "person",
-                "names": [{
-                    "kind": "PRIMARY",
-                    "en": {"full": "Ram Chandra Poudel"},
-                    "ne": {"full": "राम चन्द्र पौडेल"}
-                }]
+                "names": [
+                    {
+                        "kind": "PRIMARY",
+                        "en": {"full": "Ram Chandra Poudel"},
+                        "ne": {"full": "राम चन्द्र पौडेल"},
+                    }
+                ],
             },
-            "author:test", "Test"
+            "author:test",
+            "Test",
         )
-        
+
         # Search with English
         results_en = await search_service.search_entities(query="ram")
         assert len(results_en) == 1
-        
+
         # Search with Nepali
         results_ne = await search_service.search_entities(query="पौडेल")
         assert len(results_ne) == 1
@@ -198,84 +224,116 @@ class TestSearchServiceTypeFiltering:
     @pytest.mark.asyncio
     async def test_search_entities_filter_by_type(self, temp_db_path):
         """Test filtering entities by type."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities of different types
         await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Test Person"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Test Person"}}],
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Test Party"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Test Party"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with type filter
         results = await search_service.search_entities(entity_type="person")
-        
+
         assert len(results) == 1
         assert results[0].type == EntityType.PERSON
 
     @pytest.mark.asyncio
     async def test_search_entities_filter_by_subtype(self, temp_db_path):
         """Test filtering entities by subtype."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create organizations with different subtypes
         await pub_service.create_entity(
-            {"slug": "party-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Party 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "party-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Party 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "gov-1", "type": "organization", "sub_type": "government_body", "names": [{"kind": "PRIMARY", "en": {"full": "Gov Body 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "gov-1",
+                "type": "organization",
+                "sub_type": "government_body",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Gov Body 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with subtype filter
         results = await search_service.search_entities(
-            entity_type="organization",
-            sub_type="political_party"
+            entity_type="organization", sub_type="political_party"
         )
-        
+
         assert len(results) == 1
         assert results[0].sub_type == EntitySubType.POLITICAL_PARTY
 
     @pytest.mark.asyncio
     async def test_search_entities_type_and_query(self, temp_db_path):
         """Test combining type filter with text query."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         await pub_service.create_entity(
-            {"slug": "ram-person", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Ram Poudel"}}]},
-            "author:test", "Test"
+            {
+                "slug": "ram-person",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Poudel"}}],
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "ram-org", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Ram Party"}}]},
-            "author:test", "Test"
+            {
+                "slug": "ram-org",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Ram Party"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with type filter and query
         results = await search_service.search_entities(
-            query="ram",
-            entity_type="person"
+            query="ram", entity_type="person"
         )
-        
+
         assert len(results) == 1
         assert results[0].type == EntityType.PERSON
 
@@ -286,58 +344,80 @@ class TestSearchServiceAttributeFiltering:
     @pytest.mark.asyncio
     async def test_search_entities_filter_by_attributes(self, temp_db_path):
         """Test filtering entities by attributes."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities with different attributes
         await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}], "attributes": {"party": "nepali-congress"}},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+                "attributes": {"party": "nepali-congress"},
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "person-2", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}], "attributes": {"party": "cpn-uml"}},
-            "author:test", "Test"
+            {
+                "slug": "person-2",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}],
+                "attributes": {"party": "cpn-uml"},
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with attribute filter
         results = await search_service.search_entities(
             attributes={"party": "nepali-congress"}
         )
-        
+
         assert len(results) == 1
         assert results[0].slug == "person-1"
 
     @pytest.mark.asyncio
     async def test_search_entities_multiple_attribute_filters(self, temp_db_path):
         """Test filtering with multiple attributes (AND logic)."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities with different attribute combinations
         await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}], 
-             "attributes": {"party": "nepali-congress", "position": "minister"}},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+                "attributes": {"party": "nepali-congress", "position": "minister"},
+            },
+            "author:test",
+            "Test",
         )
         await pub_service.create_entity(
-            {"slug": "person-2", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}], 
-             "attributes": {"party": "nepali-congress", "position": "member"}},
-            "author:test", "Test"
+            {
+                "slug": "person-2",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}],
+                "attributes": {"party": "nepali-congress", "position": "member"},
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Search with multiple attribute filters (AND logic)
         results = await search_service.search_entities(
             attributes={"party": "nepali-congress", "position": "minister"}
         )
-        
+
         assert len(results) == 1
         assert results[0].slug == "person-1"
 
@@ -348,47 +428,57 @@ class TestSearchServicePagination:
     @pytest.mark.asyncio
     async def test_search_entities_with_limit(self, temp_db_path):
         """Test limiting search results."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create multiple entities
         for i in range(5):
             await pub_service.create_entity(
-                {"slug": f"person-{i}", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": f"Person {i}"}}]},
-                "author:test", "Test"
+                {
+                    "slug": f"person-{i}",
+                    "type": "person",
+                    "names": [{"kind": "PRIMARY", "en": {"full": f"Person {i}"}}],
+                },
+                "author:test",
+                "Test",
             )
-        
+
         # Search with limit
         results = await search_service.search_entities(limit=3)
-        
+
         assert len(results) == 3
 
     @pytest.mark.asyncio
     async def test_search_entities_with_offset(self, temp_db_path):
         """Test offset-based pagination."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create multiple entities
         for i in range(5):
             await pub_service.create_entity(
-                {"slug": f"person-{i}", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": f"Person {i}"}}]},
-                "author:test", "Test"
+                {
+                    "slug": f"person-{i}",
+                    "type": "person",
+                    "names": [{"kind": "PRIMARY", "en": {"full": f"Person {i}"}}],
+                },
+                "author:test",
+                "Test",
             )
-        
+
         # Get first page
         page1 = await search_service.search_entities(limit=2, offset=0)
         # Get second page
         page2 = await search_service.search_entities(limit=2, offset=2)
-        
+
         assert len(page1) == 2
         assert len(page2) == 2
         # Ensure different results
@@ -397,23 +487,28 @@ class TestSearchServicePagination:
     @pytest.mark.asyncio
     async def test_search_entities_pagination_with_query(self, temp_db_path):
         """Test pagination with text query."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create multiple entities with "test" in name
         for i in range(5):
             await pub_service.create_entity(
-                {"slug": f"test-{i}", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": f"Test Person {i}"}}]},
-                "author:test", "Test"
+                {
+                    "slug": f"test-{i}",
+                    "type": "person",
+                    "names": [{"kind": "PRIMARY", "en": {"full": f"Test Person {i}"}}],
+                },
+                "author:test",
+                "Test",
             )
-        
+
         # Search with query and pagination
         results = await search_service.search_entities(query="test", limit=3, offset=0)
-        
+
         assert len(results) == 3
 
 
@@ -423,23 +518,34 @@ class TestSearchServiceRelationshipSearch:
     @pytest.mark.asyncio
     async def test_search_relationships_by_type(self, temp_db_path):
         """Test searching relationships by type."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         person = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Create relationships of different types
         await pub_service.create_relationship(
             person.id, org.id, "MEMBER_OF", "author:test", "Test"
@@ -447,78 +553,121 @@ class TestSearchServiceRelationshipSearch:
         await pub_service.create_relationship(
             person.id, org.id, "AFFILIATED_WITH", "author:test", "Test"
         )
-        
+
         # Search by relationship type
-        results = await search_service.search_relationships(relationship_type="MEMBER_OF")
-        
+        results = await search_service.search_relationships(
+            relationship_type="MEMBER_OF"
+        )
+
         assert len(results) == 1
         assert results[0].type == "MEMBER_OF"
 
     @pytest.mark.asyncio
     async def test_search_relationships_by_source_entity(self, temp_db_path):
         """Test searching relationships by source entity."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         person1 = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         person2 = await pub_service.create_entity(
-            {"slug": "person-2", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-2",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 2"}}],
+            },
+            "author:test",
+            "Test",
         )
         org = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Create relationships
-        await pub_service.create_relationship(person1.id, org.id, "MEMBER_OF", "author:test", "Test")
-        await pub_service.create_relationship(person2.id, org.id, "MEMBER_OF", "author:test", "Test")
-        
+        await pub_service.create_relationship(
+            person1.id, org.id, "MEMBER_OF", "author:test", "Test"
+        )
+        await pub_service.create_relationship(
+            person2.id, org.id, "MEMBER_OF", "author:test", "Test"
+        )
+
         # Search by source entity
         results = await search_service.search_relationships(source_entity_id=person1.id)
-        
+
         assert len(results) == 1
         assert results[0].source_entity_id == person1.id
 
     @pytest.mark.asyncio
     async def test_search_relationships_by_target_entity(self, temp_db_path):
         """Test searching relationships by target entity."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         person = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org1 = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org2 = await pub_service.create_entity(
-            {"slug": "org-2", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 2"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-2",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 2"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Create relationships
-        await pub_service.create_relationship(person.id, org1.id, "MEMBER_OF", "author:test", "Test")
-        await pub_service.create_relationship(person.id, org2.id, "AFFILIATED_WITH", "author:test", "Test")
-        
+        await pub_service.create_relationship(
+            person.id, org1.id, "MEMBER_OF", "author:test", "Test"
+        )
+        await pub_service.create_relationship(
+            person.id, org2.id, "AFFILIATED_WITH", "author:test", "Test"
+        )
+
         # Search by target entity
         results = await search_service.search_relationships(target_entity_id=org1.id)
-        
+
         assert len(results) == 1
         assert results[0].target_entity_id == org1.id
 
@@ -529,78 +678,116 @@ class TestSearchServiceTemporalFiltering:
     @pytest.mark.asyncio
     async def test_search_relationships_active_on_date(self, temp_db_path):
         """Test filtering relationships active on a specific date."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         person = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Create relationships with different date ranges
         await pub_service.create_relationship(
-            person.id, org.id, "MEMBER_OF", "author:test", "Test",
-            start_date=date(2020, 1, 1), end_date=date(2022, 12, 31)
+            person.id,
+            org.id,
+            "MEMBER_OF",
+            "author:test",
+            "Test",
+            start_date=date(2020, 1, 1),
+            end_date=date(2022, 12, 31),
         )
         await pub_service.create_relationship(
-            person.id, org.id, "AFFILIATED_WITH", "author:test", "Test",
-            start_date=date(2023, 1, 1)
+            person.id,
+            org.id,
+            "AFFILIATED_WITH",
+            "author:test",
+            "Test",
+            start_date=date(2023, 1, 1),
         )
-        
+
         # Search for relationships active on 2021-06-01
         results = await search_service.search_relationships(
-            source_entity_id=person.id,
-            active_on=date(2021, 6, 1)
+            source_entity_id=person.id, active_on=date(2021, 6, 1)
         )
-        
+
         assert len(results) == 1
         assert results[0].type == "MEMBER_OF"
 
     @pytest.mark.asyncio
     async def test_search_relationships_currently_active(self, temp_db_path):
         """Test filtering for currently active relationships (no end date)."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities
         person = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         # Create relationships - one ended, one active
         await pub_service.create_relationship(
-            person.id, org.id, "MEMBER_OF", "author:test", "Test",
-            start_date=date(2020, 1, 1), end_date=date(2022, 12, 31)
+            person.id,
+            org.id,
+            "MEMBER_OF",
+            "author:test",
+            "Test",
+            start_date=date(2020, 1, 1),
+            end_date=date(2022, 12, 31),
         )
         await pub_service.create_relationship(
-            person.id, org.id, "AFFILIATED_WITH", "author:test", "Test",
-            start_date=date(2023, 1, 1)
+            person.id,
+            org.id,
+            "AFFILIATED_WITH",
+            "author:test",
+            "Test",
+            start_date=date(2023, 1, 1),
         )
-        
+
         # Search for currently active relationships
         results = await search_service.search_relationships(
-            source_entity_id=person.id,
-            currently_active=True
+            source_entity_id=person.id, currently_active=True
         )
-        
+
         assert len(results) == 1
         assert results[0].type == "AFFILIATED_WITH"
         assert results[0].end_date is None
@@ -612,28 +799,33 @@ class TestSearchServiceVersionRetrieval:
     @pytest.mark.asyncio
     async def test_get_entity_versions(self, temp_db_path):
         """Test retrieving version history for an entity."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create and update entity
         entity = await pub_service.create_entity(
-            {"slug": "test-person", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Test Person"}}]},
-            "author:test", "Initial"
+            {
+                "slug": "test-person",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Test Person"}}],
+            },
+            "author:test",
+            "Initial",
         )
-        
+
         entity.attributes = {"update": "1"}
         await pub_service.update_entity(entity, "author:test", "Update 1")
-        
+
         entity.attributes = {"update": "2"}
         await pub_service.update_entity(entity, "author:test", "Update 2")
-        
+
         # Get versions
         versions = await search_service.get_entity_versions(entity_id=entity.id)
-        
+
         assert len(versions) == 3
         assert versions[0].version_number == 1
         assert versions[1].version_number == 2
@@ -642,46 +834,63 @@ class TestSearchServiceVersionRetrieval:
     @pytest.mark.asyncio
     async def test_get_relationship_versions(self, temp_db_path):
         """Test retrieving version history for a relationship."""
-        from nes2.services.search import SearchService
         from nes2.services.publication import PublicationService
-        
+        from nes2.services.search import SearchService
+
         db = FileDatabase(base_path=str(temp_db_path))
         pub_service = PublicationService(database=db)
         search_service = SearchService(database=db)
-        
+
         # Create entities and relationship
         person = await pub_service.create_entity(
-            {"slug": "person-1", "type": "person", "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "person-1",
+                "type": "person",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Person 1"}}],
+            },
+            "author:test",
+            "Test",
         )
         org = await pub_service.create_entity(
-            {"slug": "org-1", "type": "organization", "sub_type": "political_party", "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}]},
-            "author:test", "Test"
+            {
+                "slug": "org-1",
+                "type": "organization",
+                "sub_type": "political_party",
+                "names": [{"kind": "PRIMARY", "en": {"full": "Org 1"}}],
+            },
+            "author:test",
+            "Test",
         )
-        
+
         relationship = await pub_service.create_relationship(
             person.id, org.id, "MEMBER_OF", "author:test", "Initial"
         )
-        
+
         # Update relationship
         relationship.attributes = {"role": "member"}
         await pub_service.update_relationship(relationship, "author:test", "Update 1")
-        
+
         # Get versions
-        versions = await search_service.get_relationship_versions(relationship_id=relationship.id)
-        
+        versions = await search_service.get_relationship_versions(
+            relationship_id=relationship.id
+        )
+
         assert len(versions) == 2
         assert versions[0].version_number == 1
         assert versions[1].version_number == 2
 
     @pytest.mark.asyncio
-    async def test_get_entity_versions_returns_empty_for_nonexistent(self, temp_db_path):
+    async def test_get_entity_versions_returns_empty_for_nonexistent(
+        self, temp_db_path
+    ):
         """Test that getting versions for nonexistent entity returns empty list."""
         from nes2.services.search import SearchService
-        
+
         db = FileDatabase(base_path=str(temp_db_path))
         search_service = SearchService(database=db)
-        
-        versions = await search_service.get_entity_versions(entity_id="entity:person/nonexistent")
-        
+
+        versions = await search_service.get_entity_versions(
+            entity_id="entity:person/nonexistent"
+        )
+
         assert versions == []

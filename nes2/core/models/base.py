@@ -144,11 +144,12 @@ class Contact(BaseModel):
     @model_validator(mode="after")
     def _validate_value_by_type(self) -> "Contact":
         import re
+
         t = self.type
         v = self.value
         if t == ContactType.EMAIL:
             # Simple email validation
-            email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+            email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             if not re.match(email_pattern, v):
                 raise ValueError(f"Invalid email format: {v}")
         elif t in {

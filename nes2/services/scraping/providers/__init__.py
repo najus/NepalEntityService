@@ -32,9 +32,9 @@ Usage:
     >>> response = await provider.generate_text(prompt="Translate: राम चन्द्र पौडेल")
 """
 
+from .aws import AWSBedrockProvider
 from .base import BaseLLMProvider
 from .mock import MockLLMProvider
-from .aws import AWSBedrockProvider
 
 __all__ = [
     "BaseLLMProvider",

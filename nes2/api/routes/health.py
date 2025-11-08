@@ -5,12 +5,13 @@ This module provides a health check endpoint for monitoring:
 """
 
 import logging
-from datetime import datetime, UTC
+from datetime import UTC, datetime
+
 from fastapi import APIRouter, Depends
 
-from nes2.database.entity_database import EntityDatabase
 from nes2.api.app import get_database
 from nes2.api.responses import HealthResponse
+from nes2.database.entity_database import EntityDatabase
 
 logger = logging.getLogger(__name__)
 
@@ -20,10 +21,10 @@ router = APIRouter(prefix="/api", tags=["health"])
 @router.get("/health", response_model=HealthResponse)
 async def health_check(database: EntityDatabase = Depends(get_database)):
     """Health check endpoint.
-    
+
     Returns the current health status of the API and its dependencies,
     including database connectivity and version information.
-    
+
     Returns:
         Health status information including:
         - Overall status (healthy/unhealthy)
@@ -39,17 +40,14 @@ async def health_check(database: EntityDatabase = Depends(get_database)):
     except Exception as e:
         logger.error(f"Database health check failed: {e}", exc_info=True)
         db_status = "disconnected"
-    
+
     # Determine overall status
     overall_status = "healthy" if db_status == "connected" else "unhealthy"
-    
+
     return HealthResponse(
         status=overall_status,
         version="2.0.0",
         api_version="v2",
-        database={
-            "status": db_status,
-            "type": "file_database"
-        },
-        timestamp=datetime.now(UTC)
+        database={"status": db_status, "type": "file_database"},
+        timestamp=datetime.now(UTC),
     )

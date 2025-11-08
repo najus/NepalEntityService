@@ -10,15 +10,15 @@ Core Components:
 - Data Normalization Service: LLM-powered data structuring
 """
 
-from .service import ScrapingService
-from .web_scraper import WebScraper, RateLimiter, RetryHandler
 from .normalization import (
-    DataNormalizer,
-    NameExtractor,
     AttributeExtractor,
-    RelationshipExtractor,
+    DataNormalizer,
     DataQualityAssessor,
+    NameExtractor,
+    RelationshipExtractor,
 )
+from .service import ScrapingService
+from .web_scraper import RateLimiter, RetryHandler, WebScraper
 
 __all__ = [
     "ScrapingService",

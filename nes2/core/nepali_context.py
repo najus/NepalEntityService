@@ -7,7 +7,6 @@ to guide proper entity classification and relationship modeling.
 
 from typing import Dict, List
 
-
 # Nepal's Political System
 POLITICAL_SYSTEM_OVERVIEW = """
 Nepal's Political System (Federal Democratic Republic since 2008):
@@ -53,14 +52,49 @@ ADMINISTRATIVE_DIVISIONS = {
         "nepali": "प्रदेश",
         "description": "Highest administrative division since 2015 constitution",
         "list": [
-            {"number": 1, "name": "Koshi Province", "nepali": "कोशी प्रदेश", "capital": "Biratnagar"},
-            {"number": 2, "name": "Madhesh Province", "nepali": "मधेश प्रदेश", "capital": "Janakpur"},
-            {"number": 3, "name": "Bagmati Province", "nepali": "बागमती प्रदेश", "capital": "Hetauda"},
-            {"number": 4, "name": "Gandaki Province", "nepali": "गण्डकी प्रदेश", "capital": "Pokhara"},
-            {"number": 5, "name": "Lumbini Province", "nepali": "लुम्बिनी प्रदेश", "capital": "Deukhuri"},
-            {"number": 6, "name": "Karnali Province", "nepali": "कर्णाली प्रदेश", "capital": "Birendranagar"},
-            {"number": 7, "name": "Sudurpashchim Province", "nepali": "सुदूरपश्चिम प्रदेश", "capital": "Godawari"},
-        ]
+            {
+                "number": 1,
+                "name": "Koshi Province",
+                "nepali": "कोशी प्रदेश",
+                "capital": "Biratnagar",
+            },
+            {
+                "number": 2,
+                "name": "Madhesh Province",
+                "nepali": "मधेश प्रदेश",
+                "capital": "Janakpur",
+            },
+            {
+                "number": 3,
+                "name": "Bagmati Province",
+                "nepali": "बागमती प्रदेश",
+                "capital": "Hetauda",
+            },
+            {
+                "number": 4,
+                "name": "Gandaki Province",
+                "nepali": "गण्डकी प्रदेश",
+                "capital": "Pokhara",
+            },
+            {
+                "number": 5,
+                "name": "Lumbini Province",
+                "nepali": "लुम्बिनी प्रदेश",
+                "capital": "Deukhuri",
+            },
+            {
+                "number": 6,
+                "name": "Karnali Province",
+                "nepali": "कर्णाली प्रदेश",
+                "capital": "Birendranagar",
+            },
+            {
+                "number": 7,
+                "name": "Sudurpashchim Province",
+                "nepali": "सुदूरपश्चिम प्रदेश",
+                "capital": "Godawari",
+            },
+        ],
     },
     "districts": {
         "count": 77,
@@ -74,7 +108,14 @@ ADMINISTRATIVE_DIVISIONS = {
                 "count": 6,
                 "nepali": "महानगरपालिका",
                 "criteria": "Population > 300,000",
-                "list": ["Kathmandu", "Pokhara", "Lalitpur", "Bharatpur", "Biratnagar", "Birgunj"]
+                "list": [
+                    "Kathmandu",
+                    "Pokhara",
+                    "Lalitpur",
+                    "Bharatpur",
+                    "Biratnagar",
+                    "Birgunj",
+                ],
             },
             "sub_metropolitan_city": {
                 "count": 11,
@@ -90,14 +131,14 @@ ADMINISTRATIVE_DIVISIONS = {
                 "count": 460,
                 "nepali": "गाउँपालिका",
                 "criteria": "Rural areas",
-            }
-        }
+            },
+        },
     },
     "wards": {
         "total": 6743,
         "nepali": "वडा",
         "description": "Smallest administrative unit within local bodies",
-    }
+    },
 }
 
 
@@ -111,7 +152,7 @@ MAJOR_POLITICAL_PARTIES = [
         "ideology": ["Social Democracy", "Democratic Socialism"],
         "symbol": "Tree",
         "color": "Green",
-        "description": "Oldest democratic party, center-left ideology"
+        "description": "Oldest democratic party, center-left ideology",
     },
     {
         "name": "Communist Party of Nepal (Unified Marxist-Leninist)",
@@ -121,7 +162,7 @@ MAJOR_POLITICAL_PARTIES = [
         "ideology": ["Communism", "Marxism-Leninism"],
         "symbol": "Sun",
         "color": "Red",
-        "description": "Major communist party, center-left to left ideology"
+        "description": "Major communist party, center-left to left ideology",
     },
     {
         "name": "Communist Party of Nepal (Maoist Centre)",
@@ -131,7 +172,7 @@ MAJOR_POLITICAL_PARTIES = [
         "ideology": ["Maoism", "Communism"],
         "symbol": "Hammer and Sickle",
         "color": "Red",
-        "description": "Former rebel group, now mainstream political party"
+        "description": "Former rebel group, now mainstream political party",
     },
     {
         "name": "Rastriya Swatantra Party",
@@ -141,7 +182,7 @@ MAJOR_POLITICAL_PARTIES = [
         "ideology": ["Good Governance", "Anti-Corruption"],
         "symbol": "Bell",
         "color": "Blue",
-        "description": "New party focused on governance reform"
+        "description": "New party focused on governance reform",
     },
     {
         "name": "Rastriya Prajatantra Party",
@@ -151,7 +192,7 @@ MAJOR_POLITICAL_PARTIES = [
         "ideology": ["Constitutional Monarchy", "Hindu State"],
         "symbol": "Plow",
         "color": "Yellow",
-        "description": "Pro-monarchy, Hindu nationalist party"
+        "description": "Pro-monarchy, Hindu nationalist party",
     },
 ]
 
@@ -159,24 +200,55 @@ MAJOR_POLITICAL_PARTIES = [
 # Government Ministries
 GOVERNMENT_MINISTRIES = [
     {"name": "Office of the President", "nepali": "राष्ट्रपति कार्यालय"},
-    {"name": "Office of the Prime Minister and Council of Ministers", "nepali": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय"},
+    {
+        "name": "Office of the Prime Minister and Council of Ministers",
+        "nepali": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+    },
     {"name": "Ministry of Home Affairs", "nepali": "गृह मन्त्रालय"},
     {"name": "Ministry of Foreign Affairs", "nepali": "परराष्ट्र मन्त्रालय"},
     {"name": "Ministry of Finance", "nepali": "अर्थ मन्त्रालय"},
     {"name": "Ministry of Defense", "nepali": "रक्षा मन्त्रालय"},
-    {"name": "Ministry of Education, Science and Technology", "nepali": "शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय"},
-    {"name": "Ministry of Health and Population", "nepali": "स्वास्थ्य तथा जनसंख्या मन्त्रालय"},
-    {"name": "Ministry of Law, Justice and Parliamentary Affairs", "nepali": "कानून, न्याय तथा संसदीय मामिला मन्त्रालय"},
-    {"name": "Ministry of Federal Affairs and General Administration", "nepali": "संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय"},
+    {
+        "name": "Ministry of Education, Science and Technology",
+        "nepali": "शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय",
+    },
+    {
+        "name": "Ministry of Health and Population",
+        "nepali": "स्वास्थ्य तथा जनसंख्या मन्त्रालय",
+    },
+    {
+        "name": "Ministry of Law, Justice and Parliamentary Affairs",
+        "nepali": "कानून, न्याय तथा संसदीय मामिला मन्त्रालय",
+    },
+    {
+        "name": "Ministry of Federal Affairs and General Administration",
+        "nepali": "संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+    },
 ]
 
 
 # Constitutional Bodies
 CONSTITUTIONAL_BODIES = [
-    {"name": "Election Commission", "nepali": "निर्वाचन आयोग", "role": "Conduct elections"},
-    {"name": "Commission for Investigation of Abuse of Authority", "nepali": "अख्तियार दुरुपयोग अनुसन्धान आयोग", "role": "Anti-corruption"},
-    {"name": "National Human Rights Commission", "nepali": "राष्ट्रिय मानव अधिकार आयोग", "role": "Human rights protection"},
-    {"name": "Public Service Commission", "nepali": "लोक सेवा आयोग", "role": "Civil service recruitment"},
+    {
+        "name": "Election Commission",
+        "nepali": "निर्वाचन आयोग",
+        "role": "Conduct elections",
+    },
+    {
+        "name": "Commission for Investigation of Abuse of Authority",
+        "nepali": "अख्तियार दुरुपयोग अनुसन्धान आयोग",
+        "role": "Anti-corruption",
+    },
+    {
+        "name": "National Human Rights Commission",
+        "nepali": "राष्ट्रिय मानव अधिकार आयोग",
+        "role": "Human rights protection",
+    },
+    {
+        "name": "Public Service Commission",
+        "nepali": "लोक सेवा आयोग",
+        "role": "Civil service recruitment",
+    },
     {"name": "Auditor General", "nepali": "महालेखा परीक्षक", "role": "Government audit"},
 ]
 
@@ -262,25 +334,28 @@ POLITICAL_RELATIONSHIP_TYPES = {
 
 def get_province_info(province_name: str) -> Dict:
     """Get information about a specific province.
-    
+
     Args:
         province_name: Name of the province (English or Nepali)
-        
+
     Returns:
         Dictionary with province information
     """
     for province in ADMINISTRATIVE_DIVISIONS["provinces"]["list"]:
-        if province["name"].lower() == province_name.lower() or province["nepali"] == province_name:
+        if (
+            province["name"].lower() == province_name.lower()
+            or province["nepali"] == province_name
+        ):
             return province
     return {}
 
 
 def get_party_info(party_name: str) -> Dict:
     """Get information about a specific political party.
-    
+
     Args:
         party_name: Name of the party (English or Nepali)
-        
+
     Returns:
         Dictionary with party information
     """
@@ -290,13 +365,15 @@ def get_party_info(party_name: str) -> Dict:
     return {}
 
 
-def validate_administrative_hierarchy(location_type: str, parent_type: str = None) -> bool:
+def validate_administrative_hierarchy(
+    location_type: str, parent_type: str = None
+) -> bool:
     """Validate if a location type can be a child of a parent type.
-    
+
     Args:
         location_type: Type of the location (province, district, etc.)
         parent_type: Type of the parent location (optional)
-        
+
     Returns:
         True if the hierarchy is valid
     """
@@ -307,14 +384,19 @@ def validate_administrative_hierarchy(location_type: str, parent_type: str = Non
         "sub_metropolitan_city": ["district", "province"],
         "municipality": ["district", "province"],
         "rural_municipality": ["district", "province"],
-        "ward": ["metropolitan_city", "sub_metropolitan_city", "municipality", "rural_municipality"],
+        "ward": [
+            "metropolitan_city",
+            "sub_metropolitan_city",
+            "municipality",
+            "rural_municipality",
+        ],
         "constituency": ["district", "province"],
     }
-    
+
     if location_type not in hierarchy:
         return False
-    
+
     if parent_type is None:
         return True
-    
+
     return parent_type in hierarchy[location_type]

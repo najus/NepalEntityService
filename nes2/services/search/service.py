@@ -23,18 +23,18 @@ from nes2.database.entity_database import EntityDatabase
 
 class SearchService:
     """Search Service for read-optimized entity and relationship queries.
-    
+
     The Search Service provides a clean interface for searching and retrieving
     entities, relationships, and versions. It delegates to the database layer
     for actual query execution.
-    
+
     Attributes:
         database: The database instance to query
     """
 
     def __init__(self, database: EntityDatabase):
         """Initialize the Search Service.
-        
+
         Args:
             database: Database instance for querying
         """
@@ -50,11 +50,11 @@ class SearchService:
         offset: int = 0,
     ) -> List[Entity]:
         """Search entities with text query and optional filtering.
-        
+
         Performs case-insensitive text search across entity name fields
         (both English and Nepali). Supports filtering by type, subtype,
         and attributes. Results are ranked by relevance when a query is provided.
-        
+
         Args:
             query: Text query to search for in entity names (case-insensitive)
             entity_type: Filter by entity type (person, organization, location)
@@ -62,25 +62,25 @@ class SearchService:
             attributes: Filter by entity attributes (AND logic)
             limit: Maximum number of entities to return (default: 100)
             offset: Number of entities to skip (default: 0)
-            
+
         Returns:
             List of entities matching the search criteria, ranked by relevance
-            
+
         Examples:
             >>> # Basic text search
             >>> results = await service.search_entities(query="ram")
-            
+
             >>> # Search with type filter
             >>> results = await service.search_entities(
             ...     query="poudel",
             ...     entity_type="person"
             ... )
-            
+
             >>> # Search with attribute filter
             >>> results = await service.search_entities(
             ...     attributes={"party": "nepali-congress"}
             ... )
-            
+
             >>> # Paginated search
             >>> page1 = await service.search_entities(query="politician", limit=20, offset=0)
             >>> page2 = await service.search_entities(query="politician", limit=20, offset=20)
@@ -105,10 +105,10 @@ class SearchService:
         offset: int = 0,
     ) -> List[Relationship]:
         """Search relationships with filtering and temporal queries.
-        
+
         Supports filtering by relationship type, source/target entities,
         and temporal constraints (active on a specific date or currently active).
-        
+
         Args:
             relationship_type: Filter by relationship type (e.g., "MEMBER_OF")
             source_entity_id: Filter by source entity ID
@@ -117,27 +117,27 @@ class SearchService:
             currently_active: Filter for relationships with no end date
             limit: Maximum number of relationships to return (default: 100)
             offset: Number of relationships to skip (default: 0)
-            
+
         Returns:
             List of relationships matching the criteria
-            
+
         Examples:
             >>> # Search by relationship type
             >>> results = await service.search_relationships(
             ...     relationship_type="MEMBER_OF"
             ... )
-            
+
             >>> # Search by source entity
             >>> results = await service.search_relationships(
             ...     source_entity_id="entity:person/ram-chandra-poudel"
             ... )
-            
+
             >>> # Search for currently active relationships
             >>> results = await service.search_relationships(
             ...     source_entity_id="entity:person/ram-chandra-poudel",
             ...     currently_active=True
             ... )
-            
+
             >>> # Search for relationships active on a specific date
             >>> results = await service.search_relationships(
             ...     source_entity_id="entity:person/ram-chandra-poudel",
@@ -155,14 +155,14 @@ class SearchService:
                 limit=limit,
                 offset=offset,
             )
-        
+
         if relationship_type:
             return await self.database.list_relationships_by_type(
                 relationship_type=relationship_type,
                 limit=limit,
                 offset=offset,
             )
-        
+
         # No filters - list all relationships
         return await self.database.list_relationships(
             limit=limit,
@@ -180,10 +180,10 @@ class SearchService:
         offset: int,
     ) -> List[Relationship]:
         """Helper method to search relationships by entity.
-        
+
         This method handles the logic for searching relationships when
         source or target entity filters are specified.
-        
+
         Args:
             source_entity_id: Filter by source entity ID
             target_entity_id: Filter by target entity ID
@@ -192,7 +192,7 @@ class SearchService:
             currently_active: Filter for relationships with no end date
             limit: Maximum number of relationships to return
             offset: Number of relationships to skip
-            
+
         Returns:
             List of relationships matching the criteria
         """
@@ -207,7 +207,7 @@ class SearchService:
         else:
             entity_id = target_entity_id
             direction = "target"
-        
+
         # Query database
         results = await self.database.list_relationships_by_entity(
             entity_id=entity_id,
@@ -218,13 +218,13 @@ class SearchService:
             limit=limit,
             offset=offset,
         )
-        
+
         # If both source and target specified, apply additional filtering
         if source_entity_id and target_entity_id:
             results = self._filter_by_both_entities(
                 results, source_entity_id, target_entity_id
             )
-        
+
         return results
 
     def _filter_by_both_entities(
@@ -234,17 +234,18 @@ class SearchService:
         target_entity_id: str,
     ) -> List[Relationship]:
         """Filter relationships by both source and target entity IDs.
-        
+
         Args:
             relationships: List of relationships to filter
             source_entity_id: Required source entity ID
             target_entity_id: Required target entity ID
-            
+
         Returns:
             Filtered list of relationships
         """
         return [
-            r for r in relationships
+            r
+            for r in relationships
             if r.source_entity_id == source_entity_id
             and r.target_entity_id == target_entity_id
         ]
@@ -256,24 +257,24 @@ class SearchService:
         offset: int = 0,
     ) -> List[Version]:
         """Get version history for an entity.
-        
+
         Returns all versions for the specified entity, sorted by version number
         in ascending order (oldest first).
-        
+
         Args:
             entity_id: The entity ID to get versions for
             limit: Maximum number of versions to return (default: 100)
             offset: Number of versions to skip (default: 0)
-            
+
         Returns:
             List of versions for the entity, sorted by version number
-            
+
         Examples:
             >>> # Get all versions for an entity
             >>> versions = await service.get_entity_versions(
             ...     entity_id="entity:person/ram-chandra-poudel"
             ... )
-            
+
             >>> # Get paginated versions
             >>> versions = await service.get_entity_versions(
             ...     entity_id="entity:person/ram-chandra-poudel",
@@ -295,18 +296,18 @@ class SearchService:
         offset: int = 0,
     ) -> List[Version]:
         """Get version history for a relationship.
-        
+
         Returns all versions for the specified relationship, sorted by version
         number in ascending order (oldest first).
-        
+
         Args:
             relationship_id: The relationship ID to get versions for
             limit: Maximum number of versions to return (default: 100)
             offset: Number of versions to skip (default: 0)
-            
+
         Returns:
             List of versions for the relationship, sorted by version number
-            
+
         Examples:
             >>> # Get all versions for a relationship
             >>> versions = await service.get_relationship_versions(

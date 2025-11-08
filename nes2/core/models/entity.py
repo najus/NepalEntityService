@@ -55,15 +55,15 @@ class EntityType(str, Enum):
 
 class EntitySubType(str, Enum):
     """Subtypes for entities with Nepali-specific classifications.
-    
+
     Note: Person entities do not have subtypes in this system.
-    
+
     Organization Subtypes:
     - POLITICAL_PARTY: Registered political parties in Nepal (e.g., Nepali Congress, CPN-UML)
     - GOVERNMENT_BODY: Government ministries, departments, and constitutional bodies
     - NGO: Non-governmental organizations operating in Nepal
     - INTERNATIONAL_ORG: International organizations with presence in Nepal
-    
+
     Location Subtypes (Nepal's Administrative Hierarchy):
     - PROVINCE: Nepal's 7 provinces (प्रदेश) - highest administrative division
     - DISTRICT: Nepal's 77 districts (जिल्ला) - second-level administrative division
@@ -85,7 +85,9 @@ class EntitySubType(str, Enum):
     PROVINCE = "province"  # प्रदेश (7 provinces)
     DISTRICT = "district"  # जिल्ला (77 districts)
     METROPOLITAN_CITY = "metropolitan_city"  # महानगरपालिका (6 metropolitan cities)
-    SUB_METROPOLITAN_CITY = "sub_metropolitan_city"  # उपमहानगरपालिका (11 sub-metropolitan cities)
+    SUB_METROPOLITAN_CITY = (
+        "sub_metropolitan_city"  # उपमहानगरपालिका (11 sub-metropolitan cities)
+    )
     MUNICIPALITY = "municipality"  # नगरपालिका (276 municipalities)
     RURAL_MUNICIPALITY = "rural_municipality"  # गाउँपालिका (460 rural municipalities)
     WARD = "ward"  # वडा (smallest unit)
@@ -97,7 +99,7 @@ Attributes = Dict[str, Any]
 
 class Entity(BaseModel, ABC):
     """Base entity model. Cannot be instantiated directly - use Person, Organization, or Location.
-    
+
     At least one name with kind='PRIMARY' should be provided for all entities.
     """
 
@@ -162,8 +164,12 @@ class Entity(BaseModel, ABC):
     @property
     def id(self) -> str:
         # Handle both enum and string types
-        type_val = self.type.value if hasattr(self.type, 'value') else self.type
-        subtype_val = self.sub_type.value if (self.sub_type and hasattr(self.sub_type, 'value')) else self.sub_type
+        type_val = self.type.value if hasattr(self.type, "value") else self.type
+        subtype_val = (
+            self.sub_type.value
+            if (self.sub_type and hasattr(self.sub_type, "value"))
+            else self.sub_type
+        )
         return build_entity_id(type_val, subtype_val, self.slug)
 
     @model_validator(mode="after")

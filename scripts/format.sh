@@ -1,6 +1,8 @@
 #!/bin/bash
 # Format script for developers
 # Run this before committing to ensure code passes CI checks
+#
+# For check-only mode (no modifications), use: ./scripts/check-format.sh
 
 set -e
 

@@ -26,11 +26,11 @@ Best Practices:
 """
 
 import asyncio
-import time
-from typing import Any, Dict, List, Optional, Tuple
-from datetime import datetime, timedelta
-from collections import defaultdict
 import logging
+import time
+from collections import defaultdict
+from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional, Tuple
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -38,24 +38,24 @@ logger = logging.getLogger(__name__)
 
 class RateLimiter:
     """Rate limiter for respectful web scraping.
-    
+
     Implements per-domain rate limiting to avoid overwhelming servers.
     Uses a token bucket algorithm for smooth rate limiting.
-    
+
     Attributes:
         requests_per_second: Maximum requests per second per domain
         requests_per_minute: Maximum requests per minute per domain
         last_request_time: Dictionary tracking last request time per domain
         request_counts: Dictionary tracking request counts per domain
     """
-    
+
     def __init__(
         self,
         requests_per_second: float = 1.0,
         requests_per_minute: int = 30,
     ):
         """Initialize the rate limiter.
-        
+
         Args:
             requests_per_second: Maximum requests per second per domain
             requests_per_minute: Maximum requests per minute per domain
@@ -65,23 +65,23 @@ class RateLimiter:
         self.last_request_time: Dict[str, float] = {}
         self.request_counts: Dict[str, List[float]] = defaultdict(list)
         self.min_delay = 1.0 / requests_per_second
-    
+
     async def acquire(self, domain: str) -> None:
         """Acquire permission to make a request to the domain.
-        
+
         Blocks until rate limit allows the request.
-        
+
         Args:
             domain: The domain to rate limit
         """
         current_time = time.time()
-        
+
         # Clean up old request timestamps (older than 1 minute)
         cutoff_time = current_time - 60
         self.request_counts[domain] = [
             t for t in self.request_counts[domain] if t > cutoff_time
         ]
-        
+
         # Check per-minute limit
         if len(self.request_counts[domain]) >= self.requests_per_minute:
             # Wait until oldest request is more than 1 minute old
@@ -90,7 +90,7 @@ class RateLimiter:
             if wait_time > 0:
                 await asyncio.sleep(wait_time)
                 current_time = time.time()
-        
+
         # Check per-second limit
         if domain in self.last_request_time:
             time_since_last = current_time - self.last_request_time[domain]
@@ -98,7 +98,7 @@ class RateLimiter:
                 wait_time = self.min_delay - time_since_last
                 await asyncio.sleep(wait_time)
                 current_time = time.time()
-        
+
         # Record this request
         self.last_request_time[domain] = current_time
         self.request_counts[domain].append(current_time)
@@ -106,15 +106,15 @@ class RateLimiter:
 
 class RetryHandler:
     """Retry handler for failed requests.
-    
+
     Implements exponential backoff with jitter for retrying failed requests.
-    
+
     Attributes:
         max_retries: Maximum number of retry attempts
         base_delay: Base delay in seconds for exponential backoff
         max_delay: Maximum delay in seconds between retries
     """
-    
+
     def __init__(
         self,
         max_retries: int = 3,
@@ -122,7 +122,7 @@ class RetryHandler:
         max_delay: float = 60.0,
     ):
         """Initialize the retry handler.
-        
+
         Args:
             max_retries: Maximum number of retry attempts
             base_delay: Base delay in seconds for exponential backoff
@@ -131,21 +131,21 @@ class RetryHandler:
         self.max_retries = max_retries
         self.base_delay = base_delay
         self.max_delay = max_delay
-    
+
     def calculate_delay(self, attempt: int) -> float:
         """Calculate delay for the given retry attempt.
-        
+
         Uses exponential backoff: delay = base_delay * (2 ^ attempt)
-        
+
         Args:
             attempt: The retry attempt number (0-indexed)
-            
+
         Returns:
             Delay in seconds
         """
-        delay = self.base_delay * (2 ** attempt)
+        delay = self.base_delay * (2**attempt)
         return min(delay, self.max_delay)
-    
+
     async def execute_with_retry(
         self,
         func,
@@ -153,26 +153,26 @@ class RetryHandler:
         **kwargs,
     ) -> Any:
         """Execute a function with retry logic.
-        
+
         Args:
             func: The async function to execute
             *args: Positional arguments for the function
             **kwargs: Keyword arguments for the function
-            
+
         Returns:
             The function result
-            
+
         Raises:
             The last exception if all retries fail
         """
         last_exception = None
-        
+
         for attempt in range(self.max_retries + 1):
             try:
                 return await func(*args, **kwargs)
             except Exception as e:
                 last_exception = e
-                
+
                 if attempt < self.max_retries:
                     delay = self.calculate_delay(attempt)
                     await asyncio.sleep(delay)
@@ -183,17 +183,17 @@ class RetryHandler:
 
 class WebScraper:
     """Web scraper for extracting data from external sources.
-    
+
     Provides multi-source data extraction with rate limiting, error handling,
     and retry logic. Supports Wikipedia, government sites, and news sources.
-    
+
     Attributes:
         rate_limiter: Rate limiter for respectful scraping
         retry_handler: Retry handler for failed requests
         user_agent: User agent string for HTTP requests
         timeout: Request timeout in seconds
     """
-    
+
     def __init__(
         self,
         requests_per_second: float = 1.0,
@@ -203,7 +203,7 @@ class WebScraper:
         user_agent: Optional[str] = None,
     ):
         """Initialize the web scraper.
-        
+
         Args:
             requests_per_second: Maximum requests per second per domain
             requests_per_minute: Maximum requests per minute per domain
@@ -222,13 +222,13 @@ class WebScraper:
             "(https://github.com/yourusername/nepal-entity-service; "
             "contact@example.com)"
         )
-    
+
     def _extract_domain(self, url: str) -> str:
         """Extract domain from URL for rate limiting.
-        
+
         Args:
             url: The URL to extract domain from
-            
+
         Returns:
             The domain name
         """
@@ -237,21 +237,21 @@ class WebScraper:
             url = url.split("://")[1]
         domain = url.split("/")[0]
         return domain
-    
+
     async def fetch_wikipedia_page(
         self,
         page_title: str,
         language: str = "en",
     ) -> Optional[Dict[str, Any]]:
         """Fetch a Wikipedia page.
-        
+
         Extracts content from a Wikipedia page using the wikipedia library.
         Handles disambiguation pages and missing pages gracefully.
-        
+
         Args:
             page_title: The Wikipedia page title
             language: Language code ("en" or "ne")
-            
+
         Returns:
             Dictionary containing:
                 - content: Page content/text
@@ -269,22 +269,22 @@ class WebScraper:
         except ImportError:
             # Fallback to mock implementation if library not available
             return await self._fetch_wikipedia_page_mock(page_title, language)
-        
+
         # Set language
         wikipedia.set_lang(language)
-        
+
         # Determine domain for rate limiting
         domain = f"{language}.wikipedia.org"
-        
+
         # Apply rate limiting
         await self.rate_limiter.acquire(domain)
-        
+
         # Fetch page with retry logic
         async def fetch():
             try:
                 # Get page
                 page = wikipedia.page(page_title, auto_suggest=False)
-                
+
                 return {
                     "content": page.content,
                     "url": page.url,
@@ -318,38 +318,38 @@ class WebScraper:
             except Exception as e:
                 # Other errors
                 raise e
-        
+
         try:
             return await self.retry_handler.execute_with_retry(fetch)
         except Exception:
             # All retries failed
             return None
-    
+
     async def _fetch_wikipedia_page_mock(
         self,
         page_title: str,
         language: str = "en",
     ) -> Optional[Dict[str, Any]]:
         """Mock Wikipedia page fetching when library not available.
-        
+
         Args:
             page_title: The Wikipedia page title
             language: Language code
-            
+
         Returns:
             Mock page data or None
         """
         # Handle nonexistent pages
         if "Nonexistent" in page_title or "12345" in page_title:
             return None
-        
+
         # Build URL
         base_url = f"https://{language}.wikipedia.org/wiki/"
         url = f"{base_url}{page_title}"
-        
+
         # Mock content
         content = f"Mock Wikipedia content for {page_title} in {language}"
-        
+
         return {
             "content": content,
             "url": url,
@@ -359,7 +359,7 @@ class WebScraper:
             "links": ["Nepali Congress", "Nepal", "Politics"],
             "images": [],
         }
-    
+
     async def search_wikipedia(
         self,
         query: str,
@@ -367,12 +367,12 @@ class WebScraper:
         max_results: int = 10,
     ) -> List[Dict[str, Any]]:
         """Search Wikipedia for pages matching the query.
-        
+
         Args:
             query: Search query
             language: Language code
             max_results: Maximum number of results
-            
+
         Returns:
             List of search results with title and summary
         """
@@ -381,50 +381,54 @@ class WebScraper:
         except ImportError:
             # Fallback to mock
             return await self._search_wikipedia_mock(query, language, max_results)
-        
+
         # Set language
         wikipedia.set_lang(language)
-        
+
         # Determine domain for rate limiting
         domain = f"{language}.wikipedia.org"
-        
+
         # Apply rate limiting
         await self.rate_limiter.acquire(domain)
-        
+
         # Search with retry logic
         async def search():
             try:
                 # Search Wikipedia
                 results = wikipedia.search(query, results=max_results)
-                
+
                 # Get summaries for each result
                 search_results = []
                 for title in results:
                     try:
                         # Rate limit each summary request
                         await self.rate_limiter.acquire(domain)
-                        
-                        summary = wikipedia.summary(title, sentences=2, auto_suggest=False)
+
+                        summary = wikipedia.summary(
+                            title, sentences=2, auto_suggest=False
+                        )
                         page_url = wikipedia.page(title, auto_suggest=False).url
-                        
-                        search_results.append({
-                            "title": title,
-                            "summary": summary,
-                            "url": page_url,
-                        })
+
+                        search_results.append(
+                            {
+                                "title": title,
+                                "summary": summary,
+                                "url": page_url,
+                            }
+                        )
                     except Exception:
                         # Skip pages that fail
                         continue
-                
+
                 return search_results
             except Exception as e:
                 raise e
-        
+
         try:
             return await self.retry_handler.execute_with_retry(search)
         except Exception:
             return []
-    
+
     async def _search_wikipedia_mock(
         self,
         query: str,
@@ -432,48 +436,50 @@ class WebScraper:
         max_results: int = 10,
     ) -> List[Dict[str, Any]]:
         """Mock Wikipedia search when library not available.
-        
+
         Args:
             query: Search query
             language: Language code
             max_results: Maximum number of results
-            
+
         Returns:
             Mock search results
         """
         # Handle queries with no results
         if "Nonexistent" in query or "12345" in query:
             return []
-        
+
         # Mock results
-        return [{
-            "title": query,
-            "summary": f"Mock summary for {query}",
-            "url": f"https://{language}.wikipedia.org/wiki/{query.replace(' ', '_')}",
-        }]
-    
+        return [
+            {
+                "title": query,
+                "summary": f"Mock summary for {query}",
+                "url": f"https://{language}.wikipedia.org/wiki/{query.replace(' ', '_')}",
+            }
+        ]
+
     async def fetch_government_page(
         self,
         url: str,
     ) -> Optional[Dict[str, Any]]:
         """Fetch a government website page.
-        
+
         Placeholder for government site scraping. Real implementation
         would use appropriate scraping libraries and handle site-specific
         structure.
-        
+
         Args:
             url: The government page URL
-            
+
         Returns:
             Dictionary containing extracted data or None
         """
         # Extract domain for rate limiting
         domain = self._extract_domain(url)
-        
+
         # Apply rate limiting
         await self.rate_limiter.acquire(domain)
-        
+
         # Mock implementation
         # Real implementation would use BeautifulSoup or similar
         return {
@@ -482,29 +488,29 @@ class WebScraper:
             "title": "Government Page",
             "source": "government",
         }
-    
+
     async def fetch_news_page(
         self,
         url: str,
     ) -> Optional[Dict[str, Any]]:
         """Fetch a news article page.
-        
+
         Placeholder for news site scraping. Real implementation
         would use appropriate scraping libraries and handle site-specific
         structure.
-        
+
         Args:
             url: The news article URL
-            
+
         Returns:
             Dictionary containing extracted data or None
         """
         # Extract domain for rate limiting
         domain = self._extract_domain(url)
-        
+
         # Apply rate limiting
         await self.rate_limiter.acquire(domain)
-        
+
         # Mock implementation
         # Real implementation would use newspaper3k or similar
         return {
@@ -513,30 +519,30 @@ class WebScraper:
             "title": "News Article",
             "source": "news",
         }
-    
+
     async def extract_html_content(
         self,
         html: str,
         selectors: Optional[Dict[str, str]] = None,
     ) -> Dict[str, Any]:
         """Extract content from HTML using CSS selectors.
-        
+
         Placeholder for HTML parsing. Real implementation would use
         BeautifulSoup or lxml for robust HTML parsing.
-        
+
         Args:
             html: The HTML content
             selectors: Dictionary of field names to CSS selectors
-            
+
         Returns:
             Dictionary of extracted content
         """
         # Mock implementation
         # Real implementation would use BeautifulSoup
         extracted = {}
-        
+
         if selectors:
             for field, selector in selectors.items():
                 extracted[field] = f"Mock extracted content for {field}"
-        
+
         return extracted

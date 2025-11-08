@@ -1,9 +1,10 @@
 """Pytest configuration and fixtures for nes2 tests."""
 
-import pytest
-from pathlib import Path
-import tempfile
 import shutil
+import tempfile
+from pathlib import Path
+
+import pytest
 
 
 @pytest.fixture
@@ -27,20 +28,16 @@ def sample_nepali_person():
                 "en": {
                     "full": "Ram Chandra Poudel",
                     "given": "Ram Chandra",
-                    "family": "Poudel"
+                    "family": "Poudel",
                 },
-                "ne": {
-                    "full": "राम चन्द्र पौडेल",
-                    "given": "राम चन्द्र",
-                    "family": "पौडेल"
-                }
+                "ne": {"full": "राम चन्द्र पौडेल", "given": "राम चन्द्र", "family": "पौडेल"},
             }
         ],
         "attributes": {
             "party": "nepali-congress",
             "constituency": "Tanahun-1",
-            "role": "politician"
-        }
+            "role": "politician",
+        },
     }
 
 
@@ -54,18 +51,11 @@ def sample_nepali_organization():
         "names": [
             {
                 "kind": "PRIMARY",
-                "en": {
-                    "full": "Nepali Congress"
-                },
-                "ne": {
-                    "full": "नेपाली कांग्रेस"
-                }
+                "en": {"full": "Nepali Congress"},
+                "ne": {"full": "नेपाली कांग्रेस"},
             }
         ],
-        "attributes": {
-            "founded": "1947",
-            "ideology": "social-democracy"
-        }
+        "attributes": {"founded": "1947", "ideology": "social-democracy"},
     }
 
 
@@ -79,18 +69,11 @@ def sample_nepali_location():
         "names": [
             {
                 "kind": "PRIMARY",
-                "en": {
-                    "full": "Kathmandu Metropolitan City"
-                },
-                "ne": {
-                    "full": "काठमाडौं महानगरपालिका"
-                }
+                "en": {"full": "Kathmandu Metropolitan City"},
+                "ne": {"full": "काठमाडौं महानगरपालिका"},
             }
         ],
-        "attributes": {
-            "province": "Bagmati",
-            "district": "Kathmandu"
-        }
+        "attributes": {"province": "Bagmati", "district": "Kathmandu"},
     }
 
 
@@ -102,9 +85,7 @@ def sample_relationship():
         "target_entity_id": "entity:organization/political_party/nepali-congress",
         "type": "MEMBER_OF",
         "start_date": "2000-01-01",
-        "attributes": {
-            "position": "President"
-        }
+        "attributes": {"position": "President"},
     }
 
 
@@ -116,7 +97,7 @@ def sample_version():
         "version": 1,
         "created_at": "2024-01-01T00:00:00Z",
         "created_by": "author:system:csv-importer",
-        "change_description": "Initial import"
+        "change_description": "Initial import",
     }
 
 
@@ -124,6 +105,7 @@ def sample_version():
 def authentic_nepali_politicians():
     """List of authentic Nepali politician names for testing."""
     from tests2.fixtures.nepali_data import NEPALI_POLITICIANS
+
     return NEPALI_POLITICIANS
 
 
@@ -131,6 +113,7 @@ def authentic_nepali_politicians():
 def authentic_nepali_parties():
     """List of authentic Nepali political parties for testing."""
     from tests2.fixtures.nepali_data import NEPALI_POLITICAL_PARTIES
+
     return NEPALI_POLITICAL_PARTIES
 
 
@@ -138,14 +121,15 @@ def authentic_nepali_parties():
 def authentic_nepali_locations():
     """List of authentic Nepali administrative divisions for testing."""
     from tests2.fixtures.nepali_data import (
-        NEPALI_PROVINCES,
         NEPALI_DISTRICTS,
-        NEPALI_MUNICIPALITIES
+        NEPALI_MUNICIPALITIES,
+        NEPALI_PROVINCES,
     )
+
     return {
         "provinces": NEPALI_PROVINCES,
         "districts": NEPALI_DISTRICTS,
-        "municipalities": NEPALI_MUNICIPALITIES
+        "municipalities": NEPALI_MUNICIPALITIES,
     }
 
 
@@ -153,6 +137,7 @@ def authentic_nepali_locations():
 def authentic_nepali_government_bodies():
     """List of authentic Nepali government bodies for testing."""
     from tests2.fixtures.nepali_data import NEPALI_GOVERNMENT_BODIES
+
     return NEPALI_GOVERNMENT_BODIES
 
 
@@ -160,4 +145,5 @@ def authentic_nepali_government_bodies():
 def authentic_nepali_constituencies():
     """List of authentic Nepali electoral constituencies for testing."""
     from tests2.fixtures.nepali_data import NEPALI_CONSTITUENCIES
+
     return NEPALI_CONSTITUENCIES
