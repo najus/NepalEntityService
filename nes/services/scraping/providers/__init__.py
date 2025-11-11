@@ -33,6 +33,7 @@ Usage:
 """
 
 from .aws import AWSBedrockProvider
+from .openai import OpenAIProvider
 from .base import BaseLLMProvider
 from .mock import MockLLMProvider
 
@@ -40,4 +41,5 @@ __all__ = [
     "BaseLLMProvider",
     "MockLLMProvider",
     "AWSBedrockProvider",
+    "OpenAIProvider"
 ]
